@@ -1,6 +1,5 @@
 package definingClassesExercise.P09CatLady;
 
-import java.util.List;
 
 public class Cat {
     private String name;

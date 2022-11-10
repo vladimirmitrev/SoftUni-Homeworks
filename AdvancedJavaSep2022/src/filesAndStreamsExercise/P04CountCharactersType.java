@@ -25,7 +25,7 @@ public class P04CountCharactersType {
 
                  oneSymbol = fr.read();
              }
-             pw.printf("Vowels: %d%nConsonants: %d%nPunctuation: %d", vowels, consonants, punctuation);
+             pw.printf("Vowels: %d%nOther symbols: %d%nPunctuation: %d", vowels, consonants, punctuation);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

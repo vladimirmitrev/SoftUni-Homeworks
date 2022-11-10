@@ -7,47 +7,40 @@ public class    P08BrowserHistoryUpgrade {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String command = scanner.nextLine();
-
-        String currentURL = "blank";
-
         ArrayDeque<String> history = new ArrayDeque<>();
         ArrayDeque<String> forward = new ArrayDeque<>();
 
-        while (!command.equals("Home")) {
+        ArrayDeque<String> browserHistoryBack = new ArrayDeque<>();
+        ArrayDeque<String> browserHistoryForward = new ArrayDeque<>();
+        String input;
+        String currentURL = null;
 
-            if(command.equals("back")) {
-                if(!history.isEmpty()) {
-                    currentURL = history.pop();
-                    forward.push(currentURL);
-                } else {
+        while (!"Home".equals(input = scanner.nextLine())) {
+            if (input.equals("back")) {
+                if (!browserHistoryBack.isEmpty()) {
+                    browserHistoryForward.offerFirst(currentURL);
+                }
+                if (browserHistoryBack.isEmpty()) {
                     System.out.println("no previous URLs");
-                    command = scanner.nextLine();
-                    continue;
-                }
-
-            } else if(command.equals("forward")) {
-                if(forward.isEmpty()) {
-                    System.out.println("no next URLs");
-                    command = scanner.nextLine();
                     continue;
                 } else {
-                    currentURL = forward.pop();
-                    history.push(currentURL);
-
+                    currentURL = browserHistoryBack.pop();
                 }
-            }
-            else {
-                if(!currentURL.equals("blank")) {
-                    history.push(currentURL);
-                    forward.clear();
+            } else if (input.equals("forward")) {
+                if (browserHistoryForward.isEmpty()) {
+                    System.out.println("no next URLs");
+                    continue;
+                } else {
+                    currentURL = browserHistoryForward.poll();
                 }
-                currentURL = command;
+            } else {
+                if (currentURL != null) {
+                    browserHistoryBack.push(currentURL);
+                }
+                currentURL = input;
+                browserHistoryForward.clear();
             }
             System.out.println(currentURL);
-            command = scanner.nextLine();
         }
-
-
     }
 }
