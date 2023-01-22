@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(238, 238, 238);
+    font-family: Georgia, serif;
+    font-size: 1em;
+}
+.card {
+    background-color: rgb(255, 255, 255) ;
+    width: 300px;
+    height: 350px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.card h3, p {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin: 0;
+}
+.card h3 {
+    font-size: 1.2em;
+}
+.card p {
+    font-size: 12px;
+}
+
+img {
+    width: 100%;
+    margin: 0 auto;
+}
+.button {
+    background-color:rgb(0, 153, 0) ;
+    border: none;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+a {
+    color: rgb(255, 255, 255) ;
+    text-decoration: none;
+}
