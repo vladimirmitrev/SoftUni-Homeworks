@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.viewport:first-child {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,92,1) 0%, rgba(0,212,255,1) 100%);
+}
+.viewport:last-child{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,111,1) 0%, rgba(255,0,0,1) 100%);
+}
+.viewport {
+   height: 50vh;
+   position: relative;
+   overflow: hidden;
+}
+
+.card {
+    display: block;
+    position: absolute;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card img {
+    width: 100%;
+}
+.card i {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    color: white;
+}
