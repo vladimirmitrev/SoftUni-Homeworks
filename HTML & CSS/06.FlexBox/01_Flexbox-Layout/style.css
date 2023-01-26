@@ -2,7 +2,7 @@ body {
     background-color: #EEE;
     padding: 5rem;
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
 }
 header, main, aside, footer {
     padding: 2rem;
