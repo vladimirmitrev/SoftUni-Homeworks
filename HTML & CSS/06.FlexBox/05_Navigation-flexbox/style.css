@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 50px;
+}
+header {
+    display: flex;
+    border-bottom: 2px solid rgb(0,0,0);
+    justify-content: space-between;
+}
+h1 {
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+ul {
+ display: flex;
+ flex-direction: row;
+ list-style-type: none;
+}
+li {
+    padding: 10px;
+}
+a {
+ text-decoration: none;
+ color: rgb(0, 153, 0);
+}
+h2 {
+    font-weight: 600;
+}
+p{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
