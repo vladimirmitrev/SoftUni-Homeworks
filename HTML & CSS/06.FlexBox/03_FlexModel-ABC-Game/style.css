@@ -1,0 +1,61 @@
+html {
+
+    font-family: Helvetica, sans-serif;
+}
+div {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    max-width: 15vw;
+    height: 35rem;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px;
+}
+span {
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+.container span:nth-child(11) {
+    order: -13;
+}
+.container span:nth-child(2) {
+    order: -12;
+}
+.container span:nth-child(12) {
+    order: -11;
+}
+.container span:nth-child(4) {
+    order: -10;
+}
+.container span:nth-child(8) {
+    order: -9;
+}
+.container span:nth-child(9) {
+    order: -8;
+}
+.container span:nth-child(6) {
+    order: -7;
+}
+.container span:nth-child(5) {
+    order: -6;
+}
+.container span:nth-child(1) {
+    order: -5;
+}
+.container span:nth-child(3) {
+    order: -4;
+}
+.container span:nth-child(7) {
+    order: -3;
+}
+.container span:nth-child(10) {
+    order: -2;
+}
+
+
+
+
