@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(228, 228, 228);
+}
+table {
+    border: 1px solid rgb(186, 186, 186);
+    width: 90vw;
+    font-family: sans-serif;
+    font-size: 14px;
+    border-spacing: 0px;
+}
+thead {
+    background-color: rgb(50, 49, 49);
+    color: white;
+    text-align: left;
+}
+th {
+    padding: 5px;
+    border: 0.5px solid rgb(186, 186, 186);
+    
+}
+td {
+    padding: 5px;
+    border: 0.5px solid rgb(186, 186, 186);
+}
+tr:nth-child(even) {
+    background-color: white;
+}
+@media screen and (max-width: 480px) {
+        table {
+            display: flex;
+            width: 67%;
+            margin: 20px;
+        }
+        thead {
+            display: flex;
+            background-color: rgb(228, 228, 228);
+            color: black;
+        
+        }
+        tbody tr {
+            display: flex;
+            flex-direction: column;
+        }
+        thead tr {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        
+    }
