@@ -1,0 +1,25 @@
+header {
+    display: flex;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+}
+nav ul li a {
+    padding-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+header {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+h1 {
+    color: #a13ab7;
+    
+}
+.sub__title {
+    text-transform: uppercase;
+    line-height: 1px
+
+}
