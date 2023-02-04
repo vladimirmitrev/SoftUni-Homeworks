@@ -22,15 +22,24 @@ html {
 
 .icons {
     position: absolute;
-    top: 0px;
-    left: 0px;
     width: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 30px 200px;
+    align-items: center; */
     z-index: 1000;
     color: white;
+}
+.icons .gg {
+    position: absolute;
+    top: 5rem;
+    left: 30rem;
+    font-size: 1.5rem;
+}
+.icons .cart {
+    position: absolute;
+    top: 5rem;
+    right: 30rem;
+    font-size: 1.5rem;
 }
 
 .first-part {
@@ -48,19 +57,30 @@ html {
     text-align: center;
 }
 .first-part .content .site-title {
-    font-size: 48px;
+    font-size: 4rem;
 }
 .first-part .content .title-desc {
     padding: 10px;
     letter-spacing: 1px;
+    font-size: 1.5rem;
 }
 .first-part .content .btn {
     background-color: #00d08e;
     border: none;
     color: white;
-    padding: 4px 15px;
+    padding: 8px 25px;
     border-radius: 4px;
     margin: 40px;
+    font-size: 22px;
+}
+
+.first-part .content .btn:hover {
+    background-color: transparent;
+    border: 3px solid white;
+    transition: all 100ms; 
+}
+.first-part .see-it {
+    font-size: 1.5rem;
 }
 .icons, .first-part {
     text-shadow: 1px 0.5px 0px #000000;
