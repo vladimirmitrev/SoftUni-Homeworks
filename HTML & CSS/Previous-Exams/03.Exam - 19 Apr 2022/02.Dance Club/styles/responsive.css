@@ -1,0 +1,55 @@
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .trainings {
+    display: flex;
+    flex-direction: column;
+  }
+  .instructors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+  .classes ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .classes li {
+    width: 100%;
+  }
+  .element.style {
+    flex-direction: column;
+}
+.getInTouch {
+    align-items: unset;
+    flex-direction: column;
+}
+.site-footer .wrapper {
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.site-footer .about {
+    flex-basis: 100%;
+}
+.site-footer .sitemap {
+    flex-basis: 30%;
+}
+}
