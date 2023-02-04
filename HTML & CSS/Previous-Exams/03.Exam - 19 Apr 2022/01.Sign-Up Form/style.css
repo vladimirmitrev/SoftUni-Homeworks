@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    background-color: rgb(218, 218, 218);
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sing-up {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 960px;
+    height: 520px;
+    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* justify-content: center; */
+}
+
+.left {
+position: relative;
+color: white;
+
+}
+.image-bg  {
+    width: 100%;
+    height: 99%;
+    object-fit:cover;
+    position: absolute;
+    z-index: -2;
+}
+.layout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 4px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.58) 51%, rgba(0,0,0,1) 100%);
+}
+.top-text {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-weight: 600;
+}
+.header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.welcome  {
+    text-align: center;
+    font-weight: 200;
+    font-size: 36px;
+}
+.ready {
+    text-align: center;
+    font-weight: 100;
+    font-size: 24px;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    left: 44%;
+}
+.icons p {
+    padding: 0 5px 0 5px;
+}
+
+.right {
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    justify-content: space-around;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.btn {
+    background-color: #111111;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 10px 40px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.ninja {
+    color: #999999;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.labels {
+    color:#CFD0CC;
+    padding: 10px 10px 10px 0px;
+    line-height: 2;
+}
+input {
+    width: 150%;
+    border: 1px solid #CFD0CC;;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-left: 10px;
+}
+
+
+
+
+
