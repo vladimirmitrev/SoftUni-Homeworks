@@ -66,34 +66,13 @@ body {
   padding-left: 20px;
 }
 table {
-  padding-left: 20px;
   text-align: center;
+  border-collapse: collapse;
+  margin-left: 20px;
+  /* padding-left: 20px; */
 }
 th,
 td {
   border: 1px solid green;
   padding: 2px 40px;
 }
-
-/* Testing  */
-
-/* th:not(:first-child) {
-  border-bottom: none;
-  border-left: none;
-}
-td:not(:first-child) {
-    border-bottom: none;
-    border-left: none;
-  }
-td:nth-child(even:nth-last-of-type()) {
-  border-left: none;
-  border-bottom: none;
-}
-td:nth-child(odd:nth-last-of-type()) {
-  border-left: none;
-  border-bottom: none;
-}
-th:nth-child(odd:nth-last-of-type()) {
-  border-bottom: none;
-  border-left: none;
-} */
