@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+  font-family: "PT Serif", serif;
+}
+.main-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  width: 960px;
+  height: 480px;
+  margin: 100px auto;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.left-card .bg-img {
+  position: absolute;
+  z-index: -1;
+}
+.left-card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 20px;
+  /* width: 50%; */
+}
+.rught-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.right-card .kiwi-img {
+  width: 100%;
+  height: 100%;
+  padding-right: 20px;
+}
+
+.title {
+  text-align: center;
+  border-bottom: 1px dotted green;
+  font-size: 24px;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+.serves {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 20px 10px 20px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.green-text {
+  color: green;
+  font-weight: bold;
+}
+.recept {
+  padding-left: 20px;
+}
+
+.description {
+  padding-left: 20px;
+}
+table {
+  padding-left: 20px;
+  text-align: center;
+}
+th,
+td {
+  border: 1px solid green;
+  padding: 2px 40px;
+}
+
+/* Testing  */
+
+/* th:not(:first-child) {
+  border-bottom: none;
+  border-left: none;
+}
+td:not(:first-child) {
+    border-bottom: none;
+    border-left: none;
+  }
+td:nth-child(even:nth-last-of-type()) {
+  border-left: none;
+  border-bottom: none;
+}
+td:nth-child(odd:nth-last-of-type()) {
+  border-left: none;
+  border-bottom: none;
+}
+th:nth-child(odd:nth-last-of-type()) {
+  border-bottom: none;
+  border-left: none;
+} */
