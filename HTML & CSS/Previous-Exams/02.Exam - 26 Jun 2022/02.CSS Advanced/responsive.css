@@ -33,4 +33,7 @@
   main section:nth-child(4) article {
     margin-left: 20%;
   }
+  form {
+    width: 500px;
+  }
 }
