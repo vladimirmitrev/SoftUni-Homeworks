@@ -1,1 +1,64 @@
-/* TODO: Add responsive styles here... */
+@media (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        /* align-items: center; */
+    }
+    #home .container {
+        align-items: center;
+    }
+
+  .hero img {
+    display: none;
+  }
+  .hero h1 {
+    margin: 30px;
+  }
+  .hero-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .col-sm-12 h2 {
+    font-size: 3rem;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .col-sm-6 {
+    max-width: 80%;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .col-12 h5 {
+    font-size: 1.5rem;
+    padding-top: 50px;
+  }
+  .about {
+    margin-bottom: 30px;
+  }
+  .email {
+    flex-direction: initial;
+  }
+  .contact-btn {
+    display: none;
+  }
+  footer .col-12 h3 {
+    font-size: 3.3rem;
+    line-height: 3rem;
+  }
+  .contact-nav {
+    display: flex;
+    flex-direction: column;
+  }
+  footer {
+    margin-top: 10px;
+  }
+}
