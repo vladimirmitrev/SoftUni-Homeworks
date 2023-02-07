@@ -1,0 +1,17 @@
+.btn {
+  background-color: gray;
+  color: white;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  line-height: 1.5;
+  /* border-radius: 4px; */
+}
+.btn:hover {
+  cursor: pointer;
+}
