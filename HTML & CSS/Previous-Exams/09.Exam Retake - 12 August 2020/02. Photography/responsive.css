@@ -1,1 +1,20 @@
-/* TODO: Add media queries */
+@media (max-width: 600px) {
+
+    body {
+        font-size: 24px; 
+    }
+
+    .thumbnails {
+        flex-direction: column;
+        gap: 50px;
+        font-size: 24px;
+    }
+
+    .thumbnails > div {
+        width: 100%;
+    }
+
+    .thumbnails a img {
+        height: 300px;
+    }
+}
