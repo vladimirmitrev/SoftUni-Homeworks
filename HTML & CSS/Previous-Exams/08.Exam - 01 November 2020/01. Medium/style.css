@@ -33,9 +33,11 @@ p {
     color: #757575;
     font-size: 26px;
 }
+
 .header {
     text-align: left;
 }
+
 .btn {
     text-align: start;
     font-size: 26px;
@@ -48,11 +50,13 @@ p {
     width: 500px;
     text-align: center;
 }
+
 .content-title {
     font-size: 24px;
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
 hr {
     margin-top: 80px;
     width: 600px;
@@ -60,6 +64,7 @@ hr {
     background-color: #757575;
     color: #757575;
 }
+
 span {
     background-color: #CEFDE9;
 }
