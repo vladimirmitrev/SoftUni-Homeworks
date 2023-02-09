@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  /* width: 1366px; */
+}
+
+.nav {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 40px;
+  margin-bottom: 100px;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: #9d9d9d;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 150px;
+}
+
+.solo {
+  flex-basis: 25%;
+}
+
+.solo-title {
+  font-size: 64px;
+  font-weight: 100;
+}
+
+.solo-desc {
+  font-size: 20px;
+  line-height: 2;
+  padding: 30px 0px;
+}
+
+.red-phones {
+  flex-basis: 40%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  /* gap: 100px; */
+  margin-bottom: 100px;
+  /* align-items: center; */
+}
+
+.black-phones {
+  flex-basis: 35%;
+}
+
+.power {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 30%;
+  gap: 30px;
+}
+
+.power-title {
+  font-size: 90px;
+  font-weight: 100;
+  text-align: right;
+}
+
+.power-sub {
+  font-size: 24px;
+  text-align: right;
+  padding-right: 10px;
+  padding-bottom: 30px;
+}
+
+.power-desc {
+  font-size: 24px;
+  line-height: 1.7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.buton-price {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.price {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.try {
+    background-color: #575757;
+    /* height: 400px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+}
+
+
+.try-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.try-title {
+    color: white;
+    font-size: 42px;
+    font-weight: 100;
+}
+
+.read-more-link {
+    font-size: 42px;
+    text-align: center;
+    color: white;
+    /* padding-bottom: 40px; */
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+hr {
+    height: 1px;
+    width: 16%;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    margin-bottom: 60px;
+}
+
+.girl-phones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DADADA;
+}
+.girl-img {
+    width: 100%;
+    height: 100%;
+    flex-basis:37%;
+}
+.red-phones-down {
+    width: 100%;
+    height: 100%;
+    flex-basis: 30%;
+    background-color: #DADADA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-left: 60px;
+    
+}
+
+.give-life {
+    font-size: 120px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -12px;
+}
+
+.beats-red {
+    font-size: 56px ;
+    font-weight: 100;
+    letter-spacing: -4px;
+
+}
+
+.red-text {
+    color: #FF0000;
+    font-weight: 700;
+}
+
+.foot-text {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 100;
+    padding: 40px;
+}
+
+
+
+
+
+
