@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+body {
+  font-family: "Gelasio", serif;
+  /* position: relative; */
+}
+
+.header {
+  width: 100vw;
+  height: 70vh;
+  position: relative;
+}
+
+.map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.logo-img {
+  width: 100px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+  top: 10px;
+  z-index: 1000;
+}
+
+.login {
+  padding-right: 20px;
+  color: #cacaca;
+}
+
+.login-link {
+  font-size: 24px;
+  color: #cacaca;
+  padding-right: 20px;
+  text-decoration: none;
+}
+
+.login .fa {
+  font-size: 24px;
+  color: #cacaca;
+  padding-right: 20px;
+}
+
+.head-title {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 68px;
+  text-shadow: 2px 2px 0px #030202;
+}
+
+.btn {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Arial", serif;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e1e1e1;
+}
+
+.articles h2 {
+  color: #53595c;
+  font-size: 48px;
+  padding: 30px;
+  text-align: left;
+}
+
+.pictures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 80%;
+}
+
+.pictures h3 {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 2px 0px #030202;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.left-img {
+  /* position: relative; */
+  width: 100%;
+  height: 88.3%;
+}
+
+.left-pic {
+  position: relative;
+  display: flex;
+}
+
+.left-title {
+    top: 60px;
+    left: 140px;
+}
+
+.top-pic {
+    position: relative;
+}
+
+.top-title {
+    top: 0px;
+    left: 35px;
+}
+
+.bottom-pic {
+    position: relative;
+}
+
+.bottom-title {
+    bottom:35px;
+    left: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    font-size: 22px;
+    background-color: #8C8C8C;
+    color:#cacaca;
+}
+
+.left-foot,
+.center-foot, 
+.left-foot
+ {
+    display: flex;
+    gap: 30px;
+    padding: 50px 10px;
+}
+
+p:not(:last-child) { 
+	padding-right: 10px;
+    border-right: 2px solid #cacaca;
+}
+
