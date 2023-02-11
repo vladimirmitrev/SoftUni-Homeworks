@@ -1,0 +1,42 @@
+@media (max-width: 1000px) {
+
+    .pair {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .planet {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    nav:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .primary footer nav a:nth-child(even) {
+        border-left: none;
+        border-right: none;
+    }
+}
+@media (max-width: 850px) {
+    
+    .news ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .news ul li {
+        text-align: center;
+    }
+
+    .news ul li img {
+        width: 350px;
+        height: 250px;
+    }
+}
