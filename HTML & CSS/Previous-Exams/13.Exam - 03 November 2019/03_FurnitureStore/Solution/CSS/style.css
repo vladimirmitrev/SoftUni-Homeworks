@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #808090;
+  background-color: #f0e4e4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f93700;
+  padding: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  padding: 30px;
+}
+.search-bar {
+  display: flex;
+}
+input {
+  border: none;
+  padding: 10px 320px 10px 10px;
+}
+
+.my-account .nav-link {
+  padding-left: 10px;
+}
+
+.my-account i {
+  font-size: 30px;
+}
+
+.fa {
+  color: white;
+}
+
+.fa-search {
+  padding: 14px 30px;
+  background-color: #b6afaf;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.card img {
+  width: 380px;
+  height: 350px;
+}
+
+.card-desc {
+  font-size: 26px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.collection {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  padding-right: 135px;
+  padding-top: 40px;
+}
+
+.title {
+  font-size: 48px;
+  color: #f93700;
+  font-weight: 500;
+}
+
+.title-text {
+  font-size: 18px;
+  padding: 20px 0px;
+}
+
+.shop-btn {
+  background-color: #f93700;
+  border-radius: 6px;
+  padding: 20px 20px;
+  font-weight: 400;
+}
+
+.right img {
+  height: 600px;
+}
+.deals {
+  background-color: #cac3c3;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  margin: 40px 130px;
+  padding: 40px;
+
+}
+
+.deals-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.deals-card img {
+  border-radius: 50%;
+  width: 160px;
+  background-color: #f0e4e4;
+  padding: 20px;
+}
+.deals-card .card-title {
+  color: #474242;
+  padding: 10px;
+  font-size: 24px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 150px;
+  margin: 40px 100px;
+  
+}
+
+.right-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+.foot-link {
+  text-decoration: none;
+  color: #808080;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.bold {
+  font-size: 24px;
+  font-weight: 600;
+  color: #808080;
+}
+
+.foot-btn {
+  background-color: #CAC3C3;
+  padding: 5px 50px;
+  border-radius: 6px;
+  color: black;
+  font-weight: 100;
+}
+
+.right-foot i {
+  color: #808080;
+  font-size: 40px;
+}
+
+.right-foot p {
+  font-size: 20px;
+}
+
