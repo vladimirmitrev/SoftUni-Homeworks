@@ -33,3 +33,6 @@
     align-items: center;
   }
 }
+.tm-cta-section {
+    width: unset;
+}
