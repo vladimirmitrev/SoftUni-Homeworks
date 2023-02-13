@@ -26,9 +26,11 @@ header {
     height: 50px;
     background-color: rgba(150, 149, 149, 0.5);
 }
+
 .sub-title {
     font-size: 22px;
 }
+
 .by {
     color: gray;
 }
@@ -96,6 +98,7 @@ header {
     gap: 60px;
     padding: 60px;
 }
+
 .card {
     display: flex;
     flex-direction: column;
@@ -118,9 +121,11 @@ header {
     padding: 30px;
     margin: 10px;
 }
+
 .card p {
     font-size: 22px;
 }
+
 .card-desc {
     color: #6d6c6c;
     font-size: 20px;
