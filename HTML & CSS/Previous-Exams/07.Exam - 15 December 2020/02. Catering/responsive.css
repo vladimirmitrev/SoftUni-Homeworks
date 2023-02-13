@@ -1,1 +1,28 @@
-/* TODO: Add the responsive styles here */
+@media (max-width: 600px) {
+    
+    .w3-hide-small {
+        display: none;
+    }
+
+    .w3-col.m6 {
+        width: 100%;
+    }
+
+    .w3-col.l6 {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+    
+    h4 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 19px;
+    }
+    .w3-large {
+        font-size: 22px;
+    }
+}
