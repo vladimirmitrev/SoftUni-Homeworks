@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+  font-family: "PT Sans", sans-serif;
+}
+
+header,
+main,
+footer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url(./image/computer-main.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgb(18, 14, 14);
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgb(18, 14, 14);
+}
+
+h1 {
+    font-size: 56px;
+}
+
+p {
+    font-size: 24px;
+}
+
+.sub-title {
+    width: 40%;
+    text-align: center;
+}
+
+.btn {
+    margin: 30px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.tablet img {
+    height: 100%;
+}
+
+.hustle-what {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 70px;
+    gap: 30px;
+}
+
+h2 {
+    font-size: 42px;
+}
+.hustle-desc {
+    width: 80%;
+    padding-bottom: 20px;
+
+}
+.lines {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.line {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.line i {
+    color: #00D08E;
+    font-size: 24px;
+}
+.line p {
+    font-size: 20px;
+}
+
+.hustle-features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.feature img {
+    width: 80px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.feature-desc {
+    color: #00D08E;
+    font-weight: 700;
+}
+
+.coffee img{
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    background-color: #B2F1DD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.faqs {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 70px;
+    padding: 50px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+.faq-desc {
+    font-size: 20px;
+}
+
+.last-text {
+    font-size: 18px;
+}
+
+.last-text a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
