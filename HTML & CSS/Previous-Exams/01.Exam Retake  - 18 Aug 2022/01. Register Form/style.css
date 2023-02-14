@@ -52,14 +52,17 @@ input {
     display: flex;
     gap: 20px;
 }
+
 .double input {
     width: 170px;
 }
+
 .checkbox {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
 .checkbox input {
     width: unset;
 }
@@ -81,9 +84,9 @@ input {
     margin-top: 20px;
     margin-left: 100px;
   }
+
   .btn:hover {
     cursor: pointer;
     scale: 1.1;
     transition: all 300ms ease-in-out;
-    
   }
