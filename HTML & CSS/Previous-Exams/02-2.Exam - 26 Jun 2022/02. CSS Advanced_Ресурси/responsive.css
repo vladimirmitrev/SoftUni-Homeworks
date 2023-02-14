@@ -1,0 +1,40 @@
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+    main .left-to-right article {
+        width: 400px;
+        height: 400px;
+        padding: 40px;
+        border-radius: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+    header h1 {
+        font-size: 36px;
+    }
+    p {
+        font-size: 18px;
+    }
+    button {
+        display: none;
+    }
+    main section:nth-child(2), main section:nth-child(4) {
+        flex-direction: column;
+        margin: 40px;
+        margin: 20px;
+        background-color: white;
+    }
+
+    form {
+        width: 500px;
+    }
+
+    section form label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+}
