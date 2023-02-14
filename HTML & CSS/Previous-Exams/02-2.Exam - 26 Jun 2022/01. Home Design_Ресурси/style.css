@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+body {
+    font-family: 'Courgette', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 500;
+}
+.sub-title {
+    text-align: right;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    color: #CB202D;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.card {
+    background-color: #FFFFFF;
+    width: 350px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.img-cont img {
+    width: 350px;
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card-title {
+    padding: 10px;
+    border-bottom: 1px solid #CB202D;
+    margin: 0 20px;
+}
+
+.desc {
+    padding: 10px;
+    font-size: 18px;
+}
+.continue {
+    padding-top: 30px;
+}
+.continue i {
+ color: #CB202D;
+}
