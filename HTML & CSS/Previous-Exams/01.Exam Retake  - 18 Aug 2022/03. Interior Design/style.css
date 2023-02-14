@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #363434;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Abril Fatface", cursive;
+}
+
+.hero {
+  background-image: url(./image/image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.left-container {
+  width: 250px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 20px;
+}
+h1 {
+  font-size: 42px;
+}
+.divider {
+  height: 2px;
+  width: 150px;
+  background-color: white;
+  margin: 10px 0px;
+}
+
+.right-container {
+  width: 330px;
+  position: absolute;
+  top: 28%;
+  right: 4%;
+  padding: 20px;
+  text-align: right;
+  text-shadow: 1px 1px 1px rgba(13, 11, 11, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background: rgb(158, 148, 141);
+  background: linear-gradient(
+    90deg,
+    rgba(158, 148, 141, 1) 0%,
+    rgba(192, 187, 182, 1) 50%,
+    rgba(202, 200, 199, 1) 100%
+  );
+}
+
+.main {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  /* padding: 40px; */
+}
+
+.right-desc {
+  color: white;
+}
+span {
+  font-size: 64px;
+  color: #8d8581;
+}
+
+.left-content {
+  background-color: #f2f0f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  flex-basis: 80%;
+}
+.service-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-left: 60px;
+}
+
+.left-content p {
+  font-size: 20px;
+}
+
+.left-content i {
+    padding-right: 10px;
+}
+
+.divider-service {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    
+}
+
+.right-content {
+  background-color: #bab1ad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 111px;
+  flex-basis: 25%;
+  text-transform: uppercase;
+}
+
+.specs {
+  padding: 25px;
+  padding-right: 100px;
+}
+
+.numbers {
+  color: white;
+  font-size: 64px;
+  font-weight: 100;
+}
+
+.number-desc {
+  font-size: 18px;
+  margin-top: -20px;
+}
+
+h2 {
+  font-size: 42px;
+  padding: 42px 60px 0px 60px;
+  text-transform: uppercase;
+}
+
+.service-desc {
+  width: 70%;
+}
+
+.contacts {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 60px;
+    gap: 30px;
+}
+
+.input {
+    display: flex;
+    gap: 10px;
+    padding: 40px 60px;
+
+}
+
+.input input {
+    border: none;
+    padding: 10px 20px;
+    background-color: #BAB1AD;
+    border-radius: 6px;
+    width: 35%;
+}
+
+::placeholder {
+    color: white;
+}
+
+.btn {
+    background-color: #67784D;
+    color: white;
+    display: inline-block;
+    font-weight: 300;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: none;
+    padding: 7px 20px;
+    padding: 7px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 6px;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition: all 300ms ease-in-out;
+  }
