@@ -1,0 +1,233 @@
+body {
+  font-family: "Helvetica", sans-serif;
+}
+
+p {
+  color: #4d5876;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 40px 150px 0px 0px;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  padding: 20px 30px;
+}
+.icon:hover {
+  background-color: #b58e10;
+  color: white;
+}
+.icon:hover i {
+  color: white;
+}
+.icon:hover p {
+  color: white;
+}
+
+.icon i {
+  font-size: 36px;
+  color: #4d5876;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: #4d5876;
+  padding: 10px 15px;
+}
+
+.nav-link:hover {
+  background-color: #b58e10;
+  color: white;
+}
+
+.hero img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+.hero {
+  position: relative;
+}
+
+.budapest-logo img {
+  width: 60%;
+  height: 60%;
+  object-fit: fill;
+}
+.budapest-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 200px;
+  position: absolute;
+  background: rgb(152, 108, 12);
+  background: linear-gradient(
+    0deg,
+    rgba(152, 108, 12, 1) 0%,
+    rgba(182, 143, 38, 1) 27%,
+    rgba(206, 172, 60, 1) 100%
+  );
+  top: -20%;
+  left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.shuttle-card {
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  color: white;
+  padding: 40px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+.shuttle-desc {
+  color: white;
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding: 30px 0px;
+}
+
+.shuttle-btn {
+  color: #fba400;
+}
+
+.shuttle-btn:hover {
+  background-color: white;
+}
+
+.buda-card {
+  background: rgb(149, 103, 10);
+  background: linear-gradient(
+    90deg,
+    rgba(149, 103, 10, 1) 0%,
+    rgba(178, 139, 36, 1) 50%,
+    rgba(208, 172, 60, 1) 100%
+  );
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.buda-desc {
+  width: 40%;
+  margin: 10px;
+}
+
+.desc {
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.buda-features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+.features-title {
+    font-size: 48px;
+    font-weight: 100;
+    color: #4d5876;
+    width: 70%;
+}
+
+.see-more {
+    font-size: 28px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+}
+
+.image img {
+    border-radius: 50%;
+    padding: 3px;
+    border: 3px solid #4d5876;
+    margin: 5px;
+}
+
+.card-desc {
+    /* font-size: 20px; */
+    text-align: center;
+}
+
+.subscribe {
+    background-color: #B58E0F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+.subscribe h3 {
+    color: white;
+    font-size: 24px;
+}
+
+.subscribe p {
+    color: white;
+    font-size: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    color: black;
+    font-size: 20px;
+}
+
+
+
+
