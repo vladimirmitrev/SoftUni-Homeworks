@@ -1,1 +1,43 @@
-/* TODO */
+@media (max-width: 600px) {
+  #top-bar ul li:nth-child(4) {
+    display: none;
+  }
+
+  #main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #main-menu img {
+    width: 20%;
+  }
+  #main-menu ul {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#left-aside {
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#left-aside article {
+    border: none;
+}
+#news {
+    width: 100%;
+}
+#news article {
+    width: 90%;
+}
+#right-aside {
+    margin: 25px;
+    width: 92%;
+}
+footer ul {
+    width: 100%;
+}
+}
