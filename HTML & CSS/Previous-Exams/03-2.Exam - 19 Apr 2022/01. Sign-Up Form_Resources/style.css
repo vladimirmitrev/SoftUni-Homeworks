@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+.container {
+    width: 850px;
+    height: 500px;
+    margin: 150px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.left-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 130px;
+    text-align: center;
+    position: relative;
+}
+
+.left-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    position: absolute;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    position: absolute;
+}
+
+.soft-uni {
+    font-weight: 700;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+
+.title-cont {
+    margin-top: 200px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 100;
+}
+
+h2 {
+    font-weight: 100;
+}
+
+i {
+    padding: 5px;
+}
+
+.right-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: 20px;
+    padding: 30px;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid rgb(189, 188, 188);
+    width: 350px;
+    padding: 10px;
+}
+
+label {
+    font-size: 16px;
+    color: rgb(213, 210, 210);
+    padding-top: 10px;
+}
+
+::placeholder {
+    color: rgb(159, 158, 158);
+    padding-left: 10px;
+}
+
+.register {
+    margin-bottom: 50px;
+}
+
+.btn {
+    background-color: #080808;
+    color: white;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: none;
+    padding:8px 40px;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 50px;
+    font-size: 16px;
+  }
+
+  a {
+    color: gray;
+    padding: 10px;
+  }
+
