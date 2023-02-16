@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  color: gray;
+  font-size: 19px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  /* gap: 40px; */
+}
+.nav-link {
+  text-decoration: none;
+  color: #102955;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  padding: 30px;
+}
+
+.hero {
+  background-image: url(./images/header-bg.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dog-image {
+  position: relative;
+  top: 100px;
+  right: 180px;
+}
+
+.care-card {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.care-card h1 {
+  font-size: 78px;
+  color: white;
+  line-height: 1.1;
+}
+
+.we-care {
+  font-weight: 200;
+}
+
+.your-pets {
+  font-weight: 800;
+}
+
+.care-desc {
+  color: white;
+  line-height: 2;
+  width: 80%;
+  padding: 10px;
+  padding-bottom: 40px;
+}
+
+.contact-btn {
+  background-color: white;
+  color: #f93000;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-title {
+  padding-top: 180px;
+  font-size: 48px;
+}
+
+.sub-title {
+  text-align: center;
+  width: 33%;
+  padding-bottom: 100px;
+}
+
+.cards {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #FBC1BD;
+  width: 400px;
+  height: 500px;
+  gap: 40px;
+  border-radius: 20px;
+}
+
+.service-img {
+  background-image: url(./images/service-bg.png);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 150px;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-card-title {
+  font-size: 28px;
+}
+
+.service-card-desc {
+  font-size: 19px;
+  width: 85%;
+  text-align: center;
+}
+
+.cat-care {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-top: 200px;
+}
+
+.we-care-cat, .your-pet-cat {
+  font-size: 56px;
+}
+
+.we-care-cat {
+  font-weight: 400;
+}
+
+.care-desc-cat {
+  line-height: 2;
+  padding: 30px 0px;
+  color: #77787D;
+}
+
+.about-btn {
+  background-color: #ED5816;
+  padding: 15px 60px;
+}
+
+.why-go {
+  background-image: url(./images/cats-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  text-align: center;
+  gap: 40px;
+}
+
+.why-go-title {
+  font-size: 56px;
+  color: white;
+}
+
+.why-go p {
+  color: white;
+}
+
+.why-go-desc {
+  width: 40%;
+  font-size: 28px;
+}
+
+.why-go-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.why-go-phone span {
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content:center;
+  gap: 50px;
+  padding: 100px;
+}
+
+.foot-title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+footer ul li a {
+  margin-left: -40px;
+  text-decoration: none;
+  color: #77787D;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+}
+footer ul li {
+  padding: 10px 0px;
+}
+.address {
+  padding-top: 27px;
+  color: #77787D;
+  font-size: 18px;
+  font-weight: 600;
+}
+footer article {
+  width: 300px;
+}
+
+
