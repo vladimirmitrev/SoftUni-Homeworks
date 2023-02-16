@@ -1,0 +1,65 @@
+body {
+  font-family: "Helvetica", sans-serif;
+}
+
+h1 {
+  font-family: "Georgia", serif;
+}
+
+p {
+  color: #727272;
+  font-size: 28px;
+}
+.main-container {
+  width: 1400px;
+  margin: 100px auto;
+}
+
+.title {
+  font-size: 74px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: end;
+}
+.btn {
+  background-color: #03a87c;
+  color: white;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: none;
+  width: 350px;
+  padding: 15px 60px;
+  font-size: 26px;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: all 300ms ease-in-out;
+}
+
+.card-title {
+  color: black;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 40px 0px;
+}
+
+.card-desc span {
+  background-color: #cefde9;
+}
+
+.line {
+  background-color: #727272;
+  height: 1px;
+  width: 500px;
+  margin: 100px auto;
+}
