@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #54546d;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-size: 22px;
+  
+}
+
+.logo-img {
+  width: 180px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0 100px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+nav ul a {
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+  color: #54546d;
+}
+
+.calc {
+  background-color: #54546d;
+  position: relative;
+  height: 460px;
+}
+
+.calc-img {
+  position: absolute;
+  width: 220px;
+  top: 25%;
+  left: -5%;
+  z-index: 10;
+}
+
+.taxes {
+  text-align: center;
+  padding-top: 80px;
+  color: white;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.cards {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 30px;
+  position: relative;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  /* align-items: center; */
+  border-radius: 12px;
+  width: 540px;
+  height: 480px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.card h2 {
+  font-size: 32px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.card-desc {
+  padding: 10px 30px;
+}
+
+.btn {
+  margin-top: 40px;
+}
+
+.card-foot-one {
+  background: rgb(3, 155, 61);
+  background: linear-gradient(
+    90deg,
+    rgba(3, 155, 61, 1) 0%,
+    rgba(74, 213, 127, 1) 100%
+  );
+  height: 150px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.price {
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.divider {
+  background-color: white;
+  width: 2px;
+  height: 120px;
+}
+
+.card-foot-two {
+  background: rgb(76, 107, 135);
+  background: linear-gradient(
+    90deg,
+    rgba(76, 107, 135, 1) 0%,
+    rgba(98, 155, 207, 1) 100%
+  );
+  height: 150px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.card-foot-three {
+  background: rgb(75, 56, 165);
+  background: linear-gradient(
+    90deg,
+    rgba(75, 56, 165, 1) 0%,
+    rgba(140, 125, 225, 1) 100%
+  );
+}
+
+.features {
+  margin: -100px auto;
+  width: 75%;
+}
+
+.features-title {
+  font-size: 32px;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+
+.features-lines {
+  margin-top: 50px;
+}
+
+.feature:nth-child(odd) {
+  background-color: #E6E6E6;
+}
+
+.feature:nth-child(even) {
+  background-color: #F8F8F8;
+}
+
+.feature:nth-child(1) {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.feature:nth-child(6) {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.feature {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+}
+
+.feature p {
+  font-size: 24px;
+}
+
+.checks {
+  display: flex;
+  gap: 200px;
+  padding-right: 70px;
+}
+
+.checks img {
+  width: 30px;
+}
+
+.finance {
+  width: 90%;
+  margin: 200px auto 70px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.finance-title {
+  font-size: 32px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+.desc-cont {
+  flex-basis: 60%;
+  padding-bottom: 100px;
+}
+
+.bank-logo img {
+  width: 500px;
+}
+
+footer {
+  background-color: #54546d;
+  padding: 30px;
+  color: #908FAB;
+  text-align: center;
+}
