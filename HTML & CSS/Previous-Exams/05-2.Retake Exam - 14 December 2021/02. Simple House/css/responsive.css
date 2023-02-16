@@ -1,1 +1,53 @@
-/* TODO: Add the responsive styles here */
+@media (max-width: 600px) {
+  .tm-cta-section {
+    margin: 0 auto;
+    width: 94%;
+    display: flex;
+  }
+
+  .tm-site-title {
+    font-size: 3.2rem;
+  }
+
+  .tm-site-description {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .row {
+    display: inherit;
+  }
+
+  .text-center {
+    font-size: 22px;
+  }
+.tm-section-title {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-left: 115px;
+}
+
+.tm-nav {
+    font-size: 22px;
+}
+
+.tm-paging-link {
+    font-size: 28px;
+}
+.tm-nav-li {
+    padding-right: 0px;
+}
+.tm-gallery-page {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+.tm-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
