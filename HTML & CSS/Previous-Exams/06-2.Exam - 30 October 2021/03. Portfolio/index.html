@@ -1,14 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
     <title>Portfolio</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main>
+      <section id="hero" class="page-section section-flexed">
+        <nav class="navigation">
+          <span>MENU</span> <i class="fa-solid fa-bars"></i>
+        </nav>
+        <article class="section-info">
+          <h1 class="title"><b>Apollo</b> Jade Template</h1>
+          <p class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex.
+          </p>
+          <div class="divider vertical"></div>
+        </article>
+        <img class="section-img hero-img" src="./images/hero.png" alt="" />
+      </section>
+      <section id="camera" class="page-section section-flexed">
+        <img class="section-img camera-img" src="./images/camera.png" alt="" />
+        <article class="section-info">
+          <div class="title-cont">
+            <div class="divider horizontal"></div>
+            <h1 class="title">My name is <b>Apollo</b></h1>
+          </div>
+          <p class="desc">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Sed ut perspiciatis
+            unde omnis iste natus error sit voluptatem accusantium doloremque
+            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+            veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+            fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt.
+          </p>
+          <p class="desc">
+            Ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+            numquam eius modi tempora incidunt ut labore et dolore magnam
+            aliquam quaerat voluptatem.
+          </p>
+          <ul class="socials" role="list">
+            <li class="social"><i class="fa-brands fa-facebook-f"></i></li>
+            <li class="social"><i class="fa-brands fa-instagram"></i></li>
+            <li class="social"><i class="fa-brands fa-twitter"></i></li>
+            <li class="social"><i class="fa-brands fa-pinterest-p"></i></li>
+          </ul>
+        </article>
+      </section>
+      <section id="girl" class="page-section">
+        <img src="./images/thumb-1.jpeg" alt="" />
+      </section>
+      <section id="bridge" class="page-section section-flexed">
+        <article class="section-info">
+          <h1 class="title"><b>Ut enim</b> ad minim</h1>
+          <p class="desc">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Aspernatur aut odit aut
+            fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt.
+          </p>
+          <div class="divider vertical"></div>
+        </article>
+        <img
+          class="section-img bridge-img"
+          src="./images/featured.jpeg"
+          alt=""
+        />
+      </section>
+      <section id="gallery" class="page-section">
+        <ul class="list" role="list">
+          <li class="picture">
+            <img src="./images/thumb-3.jpeg" alt="thumb-3" />
+          </li>
+          <li class="picture">
+            <img src="./images/thumb-4.jpeg" alt="thumb-4" />
+          </li>
+          <li class="picture">
+            <img src="./images/thumb-122.jpeg" alt="thumb-122" />
+          </li>
+        </ul>
+      </section>
+
+      <section id="contacts" class="page-section section-flexed">
+        <div class="cotacts-title">
+          <h1 class="title"><b>Say</b> Hello</h1>
+          <p class="desc">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Aspernatur aut odit aut
+            fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt.
+          </p>
+        </div>
+
+        <form action="/submit" class="form">
+          <input
+            class="email"
+            type="email"
+            name="email"
+            type="email"
+            placeholder="Your Email
+            "
+          />
+          <input
+            class="subject"
+            type="subject"
+            name="subject"
+            type="subject"
+            placeholder="Subject
+            "
+          />
+          <textarea
+            class="message"
+            name="message"
+            placeholder="Message"
+            rows="5"
+          ></textarea>
+          <button class="btn">SEND MESSAGE</button>
+        </form>
+        <footer><p>© Portfolio 2021</p></footer>
+      </section>
+    </main>
+  </body>
 </html>

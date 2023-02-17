@@ -1,5 +1,245 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+:root {
+  --clr-light-grey: #efefef;
+  --clr-dark-grey: #909090;
+  --clr-heading-black: #222222;
+  --clr-btn-black: #111111;
+}
+/* Global styles */
+
 body {
-    font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif;
+  color: #111111;
+}
+main {
+  margin: 2rem;
+}
+
+.page-section {
+  max-width: 1880px;
+  margin: 2rem auto;
+  background-color: var(--clr-light-grey);
+  height: calc(100vh - 1.5rem);
+  overflow: hidden;
+}
+
+.section-flexed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-section .section-info {
+  flex: 0 0 35%;
+}
+
+.page-section .section-img {
+  flex: 0 1 35%;
+}
+
+.page-section .title {
+  font-size: 3rem;
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+.page-section .desc {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-section .divider.vertical {
+  height: 6rem;
+  width: 1px;
+  background-color: var(--clr-heading-black);
+}
+
+/* Hero */
+
+#hero.page-section {
+  position: relative;
+  padding: 3rem 5rem;
+}
+
+#hero .navigation {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+#hero .hero-img {
+  position: absolute;
+  width: 50%;
+  bottom: 0px;
+  right: 5rem;
+}
+
+/* Camera */
+
+#camera.page-section {
+  justify-content: center;
+  gap: 100px;
+}
+#camera .title-cont {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+#camera .divider.horizontal {
+  position: absolute;
+  top: 2.6rem;
+  height: 1px;
+  width: 5rem;
+  background-color: var(--clr-heading-black);
+}
+#camera .title {
+  margin-left: 7rem;
+}
+#camera .socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding-left: 0;
+}
+
+#camera .socials .social {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--clr-dark-grey);
+  color: white;
+  position: relative;
+}
+
+#camera .socials .social i {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Girl */
+
+#girl img {
+  width: 100%;
+}
+
+/* Bridge */
+
+#bridge  {
+  justify-content: space-around;
+  align-items: center;
+}
+
+#bridge .section-info {
+    flex: 0 0 25%;
+}
+
+#bridge .bridge-img {
+    flex: 0 1 45%;
+}
+
+#bridge .bridge-img {
+  width: 50%;
+}
+
+#bridge .bridge-img {
+  width: 50%;
+}
+
+/* Gallery */
+
+#gallery {
+  display: flex;
+  align-items: center;
+}
+
+#gallery .list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+#gallery .list .picture:nth-child(2) {
+  transform: scale(1.5);
+}
+/* Hover effect */
+/* #gallery .list .picture{
+    transition: transform 300ms ease-in-out ;
+}
+
+#gallery .list .picture:hover {
+    transform: scale(1.5);
+} */
+
+/* Contacts */
+
+#contacts {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 5rem;
+    padding: 1rem;
+}
+#contacts .cotacts-title {
+    width: 60%;
+}
+
+#contacts .form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "email subject"
+    "msg msg"
+    "submit submit";
+  gap: 2rem;
+}
+
+#contacts .form input,
+textarea {
+  background-color: var(--clr-light-grey);
+  border: 1px solid var(--clr-btn-black);
+  padding: 0.5rem;
+  width: 100%;
+}
+
+#contacts .form textarea {
+  resize: none;
+}
+
+#contacts .form .email {
+  grid-area: email;
+}
+#contacts .form .subject {
+  grid-area: subject;
+}
+#contacts .form .message {
+  grid-area: msg;
+}
+
+#contacts .form .btn {
+  background-color: var(--clr-btn-black);
+  color: white;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  grid-area: submit;
+}
+
+#contacts .form ::placeholder {
+  color: var(--clr-btn-black);
+}
+
+footer {
+    background-color: var(--clr-light-grey);
+    text-align: center;
+    margin-top: 5rem;
 }
