@@ -1,1 +1,68 @@
-/* TODO: Add responsive styles here... */
+@media (max-width: 600px) {
+    .hero img {
+        display: none;
+    }
+    
+    .hero h1 {
+        margin-top: 50px;
+    }
+
+    .navbar {
+        padding-top: 20px;
+        justify-content: center;
+        
+    }
+
+    .navbar-light .navbar-brand {
+        margin-right: 0;
+    }
+
+    .container {
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .hero-btns a:first-child {
+        padding: 17px 80px;
+    }
+
+    .service-btn {
+        margin-bottom: 30px;
+    }
+
+    .side2-img img {
+        top: 2000px;
+    }
+    
+    .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .about .row {
+        gap: 80px;
+    }
+    
+    .contact-btn {
+        display: none;
+    }
+
+    .contact-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer h6 {
+        padding-bottom: 0px;
+    }
+    
+}
