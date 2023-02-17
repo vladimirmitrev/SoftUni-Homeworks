@@ -6,7 +6,7 @@
     }
 
     .banner .button.special {
-        width: 30em;
+        width: 25em;
     }
 
     header.major {
@@ -15,7 +15,7 @@
 
     .wrapper > .inner {
         margin: 0 auto;
-        width: 30em;
+        width: 20em;
     }
 
     .wrapper {
@@ -32,7 +32,7 @@
     }
 
     .wrapper > .inner.narrow {
-        width: 30em;
+        width: 25em;
     }
 
     .grid-form {
@@ -46,7 +46,7 @@
     }
 
     .wrapper.style2 input[type="submit"] {
-        width: 30em;
+        width: 25em;
     }
 
     .footer {
