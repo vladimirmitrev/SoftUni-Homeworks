@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #3f4d5e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-size: 22px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  position: sticky;
+  width: 90%;
+  height: 100px;
+  margin-left: 100px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+header img {
+  width: 10%;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 22px;
+  color: #29394b;
+  padding: 30px 20px;
+}
+
+nav ul li a:hover {
+  border-top: 5px solid #42abf8;
+}
+
+.cirle-link {
+  background-color: #42abf8;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: rgba(66, 171, 248, 0.461) 0px 10px 10px,
+    rgba(66, 171, 248, 0.461) 0px 6px 6px;
+}
+
+.hero {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9) 100%,
+      rgba(255, 255, 255, 1) 20%
+    ),
+    url(./images/hero-certificates.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 680px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  width: 85%;
+  gap: 100px;
+  padding-top: 100px;
+}
+
+.web-dev {
+  background-color: #29394b;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  flex: 0 0 60%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.web-dev .dev-title {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.web-dev .dev-desc {
+  padding: 20px 0px;
+}
+
+.certificates {
+  display: flex;
+  align-items: flex-end;
+}
+.certificates .blue {
+  height: 350px;
+}
+.certificates .dark {
+  height: 400px;
+}
+
+.down-desc {
+  width: 83%;
+  font-size: 24px;
+  font-style: italic;
+  margin: 40px auto;
+}
+
+main {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.dimploma-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+.diploma-cont {
+  background-color: #f4f5f7;
+  padding: 10px 20px 40px 20px;
+}
+.dimploma-desc {
+  padding: 20px 0px;
+}
+
+.down-desc-two {
+  margin: 20px 0px 130px 0px;
+}
+
+.explore {
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+      90deg,
+      rgba(57, 72, 93, 0.7) 100%,
+      rgba(0, 0, 0, 1) 20%
+    ),
+    url(./images/sign-up-prompt-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 320px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.explore-title {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.explore-desc {
+    width: 90%;
+}
+
+.btn-cont {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.divider {
+  background-color: white;
+  width: 2px;
+  height: 45px;
+}
+
+.apply-btn {
+  background-color: white;
+  color: #42abf8;
+}
+
+.trans-btn {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+
+footer {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  border-top: 1px solid #29394b;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+}
+
+footer ul li a,
+footer ul li i {
+  text-decoration: none;
+  font-size: 22px;
+  color: #3f4d5e;
+  padding: 30px 8px;
+}
+
+.left-foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+footer .foot-logo {
+  width: 150px;
+}
+.credits {
+  font-size: 16px;
+  color: rgba(128, 128, 128, 0.472);
+}
