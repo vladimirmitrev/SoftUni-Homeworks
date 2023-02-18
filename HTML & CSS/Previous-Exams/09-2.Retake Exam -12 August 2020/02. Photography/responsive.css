@@ -1,1 +1,33 @@
-/* TODO: Add media queries */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 2.3em;
+        padding: 0px 30px;
+    }
+
+    .icon.style2 {
+        font-size: 1.4em;
+    }
+
+    .thumbnails {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .thumbnails > div {
+        width: 100%;
+        padding-left: 2em;
+    }
+
+    .thumbnails a img {
+        height: 20em;
+    }
+
+    .thumbnails a h3 {
+        font-size: 1.4em;
+    }
+
+    footer p {
+        font-size: 1.4em;
+    }
+}
