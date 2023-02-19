@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f6e0b5;
+}
+
+.main {
+  display: flex;
+  gap: 40px;
+  margin: 100px auto;
+  padding-left: 100px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.card img {
+  width: 600px;
+  height: 300px;
+}
+
+.card {
+  border-radius: 20px;
+  background-color: #66545e;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-desc {
+  color: #fcffff;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.other h4 {
+  font-size: 32px;
+  padding-top: 5px;
+  color: #66545e;
+}
+
+.list {
+    font-size: 32px;
+    line-height: 2.5;
+    font-weight: 600;
+    padding: 0;
+}
+.list a {
+    color: #66545e;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.list i {
+    color: #66545e;
+}

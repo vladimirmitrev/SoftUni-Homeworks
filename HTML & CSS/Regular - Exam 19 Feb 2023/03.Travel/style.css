@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  position: relative;
+  background-image: url(./images/landing-photo.jpg);
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  padding: 30px;
+}
+
+.travel-logo {
+  font-size: 32px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  padding: 24px;
+}
+
+.explore-btn {
+  background-color: #370511;
+  padding: 5px 30px;
+}
+
+.header-content {
+  position: absolute;
+  top: 55%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+}
+
+.header-title {
+  font-size: 56px;
+}
+
+.header-sub-title {
+  font-size: 32px;
+}
+
+.header-desc {
+  padding: 40px 0px;
+  font-size: 20px;
+}
+
+.main {
+  width: 65%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 42px;
+}
+
+.main-sub-title {
+  color: #370511;
+  font-size: 24px;
+  padding-bottom: 50px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+}
+
+.discover-btn {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #370511;
+  margin: 30px 0px 10px 0px;
+}
+
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 180px;
+  padding: 50px;
+  margin-top: 150px;
+}
+
+.list-container {
+  display: flex;
+  gap: 100px;
+}
+
+.foot-logo {
+  font-size: 42px;
+}
+
+.foot-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 2.5;
+}
+
+.follow {
+  font-size: 20px;
+}
+.icons {
+  display: flex;
+  padding: 0;
+}
+.icons i {
+  font-size: 32px;
+  color: #ffffff;
+  padding-right: 20px;
+}
