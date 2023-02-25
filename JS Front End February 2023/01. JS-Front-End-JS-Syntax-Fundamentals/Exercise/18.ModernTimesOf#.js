@@ -14,7 +14,7 @@ modernTimes("Nowadays everyone uses # to tag a #special word in #socialMedia");
 modernTimes(
   "The symbol # is known #variously in English-speaking #regions as the #number sign"
 );
-// * Solution Two * //
+// * Solution Two without REGEX * //
 
 //   return text.split(" ")
 //             .filter((word) => word.startsWith("#") && containsOnlyLetters(word))
