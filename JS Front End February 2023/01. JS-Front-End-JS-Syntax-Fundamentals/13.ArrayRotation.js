@@ -1,5 +1,7 @@
 function arrayRotation(numberArr, countOfRotations) {
 
+    countOfRotations %= numberArr.length;
+
     for (let i = 1; i <= countOfRotations; i++) {
         let firstNum = numberArr.shift();
         numberArr.push(firstNum);
