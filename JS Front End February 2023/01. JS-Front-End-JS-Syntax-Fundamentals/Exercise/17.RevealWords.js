@@ -2,6 +2,7 @@ function revealWords(words, text) {
   let wordsArr = words.split(", ");
   let textArr = text.split(" ");
 
+  //* First Solution * //
 //   for (let word of wordsArr) {
 //     for (let element of textArr) {
 //       if (element.includes("*") && element.length === word.length) {
@@ -9,6 +10,8 @@ function revealWords(words, text) {
 //       }
 //     }
 //   }
+
+//* Second Solution * //
   for (let i = 0; i < wordsArr.length; i++) {
     for (let j = 0; j < textArr.length; j++) {
       if (
