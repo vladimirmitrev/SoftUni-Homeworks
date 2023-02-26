@@ -9,9 +9,11 @@ function spiceMustFlow(startingSpice) {
     totalSpice = totalSpice + currentSpice - workersEat;
     currentSpice -= 10;
   }
+  
   if (totalSpice >= workersEat) {
     totalSpice -= workersEat;
   }
+
   console.log(totalDays);
   console.log(totalSpice);
 }
