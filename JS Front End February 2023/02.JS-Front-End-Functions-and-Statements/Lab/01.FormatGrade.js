@@ -9,6 +9,7 @@ function formatGrade(grade) {
   } else if (grade < 3.5 && grade >= 3) {
     return `Poor (${gradeToFixed(grade)})`;
   }
+  
   return `Fail (2)`;
 
   function gradeToFixed(grade) {
