@@ -6,7 +6,9 @@ function oddAndEvenSum(number) {
 
 
     for (let i = 0; i < digits.length; i++) {
+        
         const digit = Number(digits[i]);
+
         if(digit % 2 == 0) {
             evenSum += digit;
         } else {
