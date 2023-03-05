@@ -22,7 +22,7 @@ function carWash(commandsArr) {
         break;
     }
   }
-  console.log(`The car is ${cleaned.toFixed(2)}% clean.`)
+  console.log(`The car is ${cleaned.toFixed(2)}% clean.`);
 }
 
 carWash(["soap", "soap", "vacuum cleaner", "mud", "soap", "water"]);
