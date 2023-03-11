@@ -1,28 +1,59 @@
 function piccolo(inputArr) {
-  let parkedCars = new Set();
+  /// *** Solution with Set ***
+    let parkedCars = new Set();
 
-  for (const line of inputArr) {
-    let command = line.split(", ")[0];
-    let number = line.split(", ")[1];
+    for (const line of inputArr) {
+      let command = line.split(", ")[0];
+      let number = line.split(", ")[1];
 
-    if (command === "IN") {
-      parkedCars.add(number);
-    } else {
-      delete parkedCars.delete(number);
+      if (command === "IN") {
+        parkedCars.add(number);
+      } else {
+        delete parkedCars.delete(number);
+      }
     }
-  }
 
-  if (parkedCars.size === 0) {
-    console.log("Parking Lot is Empty");
-  } else {
-    console.log();
-    let sortedNumbers = Array.from(parkedCars).sort();
+    if (parkedCars.size === 0) {
+      console.log("Parking Lot is Empty");
+    } else {
+      console.log();
+      let sortedNumbers = Array.from(parkedCars).sort((aNum, bNum) =>
+        aNum.localeCompare(bNum)
+      );
 
-    sortedNumbers.forEach((element) => {
-      console.log(element);
-    });
-  }
+      sortedNumbers.forEach((element) => {
+        console.log(element);
+      });
+    }
 }
+  /// *** Solution with array ***
+//   let parkedCars = [];
+
+//   for (const line of inputArr) {
+//     let command = line.split(", ")[0];
+//     let number = line.split(", ")[1];
+
+//     if (command === "IN" && !parkedCars.includes(number)) {
+//       parkedCars.push(number);
+//     } else if (command === "OUT" && !parkedCars.includes(number)) {
+//       let index = parkedCars.indexOf(number);
+//       parkedCars.splice(index, 1);
+//     }
+//   }
+
+//   if (parkedCars.length === 0) {
+//     console.log("Parking Lot is Empty");
+//   } else {
+//     console.log();
+//     let sortedNumbers = parkedCars.sort((aNum, bNum) =>
+//       aNum.localeCompare(bNum)
+//     );
+
+//     sortedNumbers.forEach((element) => {
+//       console.log(element);
+//     });
+//   }
+
 
 piccolo([
   "IN, CA2844AA",
