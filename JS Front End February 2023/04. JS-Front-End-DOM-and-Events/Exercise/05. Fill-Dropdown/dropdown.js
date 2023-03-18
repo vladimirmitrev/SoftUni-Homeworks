@@ -10,7 +10,7 @@ function addItem() {
 
   option.textContent = newItemText;
   option.value = newItemValue;
-  
+
   dropDownMenu.appendChild(option);
 
   newItemTextInput.value = "";
