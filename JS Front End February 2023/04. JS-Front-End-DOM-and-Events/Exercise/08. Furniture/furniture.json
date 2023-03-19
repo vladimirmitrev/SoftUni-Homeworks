@@ -1,0 +1,8 @@
+[{"img":"https://images.sofology.co.uk/c_scale,w_460,q_70,dpr_3,fl_lossy,f_auto/productmedia/lifestyle/sku001018982.jpg",
+        "name": "Sofa",
+        "price": "259",
+        "decFactor":"0.4"},
+        {"img":"https://www.stylespafurniture.com/wp-content/uploads/2020/03/Cove_3_Door_Wardrobe_1.jpg",
+        "name": "Wardrobe",
+        "price": "120",
+        "decFactor":"1.2"}]
