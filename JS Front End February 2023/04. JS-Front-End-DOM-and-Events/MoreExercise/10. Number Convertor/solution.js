@@ -26,7 +26,6 @@ function solve() {
       result.value = number.toString(2);
     } else if (selectedOption === "hexadecimal") {
       result.value = number.toString(16).toUpperCase();
-    //   console.log(result.value);
     }
   }
 }
