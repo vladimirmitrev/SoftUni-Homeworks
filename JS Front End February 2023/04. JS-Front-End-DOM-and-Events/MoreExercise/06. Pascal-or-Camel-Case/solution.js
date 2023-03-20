@@ -16,15 +16,16 @@ function solve() {
     }
 
     resultSpan.textContent = result;
+    
   } else if (namingConvention === "Pascal Case") {
     for (let index = 0; index < text.length; index++) {
       result += text[index].charAt(0).toUpperCase() + text[index].slice(1);
     }
 
     resultSpan.textContent = result;
+
   } else {
     resultSpan.textContent = "Error!";
   }
 
-  console.log(result);
 }
