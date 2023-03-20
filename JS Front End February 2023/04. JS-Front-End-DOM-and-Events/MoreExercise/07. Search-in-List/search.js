@@ -4,8 +4,14 @@ function search() {
   const searchedText = searchedTextInput.value;
   const result = document.getElementById("result");
 
+  //Clearing the results
   result.textContent = "";
 
+  for (const town of towns) {
+    town.style.fontWeight = "";
+    town.style.textDecoration = "";
+  }
+  ////
   let matchesFound = 0;
 
   for (const town of towns) {
@@ -18,10 +24,4 @@ function search() {
     }
     result.textContent = `${matchesFound} matches found`;
   }
-  
-  for (const town of towns) {
-   town.style.fontWeight = "";
-   town.style.textDecoration = "";
- }
-
 }
