@@ -6,14 +6,17 @@ async function loadCommits() {
   const usernameValue = username.value;
   const repoValue = repo.value;
 
+  const allCommits = await fetch(`${BASE_URL}${usernameValue}/${repoValue}/commits`);
   try {
-    const allCommits = await fetch(`${BASE_URL}${usernameValue}/${repoValue}/commits`);
+    // const allCommits = await fetch(`${BASE_URL}${usernameValue}/${repoValue}/commits`);
     const data = await allCommits.json();
 
     data.forEach(({ commit }) => {
       const li = document.createElement("li");
       li.textContent = `${commit.author.name}: ${commit.message}`;
       commits.appendChild(li);
+      console.log(allCommits.status)
+      console.log(allCommits);
     });
 
     // With for of loop
@@ -25,7 +28,7 @@ async function loadCommits() {
 
   } catch (error) {
     const li = document.createElement("li");
-    li.textContent = `Error: ${error.status} (Not Found)`
+    li.textContent = `Error: ${allCommits.status} (Not Found)`
     commits.appendChild(li);
   }
 }
