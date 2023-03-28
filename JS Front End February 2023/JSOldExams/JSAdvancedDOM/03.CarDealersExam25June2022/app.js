@@ -102,11 +102,15 @@ function solve() {
       carOriginalCostInput.value = carOriginalCost;
       carSellingPriceInput.value = carSellingPrice;
 
-      event.target.parentElement.parentElement.remove();
+      // event.target.parentElement.parentElement.remove();
+      tableRow.remove();
     }
 
     function sellHandler(event) {
-      event.target.parentElement.parentElement.remove();
+
+      tableRow.remove();
+
+      // event.target.parentElement.parentElement.remove();
 
       const sellListLi = document.createElement("li");
       sellListLi.classList.add("each-list");
@@ -118,7 +122,7 @@ function solve() {
       yearSpan.textContent = carYear;
 
       let profitMade = Number(carSellingPrice) - Number(carOriginalCost);
-      debugger;
+    
       const profitSpan = document.createElement("span");
       profitSpan.textContent = profitMade;
 
