@@ -103,16 +103,12 @@ function solve() {
       
       infoListUl.innerHTML = "";
 
-      let confirmBtn = document.querySelector(
-        ".edit-btn"
-      );
+      let confirmBtn = document.querySelector(".edit-btn");
       confirmBtn.setAttribute("class", "confirm-btn");
       confirmBtn.textContent = "Confirm";
       confirmBtn.disabled = false;
 
-      let cancelBtn = document.querySelector(
-        ".continue-btn"
-      );
+      let cancelBtn = document.querySelector(".continue-btn");
       cancelBtn.setAttribute("class", "cancel-btn");
       cancelBtn.textContent = "Cancel";
 
@@ -126,7 +122,7 @@ function solve() {
         nextButton.disabled = false;
 
         verificationOne.setAttribute("class", "reservation-confirmed");
-        verificationOne.textContent = "Confirmed.";
+        verificationOne.textContent = "Confirmed.";  //be careful for the dot(".") :D
 
       }
 
@@ -136,7 +132,7 @@ function solve() {
         nextButton.disabled = false;
 
         verificationOne.setAttribute("class", "reservation-cancelled");
-        verificationOne.textContent = "Cancelled.";
+        verificationOne.textContent = "Cancelled."; //be careful for the dot(".") :D
 
       }
     }
