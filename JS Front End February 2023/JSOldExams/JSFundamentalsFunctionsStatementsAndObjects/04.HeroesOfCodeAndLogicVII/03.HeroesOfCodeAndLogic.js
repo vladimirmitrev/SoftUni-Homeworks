@@ -16,7 +16,6 @@ function heroes(input) {
     if (input[0] === "End") {
       break;
     }
-    //-	a hero can have a maximum of 100 HP and 200 MP
     let tokens = input.shift().split(" - ");
     let command = tokens[0];
     let heroName = tokens[1];
@@ -28,7 +27,7 @@ function heroes(input) {
       if (manaLeft >= mpNeeded) {
         manaLeft -= mpNeeded;
         console.log(
-          `${heroName} has successfully cast ${spellName} and now has ${manaLeft} MP!"`
+          `${heroName} has successfully cast ${spellName} and now has ${manaLeft} MP!`
         );
         herosObj[heroName].manaSpell = manaLeft;
       } else {
