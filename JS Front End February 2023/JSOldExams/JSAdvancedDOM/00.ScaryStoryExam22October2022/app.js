@@ -56,13 +56,13 @@ function solve() {
     function saveBtnHandler(e) {
       main.innerHTML = "";
       createElement("h1", "Your scary story is saved!", main);
-
     }
+    
     function deleteBtnHandler(e) {
       e.target.parentNode.remove();
       publishBtn.disabled = false;
     }
- 
+
     function editBtnHandler(e) {
       e.target.parentNode.remove();
 
@@ -73,10 +73,7 @@ function solve() {
       genreInput.value = genre;
       textInput.value = text;
 
-      publishBtn.disabled = false
-      // saveBtn.disabled = true;
-      // editBtn.disabled = true;
-      // deleteBtn.disabled = true;
+      publishBtn.disabled = false;
     }
   }
 
