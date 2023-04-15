@@ -56,22 +56,23 @@ function attachEvents() {
         let h3 = createElement("h3", title, li);
         let p = createElement("p", description, li);
         let moveBtn = createElement("button", "", li);
+        moveBtn.id = _id;
 
         if (status === "ToDo") {
           moveBtn.textContent = "Move to In Progress";
-          moveBtn.id = _id;
+        //   moveBtn.id = _id;
           toDoSectionContainer.appendChild(li);
         } else if (status === "In Progress") {
           moveBtn.textContent = "Move to Code Review";
-          moveBtn.id = _id;
+        //   moveBtn.id = _id;
           inProgressContainer.appendChild(li);
         } else if (status === "Code Review") {
           moveBtn.textContent = "Move to Done";
-          moveBtn.id = _id;
+        //   moveBtn.id = _id;
           codeReviewContainer.appendChild(li);
         } else if (status === "Done") {
           moveBtn.textContent = "Close";
-          moveBtn.id = _id;
+        //   moveBtn.id = _id;
           doneSectionContainer.appendChild(li);
         }
 

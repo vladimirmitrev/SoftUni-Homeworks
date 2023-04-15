@@ -15,7 +15,10 @@ function solve() {
   nextBtn.addEventListener("click", nextBtnHandler);
 
   function nextBtnHandler(e) {
-    e.preventDefault();
+    if(e){
+
+      e.preventDefault();
+    }
     let firstName = firstNameInput.value;   
     let lastName = lastNameInput.value;
     let countOfPeople = countOfPeopleInput.value;
@@ -54,10 +57,7 @@ function solve() {
 
     nextBtn.disabled = true;
 
-    editBtn.addEventListener("click", editHandler);
-    continueBtn.addEventListener("click", continueHandler);
-
-    function editHandler(e) {
+    editBtn.addEventListener("click", (e)=> {
       e.target.parentNode.parentNode.remove();
       nextBtn.disabled = false;
       firstNameInput.value = firstName;
@@ -65,7 +65,13 @@ function solve() {
       countOfPeopleInput.value = countOfPeople;
       dateFromInput.value = dateFrom;
       numberOfDaysInput.value = numberOfDays;
-    }
+    });
+
+    continueBtn.addEventListener("click", continueHandler);
+
+    // function editHandler(e) {
+     
+    // }
 
     function continueHandler(e) {
       e.target.parentNode.parentNode.remove();
