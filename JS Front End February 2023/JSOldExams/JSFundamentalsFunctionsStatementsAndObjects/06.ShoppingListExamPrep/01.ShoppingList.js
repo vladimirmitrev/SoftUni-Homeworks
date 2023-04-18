@@ -10,11 +10,9 @@ function shoppingList(input) {
     if (command === "Urgent" && !productsArr.includes(product)) {
       productsArr.unshift(product);
     } else if (command === "Unnecessary" && productsArr.includes(product)) {
-      // let index  = productsArr.indexOf(product);
       productsArr.splice(index, 1);
     } else if (command === "Correct" && productsArr.includes(product)) {
       let newProduct = tokens[2];
-      // let index = productsArr.indexOf(product);
       productsArr.splice(index, 1, newProduct);
     } else if (command === "Rearrange" && productsArr.includes(product)) {
       productsArr.splice(index, 1);
