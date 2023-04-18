@@ -49,12 +49,18 @@ function solve() {
       let finishBtn = createElement("button", "Finish", buttonsDiv, ["orange"]);
       yellowSection.appendChild(articleEl);
 
-      finishBtn.addEventListener("click", () => {
-        let removeBtn = document.querySelector(".flex");
-        articleEl.removeChild(removeBtn);
-        greenSection.appendChild(articleEl);
+      finishBtn.addEventListener("click", finishBtnHandler);
+
+      function finishBtnHandler(e) {
+        e.target.parentNode.parentNode.remove();
+
+        let articleEl = createElement("article");
+        createElement("h3", `${task}`, articleEl);
+        createElement("p", `Description: ${description}`, articleEl);
+        createElement("p", `Due Date: ${date}`, articleEl);
         
-      });
+        greenSection.appendChild(articleEl);
+      }
     }
   }
 
