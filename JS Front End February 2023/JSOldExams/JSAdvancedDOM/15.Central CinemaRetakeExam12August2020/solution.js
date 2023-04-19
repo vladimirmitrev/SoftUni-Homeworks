@@ -43,12 +43,12 @@ function solve() {
     createElement("strong", `${price.toFixed(2)}`, div);
     let inputPlaceholder = createElement("input", "", div);
     inputPlaceholder.setAttribute("placeholder", "Tickets sold");
-    
+
     let archiveBtn = createElement("button", "Archive", div);
 
     archiveBtn.addEventListener("click", (e) => {
    
-      if (isNaN(inputPlaceholder.value) || !inputPlaceholder.value) {
+      if (!Number(inputPlaceholder.value)){
         alert("check input");
         return;
       }
