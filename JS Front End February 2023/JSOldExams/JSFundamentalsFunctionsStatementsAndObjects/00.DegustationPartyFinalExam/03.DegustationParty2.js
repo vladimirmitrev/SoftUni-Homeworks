@@ -18,19 +18,23 @@ function solve(input) {
     } else if (command === "Dislike") {
       if (!guestObj.hasOwnProperty(name)) {
         console.log(`${name} is not at the party.`);
-      } else if (!guestObj[name].includes(food)) {
-        console.log(`${name} doesn't have the ${food} in his/her collection.`);
       } else {
-        let index = guestObj[name].indexOf(food);
-        guestObj[name].splice(index, 1);
-        unlikedMeals++;
-        console.log(`${name} doesn't like the ${food}.`);
+        if (!guestObj[name].includes(food)) {
+          console.log(
+            `${name} doesn't have the ${food} in his/her collection.`
+          );
+        } else {
+          let index = guestObj[name].indexOf(food);
+          guestObj[name].splice(index, 1);
+          unlikedMeals++;
+          console.log(`${name} doesn't like the ${food}.`);
+        }
       }
     }
   }
 
   for (const key in guestObj) {
-        console.log(`${key}: ${guestObj[key].join(', ')}`);
+    console.log(`${key}: ${guestObj[key].join(", ")}`);
   }
   console.log(`Unliked meals: ${unlikedMeals}`);
 }
