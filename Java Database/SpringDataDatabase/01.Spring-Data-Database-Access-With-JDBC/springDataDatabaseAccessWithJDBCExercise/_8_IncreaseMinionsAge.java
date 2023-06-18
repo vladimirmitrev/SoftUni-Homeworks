@@ -1,6 +1,7 @@
 package springDataDatabaseAccessWithJDBCExercise;
 
 import java.sql.*;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -8,22 +9,32 @@ public class _8_IncreaseMinionsAge {
     public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
 
-        String[] inputIDs = scanner.nextLine().split(" ");
 
-        int firstId = Integer.parseInt(inputIDs[0]);
-        int secondId = Integer.parseInt(inputIDs[1]);
-        int thirdId = Integer.parseInt(inputIDs[2]);
+        int[] inputIds = Arrays
+                .stream(scanner.nextLine().split(" "))
+                .mapToInt(Integer::parseInt)
+                .toArray();
 
         Connection connection = getConnection();
 
-        updateMinionAgeAndName(firstId, connection);
-        updateMinionAgeAndName(secondId, connection);
-        updateMinionAgeAndName(thirdId, connection);
+        updateMinionsWithGivenId(inputIds, connection);
 
         printAllMinions(connection);
 
         connection.close();
 
+    }
+
+    private static void updateMinionsWithGivenId(int[] inputIds, Connection connection) throws SQLException {
+        PreparedStatement updateStatement =
+                connection.prepareStatement("UPDATE minions AS m " +
+                        "SET m.age = m.age + 1, m.name = LOWER(m.name)\n" +
+                        "WHERE m.id = ?;");
+
+        for (int id : inputIds) {
+            updateStatement.setInt(1, id);
+            updateStatement.executeUpdate();
+        }
     }
 
     private static void printAllMinions(Connection connection) throws SQLException {
@@ -37,16 +48,6 @@ public class _8_IncreaseMinionsAge {
                     resultSet.getString("name"),
                     resultSet.getInt("age"));
         }
-    }
-
-    private static void updateMinionAgeAndName(int firstId, Connection connection) throws SQLException {
-        PreparedStatement updateStatement = connection
-                .prepareStatement("UPDATE minions AS m " +
-                        "SET m.age = m.age + 1, m.name = LOWER(m.name) " +
-                        "WHERE m.id = ?;");
-
-        updateStatement.setInt(1, firstId);
-        updateStatement.executeUpdate();
     }
 
     private static Connection getConnection() throws SQLException {
