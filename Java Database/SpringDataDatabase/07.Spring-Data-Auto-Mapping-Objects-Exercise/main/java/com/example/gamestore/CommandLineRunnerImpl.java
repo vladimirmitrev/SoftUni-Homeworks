@@ -59,8 +59,11 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
                 case "EditGame" -> gameService
                         .editGame(Integer.parseInt(commands[1]),
-                                new BigDecimal(commands[2]),
-                                Double.parseDouble(commands[3]));
+                                new BigDecimal(commands[2].split("=")[1]),
+                                Double.parseDouble(commands[3].split("=")[1]));
+
+                case "DeleteGame" -> gameService
+                        .deleteGame(Integer.parseInt(commands[1]));
             }
 
         }

@@ -10,7 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.Comparator;
+import java.util.Comparator;    
 import java.util.List;
 
 @Component
@@ -29,15 +29,34 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        this.seedService.seedAuthors();
-//        this.seedService.seedCategories();
-//        this.seedService.seedBooks();
-        this.seedService.seedAll();
+
+        //Todo uncomment to insert data
+        this.seedService.seedAuthors();
+        this.seedService.seedCategories();
+        this.seedService.seedBooks();
+//        this.seedService.seedAll();
+
+        System.out.println();
+        System.out.println("**********First Query**********");
 
         this.P01PrintAllBooksAfter2000();
+
+        System.out.println();
+        System.out.println("**********Second Query**********");
+
         this.P02PrintAllAuthorsWithBookBefore1990();
+
+        System.out.println();
+        System.out.println("**********Third Query**********");
+
         this.P03PrintAllAuthorsOrderedByCountOfBooks();
+
+        System.out.println();
+        System.out.println("**********Fourth Query**********");
+
         this.P04PrintAllBooksFromGivenName("George", "Powell");
+
+        System.out.println();
     }
 
 

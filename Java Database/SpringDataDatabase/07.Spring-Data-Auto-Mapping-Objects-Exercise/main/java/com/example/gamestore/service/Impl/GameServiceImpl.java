@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -48,7 +49,7 @@ public class GameServiceImpl implements GameService {
         //todo save to DB
         gameRepository.save(game);
 
-        System.out.printf("Added %s", game.getTitle());
+        System.out.printf("Added %s%n", game.getTitle());
 
 
     }
@@ -67,5 +68,18 @@ public class GameServiceImpl implements GameService {
         game.setSize(size);
 
         gameRepository.save(game);
+    }
+
+    @Override
+    public void deleteGame(int gameId) {
+        Game game = gameRepository.findById(gameId)
+                .orElse(null);
+
+        if(game == null) {
+            System.out.println("Game Id is not correct");
+            return;
+        }
+
+        gameRepository.delete(game);
     }
 }
