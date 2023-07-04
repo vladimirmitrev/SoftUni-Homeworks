@@ -23,9 +23,28 @@ public class ApplicationBeanConfiguration {
     public Gson gson() {
         return new GsonBuilder()
                 .excludeFieldsWithoutExposeAnnotation()
-                .registerTypeAdapter(LocalDateTime.class, (JsonDeserializer<LocalDateTime>) (jsonElement, type, jsonDeserializationContext) -> LocalDateTime
-                        .parse(jsonElement.getAsString(), DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")))
+                .registerTypeAdapter(LocalDateTime.class, (JsonDeserializer<LocalDateTime>) (jsonElement, type, jsonDeserializationContext) ->
+                        LocalDateTime
+                                .parse(jsonElement.getAsString(), DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")))
+//                .registerTypeAdapter(LocalDateTime.class, (JsonSerializer<String>) (jsonElement, type, jsonSerializationContext) ->
+//                        new JsonPrimitive(jsonElement))
                 .setPrettyPrinting()
                 .create();
     }
+
+//    @Bean
+//    public Gson gson(){
+//        JsonDeserializer<LocalDateTime> toLocalDate =
+//                (json, t, c) -> LocalDateTime.parse(json.getAsString());
+//
+//        JsonSerializer<String> fromLocalDate =
+//                (date, t, c) -> new JsonPrimitive(date);
+//
+//        return new GsonBuilder()
+//                .setPrettyPrinting()
+////                .serializeNulls()
+//                .registerTypeAdapter(LocalDateTime.class, toLocalDate)
+//                .registerTypeAdapter(LocalDateTime.class, fromLocalDate)
+//                .create();
+//    }
 }
