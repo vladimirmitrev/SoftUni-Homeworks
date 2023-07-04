@@ -1,4 +1,4 @@
-package com.example.cardealer.model.dto;
+package com.example.cardealer.model.dto.importDto;
 
 import com.google.gson.annotations.Expose;
 
