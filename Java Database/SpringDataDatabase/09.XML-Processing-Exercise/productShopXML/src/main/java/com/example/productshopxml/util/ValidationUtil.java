@@ -1,4 +1,4 @@
-package com.example.productshopxml.util.Impl;
+package com.example.productshopxml.util;
 
 public interface ValidationUtil {
 
