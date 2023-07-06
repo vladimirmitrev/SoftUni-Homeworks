@@ -19,10 +19,10 @@ public class User extends BaseEntity{
 
     @ManyToMany
     private Set<User> friends;
-    @OneToMany(targetEntity = Product.class, mappedBy = "buyer")
+    @OneToMany(targetEntity = Product.class, mappedBy = "seller")
     private Set<Product> soldProducts;
 
-    @OneToMany(targetEntity = Product.class, mappedBy = "seller")
+    @OneToMany(targetEntity = Product.class, mappedBy = "buyer")
     private Set<Product> sellingItems;
 
 
