@@ -10,4 +10,10 @@ public interface GameService {
     void editGame(int gameId, BigDecimal price, Double size);
 
     void deleteGame(int gameId);
+
+    void printAllGames();
+
+    void detailsForGame(String currentGame);
+
+    void ownedGames();
 }
