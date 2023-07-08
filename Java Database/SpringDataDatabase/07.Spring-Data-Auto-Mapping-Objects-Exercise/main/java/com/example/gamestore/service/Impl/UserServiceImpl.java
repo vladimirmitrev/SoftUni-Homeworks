@@ -48,9 +48,16 @@ public class UserServiceImpl implements UserService {
                     .forEach(System.out::println);
             return;
         }
+
         User user = modelMapper.map(userRegisterDto, User.class);
 
+        if(userRepository.count() == 0) {
+            user.setAdmin(true);
+        } else {
+            user.setAdmin(false);
+        }
         userRepository.save(user);
+        System.out.printf("%s was registered%n", user.getFullName());
 
     }
 
@@ -85,6 +92,7 @@ public class UserServiceImpl implements UserService {
         if (loggedInUser == null) {
             System.out.println("Cannot log out. No user was logged in.");
         } else {
+            System.out.printf("User %s successfully logged out%n", loggedInUser.getFullName());
             loggedInUser = null;
         }
     }
