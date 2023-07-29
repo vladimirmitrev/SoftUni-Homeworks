@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @Service
 public class CarsServiceImpl implements CarsService {
-    private static String CARS_FILE_PATH = "src/main/resources/files/xml/cars.xml";
+    public static String CARS_FILE_PATH = "src/main/resources/files/xml/cars.xml";
 
     private final CarsRepository carsRepository;
     private final ModelMapper modelMapper;

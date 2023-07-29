@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 // TODO: Implement all methods
 
@@ -72,16 +73,12 @@ public class TasksServiceImpl implements TasksService {
                 .stream()
                 .filter(taskImportDto -> {
 
-                    boolean isValid = validationUtil.isValid(taskImportDto);
-
                     Optional<Mechanic> optionalMechanic = mechanicsRepository
                             .findMechanicByFirstName(taskImportDto.getMechanic().getFirstName());
 
-                    if (optionalMechanic.isEmpty()) {
-                        isValid = false;
-                    }
+                    boolean isValid = validationUtil.isValid(taskImportDto) && (optionalMechanic.isPresent());
 
-                    sb.append(isValid ? String.format("Successfully imported task %.2f",
+                    sb.append(isValid ? String.format(Locale.US,"Successfully imported task %.2f",
                                     taskImportDto.getPrice())
                                     : "Invalid task")
                             .append(System.lineSeparator());
@@ -91,9 +88,9 @@ public class TasksServiceImpl implements TasksService {
                 .map(taskImportDto -> {
                     Task task = modelMapper.map(taskImportDto, Task.class);
 
-                    task.setMechanic(mechanicsService.findMechanicByFirstName(taskImportDto.getMechanic().getFirstName()));
-
                     task.setCar(carsService.findCarById(taskImportDto.getCar().getId()));
+
+                    task.setMechanic(mechanicsService.findMechanicByFirstName(taskImportDto.getMechanic().getFirstName()));
 
                     task.setPart(partsService.findPartById(taskImportDto.getPart().getId()));
 
@@ -104,6 +101,7 @@ public class TasksServiceImpl implements TasksService {
 
         return sb.toString();
     }
+
 
     @Override
     public String getCoupeCarTasksOrderByPrice() {

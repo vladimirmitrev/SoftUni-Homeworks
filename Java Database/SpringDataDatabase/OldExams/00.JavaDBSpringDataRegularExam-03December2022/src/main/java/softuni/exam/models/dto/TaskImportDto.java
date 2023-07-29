@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
@@ -11,21 +12,23 @@ import java.math.BigDecimal;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TaskImportDto {
 
-    @NotNull
+//    @NotNull
+    @XmlElement
     @Positive
     private BigDecimal price;
 
-    @NotNull
+//    @NotNull
+    @XmlElement
     private String date;
+    @XmlElement
+    private CarIdDto car;
 
-
+    @XmlElement
     private MechanicFirstNameDto mechanic;
 
-
+    @XmlElement
     private PartIdDto part;
 
-
-    private CarIdDto car;
 
     public BigDecimal getPrice() {
         return price;
