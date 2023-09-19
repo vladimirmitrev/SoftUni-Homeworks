@@ -1,8 +1,8 @@
-logging:
-    level:
-        blog: WARN
-        org: WARN
-        org.hibernate.SQL: DEBUG
+#logging:
+#    level:
+#        blog: WARN
+#        org: WARN
+#        org.hibernate.SQL: DEBUG
 spring:
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
@@ -17,3 +17,15 @@ spring:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL8Dialect
                 format_sql: true
+
+
+#spring:
+#    datasource:
+#        driverClassName: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://localhost:3306/mobilele?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+#        username: root
+#        password:
+#    jpa:
+#        database-platform: org.hibernate.dialect.MySQLDialect
+#        hibernate:
+#            ddl-auto: create-drop
