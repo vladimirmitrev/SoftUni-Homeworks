@@ -1,19 +1,31 @@
 package com.softuni.mobilele.model.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
 
-    private String email;
-    private String password;
-    private String firstName;
-    private String lastName;
+    //•	role –  user's role (User or Admin).
 
-    private boolean active;
+    @Column(nullable = false)
+    private String email;
+    @Column(nullable = false)
+    private String password;
+    @Column(nullable = false)
+    private String firstName;
+    @Column(nullable = false)
+    private String lastName;
+    @Column(nullable = false)
+    private boolean isActive;
+    private String imageUrl;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private UserRoleEntity role;
 
     public String getEmail() {
         return email;
@@ -48,10 +60,19 @@ public class UserEntity extends BaseEntity {
     }
 
     public boolean isActive() {
-        return active;
+        return isActive;
     }
 
     public void setActive(boolean active) {
-        this.active = active;
+        isActive = active;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 }
