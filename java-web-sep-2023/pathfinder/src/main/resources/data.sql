@@ -23,26 +23,26 @@ INSERT INTO users (id, age, email, full_name, level, password, username)
 VALUES (4, 33, 'ivan@ivan.com', 'Ivan Ivanov', 'BEGINNER', '26dd1ba9ae974a70136ea4463046371516661b0601ca0fb83a905876ca549b3473dd524d578e241b', 'ivan');
 -- user roles
 -- admin
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (1, 1);
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (1, 2);
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (1, 3);
 -- moderator
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (2, 2);
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (2, 3);
 -- user
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (3, 3);
 -- user 2
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (4, 3);
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (4, 2);
-INSERT INTO users_roles (`user_id`, `roles_id`)
+INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (4, 1);
 
 -- categories
