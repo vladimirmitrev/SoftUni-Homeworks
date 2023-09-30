@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Table(name = "brands")
 public class BrandEntity extends BaseEntity {
-
+    @Column(nullable = false, unique = true)
     private String name;
 
     @OneToMany(

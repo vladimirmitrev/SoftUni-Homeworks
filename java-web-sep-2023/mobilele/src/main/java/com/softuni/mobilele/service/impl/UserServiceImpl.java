@@ -58,6 +58,11 @@ public class UserServiceImpl implements UserService {
         return loginSuccess;
     }
 
+    @Override
+    public void logoutUser() {
+        currentUser.logout();
+    }
+
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {
 
         return new UserEntity()

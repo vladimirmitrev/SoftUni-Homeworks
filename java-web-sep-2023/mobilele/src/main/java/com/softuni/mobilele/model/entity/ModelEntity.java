@@ -19,7 +19,6 @@ public class ModelEntity extends BaseEntity {
     private Integer startYear;
     private Integer endYear;
 
-
     @ManyToOne
     private BrandEntity brand;
 
