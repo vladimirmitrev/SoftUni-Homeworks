@@ -1,29 +1,34 @@
-package com.softuni.pathfinder.model.entity;
+package com.softuni.pathfinder.model.service;
 
+import com.softuni.pathfinder.model.entity.RoleEntity;
 import com.softuni.pathfinder.model.entity.enums.LevelEnum;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToMany;
 
 import java.util.Set;
 
-@Entity
-@Table(name = "users")
-public class UserEntity extends BaseEntity {
+public class UserServiceModel {
 
-    @Column(nullable = false, unique = true)
+    private Long id;
     private String username;
-    @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
     private String fullName;
-//    @Column(nullable = false, unique = true)
     private Integer age;
     private String email;
-    @Enumerated(EnumType.STRING)
     private LevelEnum level;
-    @ManyToMany
     private Set<RoleEntity> roles;
 
-    public UserEntity() {
+    public UserServiceModel() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -50,6 +55,14 @@ public class UserEntity extends BaseEntity {
         this.fullName = fullName;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -66,20 +79,11 @@ public class UserEntity extends BaseEntity {
         this.level = level;
     }
 
-
-    public Set<RoleEntity> getRole() {
+    public Set<RoleEntity> getRoles() {
         return roles;
     }
 
-    public void setRole(Set<RoleEntity> role) {
-        this.roles = role;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setRoles(Set<RoleEntity> roles) {
+        this.roles = roles;
     }
 }
