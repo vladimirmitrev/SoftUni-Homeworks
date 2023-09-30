@@ -20,7 +20,7 @@ public class UserEntity extends BaseEntity {
     private String email;
     @Enumerated(EnumType.STRING)
     private LevelEnum level;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<RoleEntity> roles;
 
     public UserEntity() {
