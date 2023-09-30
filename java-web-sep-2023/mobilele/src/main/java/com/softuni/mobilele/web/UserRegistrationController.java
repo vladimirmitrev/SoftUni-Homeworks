@@ -17,8 +17,7 @@ public class UserRegistrationController {
 
     private final UserService userService;
 
-    public UserRegistrationController(UserService userService
-    ) {
+    public UserRegistrationController(UserService userService) {
         this.userService = userService;
     }
 
@@ -33,13 +32,15 @@ public class UserRegistrationController {
     }
 
     @PostMapping("/register")
-    public String register(@Valid UserRegistrationDTO userRegistrationDTO,
-                           BindingResult bindingResult) {
+    public String register(UserRegistrationDTO userRegistrationDTO) {
 
-        if(bindingResult.hasErrors()) {
-            return "redirect:/users/register";
-        }
+//        userService.registerUser(userRegistrationDTO);
 
+//        if (bindingResult.hasErrors()) {
+//            return "redirect:/users/register";
+//        }
+
+        userService.registerUser(userRegistrationDTO);
 
         return "redirect:/";
     }

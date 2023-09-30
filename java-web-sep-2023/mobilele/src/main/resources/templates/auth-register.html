@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head}">
 </head>
@@ -11,8 +12,11 @@
 
 <div class="container">
     <h2 class="text-center text-white">Register User</h2>
-    <form method="POST" 
-          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+    <form
+            th:object="${user}"
+            th:action="@{/users/register}"
+            th:method="post"
+            class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="firstName" class="text-white font-weight-bold">First Name</label>
@@ -58,11 +62,11 @@
                 </p>
             </div>
             <div class="form-group col-md-6 mb-3">
-                <label for="password" class="text-white font-weight-bold">Password</label>
+                <label for="confirm-password" class="text-white font-weight-bold">Confirm Password</label>
                 <input id="confirm-password"
                        name="confirm-password"
-                       gtype="password" min="2" max="20" class="form-control"
-                       placeholder="ConfirmPassword"/>
+                       type="password" min="2" max="20" class="form-control"
+                       placeholder="Confirm password"/>
                 <p class="errors alert alert-danger">
                    Confirm password is required.
                 </p>
