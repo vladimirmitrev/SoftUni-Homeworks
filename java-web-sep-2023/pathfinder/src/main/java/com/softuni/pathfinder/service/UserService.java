@@ -15,4 +15,6 @@ public interface UserService {
 
 
     UserServiceModel findUserById(Long id);
+
+    boolean findByUsername(String username);
 }
