@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/users")
@@ -21,9 +22,13 @@ public class UserRegistrationController {
         this.userService = userService;
     }
 
+//    @ModelAttribute("userModel")
+//    public void initUserModel(Model model) {
+//        model.addAttribute("userModel", new UserRegistrationDTO());
+//    }
     @ModelAttribute("userModel")
-    public void initUserModel(Model model) {
-        model.addAttribute("userModel", new UserRegistrationDTO());
+    public UserRegistrationDTO initUserModel() {
+        return new UserRegistrationDTO();
     }
 
     @GetMapping("/register")
@@ -32,18 +37,21 @@ public class UserRegistrationController {
     }
 
     @PostMapping("/register")
-    public String register(UserRegistrationDTO userRegistrationDTO) {
+    public String register(@Valid UserRegistrationDTO userModel,
+                           BindingResult bindingResult,
+                           RedirectAttributes redirectAttributes) {
 
-//        userService.registerUser(userRegistrationDTO);
+        if (bindingResult.hasErrors()) {
+            redirectAttributes
+                    .addFlashAttribute("userModel", userModel)
+                    .addFlashAttribute("org.springframework.validation.BindingResult.userModel",
+                            bindingResult);
 
-//        if (bindingResult.hasErrors()) {
-//            return "redirect:/users/register";
-//        }
+            return "redirect:register";
+        }
 
-        userService.registerUser(userRegistrationDTO);
+        this.userService.registerUser(userModel);
 
         return "redirect:/";
     }
-
-
 }
