@@ -20,11 +20,11 @@
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="firstName" class="text-white font-weight-bold">First Name</label>
-                <input  id="firstName"
-                        th:field="*{firstName}"
-                        th:errorclass="is-invalid"
-                        type="text"
-                        class="form-control"
+                <input id="firstName"
+                       th:field="*{firstName}"
+                       th:errorclass="is-invalid"
+                       type="text"
+                       class="form-control"
                        placeholder="First name"/>
                 <p class="invalid-feedback errors alert alert-danger">
                     First name is required and should be between 2 and 20 symbols.
@@ -35,7 +35,7 @@
                 <input id="lastName"
                        th:field="*{lastName}"
                        th:errorclass="is-invalid"
-                       type="text"class="form-control"
+                       type="text" class="form-control"
                        placeholder="Last name"/>
                 <p class="invalid-feedback errors alert alert-danger">
                     Last name is required and should be between 2 and 20 symbols.
@@ -51,9 +51,12 @@
                        type="text"
                        class="form-control"
                        placeholder="Email"/>
-                <p class="invalid-feedback errors alert alert-danger">
-                    Email is required and should be valid.
-                </p>
+                <div class="invalid-feedback errors alert alert-danger">
+                    <div
+                            th:each="err : ${#fields.errors('email')}"
+                            th:text="${err}"
+                    />
+                </div>
             </div>
         </div>
         <div class="row">
@@ -73,22 +76,23 @@
                 <input id="confirm-password"
                        th:field="*{confirmPassword}"
                        th:errorclass="is-invalid"
-                       type="password" class="form-control"
+                       type="password"
+                       class="form-control"
                        placeholder="Confirm password"/>
                 <p class="invalid-feedback errors alert alert-danger">
-                   Confirm password is required and should be at least 5 symbols..
+                    Password should match.
                 </p>
             </div>
         </div>
         <div class="form-group">
-<!--            <label class="text-center text-white font-weight-bold" for="roles">Roles</label>-->
-<!--            <select  id="roles" class="form-control" multiple>-->
-<!--                <option>-->
-<!--                </option>-->
-<!--            </select>-->
-<!--            <p class="errors alert alert-danger">-->
-<!--                Selecting a role is required.-->
-<!--            </p>-->
+            <!--            <label class="text-center text-white font-weight-bold" for="roles">Roles</label>-->
+            <!--            <select  id="roles" class="form-control" multiple>-->
+            <!--                <option>-->
+            <!--                </option>-->
+            <!--            </select>-->
+            <!--            <p class="errors alert alert-danger">-->
+            <!--                Selecting a role is required.-->
+            <!--            </p>-->
         </div>
 
         <div class="row">
@@ -102,7 +106,7 @@
 </div>
 
 <div>
-     <footer> </footer>
+    <footer></footer>
 </div>
 
 </body>

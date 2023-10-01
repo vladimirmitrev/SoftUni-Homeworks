@@ -1,10 +1,16 @@
 package com.softuni.mobilele.model.dto;
 
+import com.softuni.mobilele.model.validation.FieldMatch;
 import com.softuni.mobilele.model.validation.UniqueUserEmail;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+@FieldMatch(
+        firstField = "password",
+        secondField = "confirmPassword",
+        message = "Passwords doesn't match!"
+)
 public class UserRegistrationDTO {
 
     @NotEmpty
