@@ -1,5 +1,6 @@
 package com.softuni.mobilele.model.dto;
 
+import com.softuni.mobilele.model.validation.UniqueUserEmail;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -12,8 +13,9 @@ public class UserRegistrationDTO {
     @NotEmpty
     @Size(min = 2, max = 20)
     private String lastName;
-    @NotEmpty
-    @Email
+    @NotEmpty(message = "User email should be provided.")
+    @Email(message = "User email should be valid.")
+    @UniqueUserEmail(message = "User email is already taken")
     private String email;
 
     @NotEmpty

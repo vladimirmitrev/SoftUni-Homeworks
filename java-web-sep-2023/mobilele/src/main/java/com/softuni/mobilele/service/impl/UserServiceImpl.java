@@ -3,6 +3,7 @@ package com.softuni.mobilele.service.impl;
 import com.softuni.mobilele.model.dto.UserLoginDTO;
 import com.softuni.mobilele.model.dto.UserRegistrationDTO;
 import com.softuni.mobilele.model.entity.UserEntity;
+import com.softuni.mobilele.model.mapper.UserMapper;
 import com.softuni.mobilele.repository.UserRepository;
 import com.softuni.mobilele.service.UserService;
 import com.softuni.mobilele.util.CurrentUser;
@@ -15,15 +16,18 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final CurrentUser currentUser;
+    private final UserMapper userMapper;
 
 
     public UserServiceImpl(UserRepository userRepository,
                            PasswordEncoder passwordEncoder,
-                           CurrentUser currentUser) {
+                           CurrentUser currentUser,
+                           UserMapper userMapper) {
 
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.currentUser = currentUser;
+        this.userMapper = userMapper;
     }
 
     @Override
@@ -65,11 +69,9 @@ public class UserServiceImpl implements UserService {
 
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {
 
-        return new UserEntity()
-                .setActive(true)
-                .setFirstName(userRegistrationDTO.getFirstName())
-                .setLastName(userRegistrationDTO.getLastName())
-                .setEmail(userRegistrationDTO.getEmail())
-                .setPassword(passwordEncoder.encode(userRegistrationDTO.getPassword()));
+        UserEntity newUser = userMapper.userDtoToUserEntity(userRegistrationDTO);
+        newUser.setPassword(passwordEncoder.encode(userRegistrationDTO.getPassword()));
+
+        return newUser;
     }
 }
