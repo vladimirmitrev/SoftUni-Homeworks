@@ -3,7 +3,10 @@ package com.softuni.mobilele.model.entity;
 import com.softuni.mobilele.model.enums.EngineEnum;
 import com.softuni.mobilele.model.enums.TransmissionEnum;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.annotations.Type;
 
 import java.math.BigDecimal;
 import java.sql.Types;
@@ -13,6 +16,14 @@ import java.util.UUID;
 @Table(name = "offers")
 public class OfferEntity extends BaseEntity {
 
+//    @Id
+//    @GeneratedValue(generator = "UUID")
+//    @GenericGenerator(
+//            name = "UUID",
+//            strategy = "org.hibernate.id.UUIDGenerator"
+//    )
+//    @Type(type = "uuid-char")
+//    private UUID id;
     @JdbcTypeCode(Types.VARCHAR)
     private UUID uuid;
 

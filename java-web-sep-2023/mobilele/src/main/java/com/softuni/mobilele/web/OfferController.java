@@ -35,6 +35,7 @@ public class OfferController {
         if(!model.containsAttribute("addOfferModel")) {
             model.addAttribute("addOfferModel", new AddOfferDTO());
         }
+        model.addAttribute("brands", offerService.getAllBrands());
         return "offer-add";
     }
 
@@ -52,10 +53,9 @@ public class OfferController {
             return "redirect:/offers/add";
         }
 
-        //TODO
+        offerService.addOffer(addOfferModel);
 
-
-        return "index";
+        return "redirect:/offers/all";
     }
 
     @GetMapping("/{uuid}/details")

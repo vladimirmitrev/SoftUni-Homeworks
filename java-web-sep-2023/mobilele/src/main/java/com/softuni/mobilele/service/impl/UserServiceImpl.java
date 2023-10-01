@@ -55,6 +55,8 @@ public class UserServiceImpl implements UserService {
                 currentUser.setLogged(true);
                 currentUser.setFirstName(userEntity.getFirstName());
                 currentUser.setLastName(userEntity.getLastName());
+                currentUser.setEmail(userEntity.getEmail());
+
             } else {
                 currentUser.logout();
             }

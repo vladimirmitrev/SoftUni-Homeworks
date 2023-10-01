@@ -10,6 +10,7 @@ public class CurrentUser {
     private String firstName;
     private String lastName;
     private boolean isLogged;
+    private String email;
 
     public String getFirstName() {
         return firstName;
@@ -39,9 +40,18 @@ public class CurrentUser {
         setLogged(false);
         setFirstName(null);
         setLastName(null);
+        setEmail(null);
     }
 
     public String getFullName() {
         return getFirstName() + " " + getLastName();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
