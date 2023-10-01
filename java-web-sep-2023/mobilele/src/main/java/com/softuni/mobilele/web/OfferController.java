@@ -1,12 +1,17 @@
 package com.softuni.mobilele.web;
 
+import com.softuni.mobilele.model.dto.AddOfferDTO;
 import com.softuni.mobilele.model.dto.CreateOfferDTO;
 import com.softuni.mobilele.service.OfferService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.UUID;
 
@@ -26,14 +31,29 @@ public class OfferController {
     }
 
     @GetMapping("/add")
-    public String add() {
+    public String add(Model model) {
+        if(!model.containsAttribute("addOfferModel")) {
+            model.addAttribute("addOfferModel", new AddOfferDTO());
+        }
         return "offer-add";
     }
 
     @PostMapping("/add")
-    public String add(CreateOfferDTO createOfferDTO) {
+    public String add(@Valid AddOfferDTO addOfferModel,
+                      BindingResult bindingResult,
+                      RedirectAttributes redirectAttributes) {
 
-        offerService.createOffer(createOfferDTO);
+        if (bindingResult.hasErrors()) {
+            redirectAttributes
+                    .addFlashAttribute("addOfferModel", addOfferModel)
+                    .addFlashAttribute("org.springframework.validation.BindingResult.addOfferModel",
+                            bindingResult);
+
+            return "redirect:/offers/add";
+        }
+
+        //TODO
+
 
         return "index";
     }

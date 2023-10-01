@@ -1,6 +1,6 @@
 package com.softuni.mobilele.model.entity;
 
-import com.softuni.mobilele.model.entity.enums.CategoryEnum;
+import com.softuni.mobilele.model.enums.CategoryEnum;
 import jakarta.persistence.*;
 
 @Entity

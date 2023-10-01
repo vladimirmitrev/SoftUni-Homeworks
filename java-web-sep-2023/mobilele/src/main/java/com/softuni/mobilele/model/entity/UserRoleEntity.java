@@ -1,9 +1,7 @@
 package com.softuni.mobilele.model.entity;
 
-import com.softuni.mobilele.model.entity.enums.RoleEnum;
+import com.softuni.mobilele.model.enums.RoleEnum;
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "user_roles")

@@ -1,9 +1,8 @@
 package com.softuni.mobilele.model.entity;
 
-import com.softuni.mobilele.model.entity.enums.EngineEnum;
-import com.softuni.mobilele.model.entity.enums.TransmissionEnum;
+import com.softuni.mobilele.model.enums.EngineEnum;
+import com.softuni.mobilele.model.enums.TransmissionEnum;
 import jakarta.persistence.*;
-import org.hibernate.annotations.JdbcType;
 import org.hibernate.annotations.JdbcTypeCode;
 
 import java.math.BigDecimal;
