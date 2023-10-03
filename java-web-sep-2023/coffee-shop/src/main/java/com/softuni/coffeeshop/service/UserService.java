@@ -1,6 +1,7 @@
 package com.softuni.coffeeshop.service;
 
 import com.softuni.coffeeshop.model.binding.UserRegisterBindingModel;
+import com.softuni.coffeeshop.model.entity.User;
 import com.softuni.coffeeshop.model.service.UserServiceModel;
 
 public interface UserService {
@@ -11,4 +12,5 @@ public interface UserService {
 
     void loginUser(Long id, String username);
 
+    User findUserById(Long id);
 }
