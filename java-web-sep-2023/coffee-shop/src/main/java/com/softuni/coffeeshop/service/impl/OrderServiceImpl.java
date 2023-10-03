@@ -2,6 +2,7 @@ package com.softuni.coffeeshop.service.impl;
 
 import com.softuni.coffeeshop.model.entity.Order;
 import com.softuni.coffeeshop.model.service.OrderServiceModel;
+import com.softuni.coffeeshop.model.view.OrderViewModel;
 import com.softuni.coffeeshop.repository.OrderRepository;
 import com.softuni.coffeeshop.service.CategoryService;
 import com.softuni.coffeeshop.service.OrderService;
@@ -9,6 +10,9 @@ import com.softuni.coffeeshop.service.UserService;
 import com.softuni.coffeeshop.util.CurrentUser;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -36,5 +40,20 @@ public class OrderServiceImpl implements OrderService {
         order.setCategory(categoryService.findByCategoryNameEnum(orderServiceModel.getCategory()));
 
         orderRepository.save(order);
+    }
+
+    @Override
+    public List<OrderViewModel> findAllOrderByPriceDesc() {
+
+        return orderRepository.findAllByOrderByPriceDesc()
+                .stream()
+                .map(order -> modelMapper.map(order, OrderViewModel.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void orderReady(Long id) {
+
+        orderRepository.deleteById(id);
     }
 }

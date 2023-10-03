@@ -2,11 +2,15 @@ package com.softuni.coffeeshop.service.impl;
 
 import com.softuni.coffeeshop.model.entity.User;
 import com.softuni.coffeeshop.model.service.UserServiceModel;
+import com.softuni.coffeeshop.model.view.UserViewModel;
 import com.softuni.coffeeshop.repository.UserRepository;
 import com.softuni.coffeeshop.service.UserService;
 import com.softuni.coffeeshop.util.CurrentUser;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -56,4 +60,20 @@ public class UserServiceImpl implements UserService {
                 .orElse(null);
     }
 
+    @Override
+    public List<UserViewModel> findAllUsersAndCountOrOrdersOrderByCountDesc() {
+
+
+        return userRepository.findAllUsersOrderedByOrdersCount()
+                .stream()
+                .map(user -> {
+                    UserViewModel userViewModel = new UserViewModel();
+
+                    userViewModel.setUsername(user.getUsername());
+                    userViewModel.setCountOfOrders(user.getOrders().size());
+
+                    return userViewModel;
+                })
+                .collect(Collectors.toList());
+    }
 }
