@@ -1,6 +1,5 @@
 package com.softuni.coffeeshop.service;
 
-import com.softuni.coffeeshop.model.binding.UserRegisterBindingModel;
 import com.softuni.coffeeshop.model.entity.User;
 import com.softuni.coffeeshop.model.service.UserServiceModel;
 import com.softuni.coffeeshop.model.view.UserViewModel;
@@ -18,4 +17,8 @@ public interface UserService {
     User findUserById(Long id);
 
     List<UserViewModel> findAllUsersAndCountOrOrdersOrderByCountDesc();
+
+    boolean findByUsername(String username);
+
+    boolean findByEmail(String email);
 }

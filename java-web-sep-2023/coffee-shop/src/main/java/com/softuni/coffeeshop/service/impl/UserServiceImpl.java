@@ -76,4 +76,20 @@ public class UserServiceImpl implements UserService {
                 })
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public boolean findByUsername(String username) {
+
+        return userRepository
+                .findByUsername(username)
+                .isPresent();
+    }
+
+    @Override
+    public boolean findByEmail(String email) {
+
+        return userRepository
+                .findByEmail(email)
+                .isPresent();
+    }
 }

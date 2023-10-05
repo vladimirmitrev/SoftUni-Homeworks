@@ -60,6 +60,16 @@ public class UserController {
             return "redirect:register";
         }
 
+        boolean isUsernameExists = userService
+                .findByUsername(userRegisterBindingModel.getUsername());
+
+        boolean isEmailExits = userService
+                .findByEmail(userRegisterBindingModel.getEmail());
+
+        if(isUsernameExists || isEmailExits) {
+            //Todo: redirect with message
+            return "redirect:register";
+        }
         userService.registerUser(modelMapper
                 .map(userRegisterBindingModel, UserServiceModel.class));
 
