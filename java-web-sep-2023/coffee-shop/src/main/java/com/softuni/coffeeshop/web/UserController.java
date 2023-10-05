@@ -60,13 +60,12 @@ public class UserController {
             return "redirect:register";
         }
 
-        boolean isUsernameExists = userService
-                .findByUsername(userRegisterBindingModel.getUsername());
 
-        boolean isEmailExits = userService
-                .findByEmail(userRegisterBindingModel.getEmail());
+        boolean isUsernameOrEmailExits = userService
+                .findByUsernameOrEmail(userRegisterBindingModel.getUsername(),
+                        userRegisterBindingModel.getEmail());
 
-        if(isUsernameExists || isEmailExits) {
+        if(isUsernameOrEmailExits) {
             //Todo: redirect with message
             return "redirect:register";
         }

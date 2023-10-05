@@ -18,7 +18,5 @@ public interface UserService {
 
     List<UserViewModel> findAllUsersAndCountOrOrdersOrderByCountDesc();
 
-    boolean findByUsername(String username);
-
-    boolean findByEmail(String email);
+    boolean findByUsernameOrEmail(String username, String email);
 }
