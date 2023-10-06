@@ -1,5 +1,6 @@
 package com.softuni.pathfinder.service;
 
+import com.softuni.pathfinder.model.entity.UserEntity;
 import com.softuni.pathfinder.model.service.UserServiceModel;
 
 public interface UserService {
@@ -17,4 +18,6 @@ public interface UserService {
     UserServiceModel findUserById(Long id);
 
     boolean findByUsername(String username);
+
+    UserEntity findCurrentLoginUserEntity();
 }
