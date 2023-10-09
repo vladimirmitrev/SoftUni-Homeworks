@@ -1,9 +1,8 @@
 package com.softuni.mobilele.service.impl;
 
-import com.softuni.mobilele.model.dto.AddOfferDTO;
-import com.softuni.mobilele.model.dto.BrandDTO;
-import com.softuni.mobilele.model.dto.CreateOfferDTO;
-import com.softuni.mobilele.model.dto.ModelDTO;
+import com.softuni.mobilele.model.dto.offer.*;
+import com.softuni.mobilele.model.dto.brand.BrandDTO;
+import com.softuni.mobilele.model.dto.model.ModelDTO;
 import com.softuni.mobilele.model.entity.BrandEntity;
 import com.softuni.mobilele.model.entity.ModelEntity;
 import com.softuni.mobilele.model.entity.OfferEntity;
@@ -18,7 +17,6 @@ import com.softuni.mobilele.util.CurrentUser;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -95,11 +93,18 @@ public class OfferServiceImpl implements OfferService {
         offerRepository.save(newOffer);
     }
 
-
-    @Override
-    public UUID createOffer(CreateOfferDTO createOfferDTO) {
-        //Todo: create offer
-
-        throw new UnsupportedOperationException("Coming soon!");
+    public List<CardListingOfferDTO> findOfferByOfferName(String query) {
+        return this.offerRepository
+                .findAllByModel_NameContains(query)
+                .stream()
+                .map(offerMapper::offerEntityToCardListingOfferDto)
+                .toList();
     }
+
+//    @Override
+//    public UUID createOffer(CreateOfferDTO createOfferDTO) {
+//        //Todo: create offer
+//
+//        throw new UnsupportedOperationException("Coming soon!");
+//    }
 }

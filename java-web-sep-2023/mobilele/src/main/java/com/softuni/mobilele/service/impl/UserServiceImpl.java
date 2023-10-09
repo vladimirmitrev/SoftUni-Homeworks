@@ -1,7 +1,7 @@
 package com.softuni.mobilele.service.impl;
 
-import com.softuni.mobilele.model.dto.UserLoginDTO;
-import com.softuni.mobilele.model.dto.UserRegistrationDTO;
+import com.softuni.mobilele.model.dto.user.UserLoginDTO;
+import com.softuni.mobilele.model.dto.user.UserRegistrationDTO;
 import com.softuni.mobilele.model.entity.UserEntity;
 import com.softuni.mobilele.model.mapper.UserMapper;
 import com.softuni.mobilele.repository.UserRepository;

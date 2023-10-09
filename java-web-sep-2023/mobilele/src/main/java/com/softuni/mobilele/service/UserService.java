@@ -1,7 +1,7 @@
 package com.softuni.mobilele.service;
 
-import com.softuni.mobilele.model.dto.UserLoginDTO;
-import com.softuni.mobilele.model.dto.UserRegistrationDTO;
+import com.softuni.mobilele.model.dto.user.UserLoginDTO;
+import com.softuni.mobilele.model.dto.user.UserRegistrationDTO;
 
 public interface UserService {
     void registerUser(UserRegistrationDTO userRegistrationDTO);

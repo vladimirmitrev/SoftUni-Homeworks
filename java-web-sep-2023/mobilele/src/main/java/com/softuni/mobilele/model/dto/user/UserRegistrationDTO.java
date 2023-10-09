@@ -1,4 +1,4 @@
-package com.softuni.mobilele.model.dto;
+package com.softuni.mobilele.model.dto.user;
 
 import com.softuni.mobilele.model.validation.FieldMatch;
 import com.softuni.mobilele.model.validation.UniqueUserEmail;

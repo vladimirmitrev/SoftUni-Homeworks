@@ -1,6 +1,6 @@
 package com.softuni.mobilele.web;
 
-import com.softuni.mobilele.model.dto.UserLoginDTO;
+import com.softuni.mobilele.model.dto.user.UserLoginDTO;
 import com.softuni.mobilele.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

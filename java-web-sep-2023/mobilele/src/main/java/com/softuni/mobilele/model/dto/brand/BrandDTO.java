@@ -1,4 +1,6 @@
-package com.softuni.mobilele.model.dto;
+package com.softuni.mobilele.model.dto.brand;
+
+import com.softuni.mobilele.model.dto.model.ModelDTO;
 
 import java.util.ArrayList;
 import java.util.List;
