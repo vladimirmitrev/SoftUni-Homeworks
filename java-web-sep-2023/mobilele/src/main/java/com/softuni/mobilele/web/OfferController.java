@@ -4,6 +4,8 @@ import com.softuni.mobilele.model.dto.offer.AddOfferDTO;
 import com.softuni.mobilele.model.dto.offer.SearchOfferDTO;
 import com.softuni.mobilele.service.OfferService;
 import jakarta.validation.Valid;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,8 +40,9 @@ public class OfferController {
 
     @PostMapping("/offers/add")
     public String addOffer(@Valid AddOfferDTO addOfferModel,
-                      BindingResult bindingResult,
-                      RedirectAttributes redirectAttributes) {
+                           BindingResult bindingResult,
+                           RedirectAttributes redirectAttributes,
+                           @AuthenticationPrincipal UserDetails userDetails) {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes
@@ -50,7 +53,7 @@ public class OfferController {
             return "redirect:/offers/add";
         }
 
-        offerService.addOffer(addOfferModel);
+        offerService.addOffer(addOfferModel, userDetails);
 
         return "redirect:/offers/all";
     }

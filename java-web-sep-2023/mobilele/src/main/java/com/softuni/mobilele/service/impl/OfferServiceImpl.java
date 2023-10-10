@@ -13,7 +13,7 @@ import com.softuni.mobilele.repository.ModelRepository;
 import com.softuni.mobilele.repository.OfferRepository;
 import com.softuni.mobilele.repository.UserRepository;
 import com.softuni.mobilele.service.OfferService;
-import com.softuni.mobilele.util.CurrentUser;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,15 +26,15 @@ public class OfferServiceImpl implements OfferService {
     private final BrandRepository brandRepository;
     private final OfferMapper offerMapper;
     private final UserRepository userRepository;
-    private final CurrentUser currentUser;
     private final ModelRepository modelRepository;
 
-    public OfferServiceImpl(OfferRepository offerRepository, BrandRepository brandRepository, OfferMapper offerMapper, UserRepository userRepository, CurrentUser currentUser, ModelRepository modelRepository) {
+    public OfferServiceImpl(OfferRepository offerRepository, BrandRepository brandRepository,
+                            OfferMapper offerMapper, UserRepository userRepository,
+                            ModelRepository modelRepository) {
         this.offerRepository = offerRepository;
         this.brandRepository = brandRepository;
         this.offerMapper = offerMapper;
         this.userRepository = userRepository;
-        this.currentUser = currentUser;
         this.modelRepository = modelRepository;
     }
 
@@ -73,13 +73,13 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public void addOffer(AddOfferDTO addOfferDTO) {
+    public void addOffer(AddOfferDTO addOfferDTO, UserDetails userDetails) {
         OfferEntity newOffer = offerMapper.addOfferDtoToOfferEntity(addOfferDTO);
 
         //Todo - check if logged user
 
         UserEntity seller = userRepository
-                .findByEmail(currentUser.getEmail())
+                .findByEmail(userDetails.getUsername())
                 .orElseThrow();
 
 

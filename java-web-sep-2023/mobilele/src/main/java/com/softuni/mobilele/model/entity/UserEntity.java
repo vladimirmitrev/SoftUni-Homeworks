@@ -3,6 +3,9 @@ package com.softuni.mobilele.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
@@ -18,8 +21,8 @@ public class UserEntity extends BaseEntity {
     @Column(nullable = false)
     private boolean isActive;
     private String imageUrl;
-    @ManyToOne(fetch = FetchType.EAGER)
-    private UserRoleEntity role;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<UserRoleEntity> userRoles = new ArrayList<>();
 
     public String getEmail() {
         return email;
@@ -75,11 +78,11 @@ public class UserEntity extends BaseEntity {
         return this;
     }
 
-    public UserRoleEntity getRole() {
-        return role;
+    public List<UserRoleEntity> getUserRoles() {
+        return userRoles;
     }
 
-    public void setRole(UserRoleEntity role) {
-        this.role = role;
+    public void setUserRoles(List<UserRoleEntity> userRoles) {
+        this.userRoles = userRoles;
     }
 }

@@ -1,5 +1,5 @@
 package com.softuni.mobilele.model.enums;
 
-public enum RoleEnum {
+public enum UserRoleEnum {
     ADMIN, USER;
 }
