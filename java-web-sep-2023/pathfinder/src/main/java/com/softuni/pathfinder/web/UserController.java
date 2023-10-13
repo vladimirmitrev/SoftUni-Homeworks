@@ -3,6 +3,7 @@ package com.softuni.pathfinder.web;
 
 import com.softuni.pathfinder.model.binding.UserLoginBindingModel;
 import com.softuni.pathfinder.model.binding.UserRegisterBindingModel;
+import com.softuni.pathfinder.model.entity.UserEntity;
 import com.softuni.pathfinder.model.service.UserServiceModel;
 import com.softuni.pathfinder.model.view.UserViewModel;
 import com.softuni.pathfinder.service.UserService;
@@ -13,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/users")
@@ -75,57 +78,67 @@ public class UserController {
     @GetMapping("/login")
     public String login(Model model) {
 
-        model.addAttribute("isExists", true);
+//        model.addAttribute("isExists", true);
 
         return "login";
     }
 
-    @PostMapping("/login")
-    public String confirmLogin(@Valid UserLoginBindingModel userLoginBindingModel,
-                               BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-
-        if (bindingResult.hasErrors()) {
-
-            redirectAttributes
-                    .addFlashAttribute("userLoginBindingModel", userLoginBindingModel)
-                    .addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel",
-                            bindingResult);
-
-            return "redirect:login";
-        }
-
-        UserServiceModel user = userService
-                .findUserByUsernameAndPassword(userLoginBindingModel.getUsername(), userLoginBindingModel.getPassword());
-
-        if (user == null) {
-            redirectAttributes
-                    .addFlashAttribute("isExist", false)
-                    .addFlashAttribute("userLoginBindingModel", userLoginBindingModel)
-                    .addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel",
-                            bindingResult);
-
-            return "redirect:login";
-        }
-
-        userService.loginUser(user.getId(), user.getUsername());
-
-        return "redirect:/";
-    }
+//    @PostMapping("/login")
+//    public String confirmLogin(@Valid UserLoginBindingModel userLoginBindingModel,
+//                               BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+//
+//        if (bindingResult.hasErrors()) {
+//
+//            redirectAttributes
+//                    .addFlashAttribute("userLoginBindingModel", userLoginBindingModel)
+//                    .addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel",
+//                            bindingResult);
+//
+//            return "redirect:login";
+//        }
+//
+//        UserServiceModel user = userService
+//                .findUserByUsernameAndPassword(userLoginBindingModel.getUsername(), userLoginBindingModel.getPassword());
+//
+//        if (user == null) {
+//            redirectAttributes
+//                    .addFlashAttribute("isExist", false)
+//                    .addFlashAttribute("userLoginBindingModel", userLoginBindingModel)
+//                    .addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel",
+//                            bindingResult);
+//
+//            return "redirect:login";
+//        }
+//
+//        userService.loginUser(user.getId(), user.getUsername());
+//
+//        return "redirect:/";
+//    }
 
     @GetMapping("/logout")
     public String logout() {
 
-        userService.logout();
+//        userService.logout();
 
         return "redirect:/";
     }
 
 
-    @GetMapping("/profile/{id}")
-    public String profile(@PathVariable Long id, Model model) {
+    @GetMapping("/profile/")
+    public String profile(Principal principal, Model model) {
+        String username = principal.getName();
 
-        model.addAttribute("user", modelMapper
-                .map(userService.findUserById(id), UserViewModel.class));
+        UserEntity user = userService.getUser(username);
+
+        UserViewModel userViewModel = new UserViewModel(
+                username,
+                user.getEmail(),
+                user.getFullName(),
+                user.getAge(),
+                user.getLevel() != null ? user.getLevel().name() : "BEGINNER"
+        );
+
+        model.addAttribute("user", userViewModel);
 
         return "profile";
     }

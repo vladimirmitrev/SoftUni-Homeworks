@@ -20,4 +20,6 @@ public interface UserService {
     boolean findByUsername(String username);
 
     UserEntity findCurrentLoginUserEntity();
+
+    UserEntity getUser(String username);
 }

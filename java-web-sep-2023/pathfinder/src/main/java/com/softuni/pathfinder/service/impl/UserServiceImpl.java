@@ -7,6 +7,8 @@ import com.softuni.pathfinder.repository.UserRepository;
 import com.softuni.pathfinder.service.UserService;
 import com.softuni.pathfinder.util.CurrentUser;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,16 +18,19 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
     private final CurrentUser currentUser;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, CurrentUser currentUser) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, CurrentUser currentUser, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.currentUser = currentUser;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public void registerUser(UserServiceModel userServiceModel) {
         UserEntity user = modelMapper.map(userServiceModel, UserEntity.class);
+        user.setPassword(passwordEncoder.encode(userServiceModel.getPassword()));
         user.setLevel(LevelEnum.BEGINNER);
 
         userRepository.save(user);
@@ -72,5 +77,11 @@ public class UserServiceImpl implements UserService {
         return userRepository
                 .findById(currentUser.getId())
                 .orElse(null);
+    }
+
+    @Override
+    public UserEntity getUser(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User with email " + username + " not found!"));
     }
 }

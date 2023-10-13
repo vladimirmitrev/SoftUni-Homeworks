@@ -82,4 +82,12 @@ public class UserEntity extends BaseEntity {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public Set<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<RoleEntity> roles) {
+        this.roles = roles;
+    }
 }

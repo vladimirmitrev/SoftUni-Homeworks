@@ -14,7 +14,7 @@
                 <div class="profile-card p-3 py-4">
                     <div class="text-center"><img src="/images/profile.jpg" width="100" class="rounded-circle"></div>
                     <div class="text-center mt-3" th:object="${user}">
-                        <span class="bg-secondary p-1 px-4 rounded text-white" th:text="*{level.name()}">Pro</span>
+                        <span class="bg-secondary p-1 px-4 rounded text-white" th:text="*{level}">Pro</span>
                         <h5 class="mt-4 mb-0">Full name</h5>
                         <span th:text="*{fullName}">UI/UX Designer</span>
                         <h5 class="mt-2 mb-0">Username</h5>

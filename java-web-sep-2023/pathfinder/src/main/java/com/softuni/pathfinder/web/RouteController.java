@@ -6,6 +6,8 @@ import com.softuni.pathfinder.service.RouteService;
 import com.softuni.pathfinder.util.CurrentUser;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.security.PublicKey;
 
 @Controller
@@ -52,18 +55,19 @@ public class RouteController {
 
 
     @GetMapping("/add")
-    public String add() {
+    public String add(Principal principal) {
 
-        if (currentUser.getId() == null) {
-            return "redirect:/users/login";
-        }
+//        if (currentUser.getId() == null) {
+//            return "redirect:/users/login";
+//        }
 
         return "add-route";
     }
 
     @PostMapping("/add")
     public String confirmAdd(@Valid RouteAddBindingModel routeAddBindingModel, BindingResult bindingResult,
-                             RedirectAttributes redirectAttributes) throws IOException {
+                             RedirectAttributes redirectAttributes,
+                             @AuthenticationPrincipal UserDetails userDetails) throws IOException {
 
         if (bindingResult.hasErrors()) {
 
@@ -80,7 +84,7 @@ public class RouteController {
                 routeAddBindingModel.getGpxCoordinates().getBytes()));
 
 
-        routeService.addNewRoute(routeServiceModel);
+        routeService.addNewRoute(routeServiceModel,userDetails);
 
 
         return "redirect:all";
