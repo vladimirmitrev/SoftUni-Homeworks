@@ -18,7 +18,15 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
+server:
+  port: 8081
 
+mail:
+  host: "localhost"
+  port: 1025
+  username: "mobilele@mobilele.com"
+  password: ""
+  
 #  sql:
 #      init:
 #          mode: always
@@ -33,4 +41,10 @@ spring:
 #    jpa:
 #        database-platform: org.hibernate.dialect.MySQLDialect
 #        hibernate:
+
+#  error:
+#    include-stacktrace: always
+#  error:
+#    whitelabel:
+#      enabled: false
 #            ddl-auto: create-drop
