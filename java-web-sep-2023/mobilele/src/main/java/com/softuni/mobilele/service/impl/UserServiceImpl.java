@@ -44,11 +44,10 @@ public class UserServiceImpl implements UserService {
         newUser.setPassword(passwordEncoder.encode(userRegistrationDTO.getPassword()));
 
         this.userRepository.save(newUser);
-
+        login(newUser.getEmail());
         emailService.sendRegistrationEmail(newUser.getEmail(),
                 newUser.getFirstName() + " " + newUser.getLastName());
 
-        login(newUser.getEmail());
     }
 
     @Override
