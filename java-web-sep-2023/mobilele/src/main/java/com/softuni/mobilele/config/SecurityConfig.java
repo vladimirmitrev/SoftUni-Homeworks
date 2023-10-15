@@ -93,9 +93,10 @@ public class SecurityConfig {
                                         .permitAll().
                                         requestMatchers("/", "/users/login", "/users/register")
                                         .permitAll().
+                                        requestMatchers("offers/all").permitAll()
 //                                        requestMatchers("/").hasRole(UserRoleEnum.USER.name()).
 //                                        requestMatchers("/").hasRole(UserRoleEnum.ADMIN.name()).
-                                        anyRequest().authenticated()
+                                .anyRequest().authenticated()
                 )
                 .formLogin(
                         (formLogin) ->

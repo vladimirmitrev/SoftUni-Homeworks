@@ -13,6 +13,8 @@ import com.softuni.mobilele.repository.ModelRepository;
 import com.softuni.mobilele.repository.OfferRepository;
 import com.softuni.mobilele.repository.UserRepository;
 import com.softuni.mobilele.service.OfferService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +72,13 @@ public class OfferServiceImpl implements OfferService {
         result.setName(modelEntity.getName());
 
         return result;
+    }
+
+    @Override
+    public Page<CardListingOfferDTO> getAllOffers(Pageable pageable) {
+        return offerRepository
+                .findAll(pageable)
+                .map(offerMapper::offerEntityToCardListingOfferDto);
     }
 
     @Override

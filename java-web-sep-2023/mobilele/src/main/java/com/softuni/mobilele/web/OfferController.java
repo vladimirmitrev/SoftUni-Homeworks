@@ -4,6 +4,8 @@ import com.softuni.mobilele.model.dto.offer.AddOfferDTO;
 import com.softuni.mobilele.model.dto.offer.SearchOfferDTO;
 import com.softuni.mobilele.service.OfferService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.UUID;
 
 @Controller
 //@RequestMapping("/offers")
@@ -25,7 +26,15 @@ public class OfferController {
     }
 
     @GetMapping("/offers/all")
-    public String allOffers() {
+    public String allOffers(
+            @PageableDefault(
+                    page = 0,
+                    size = 5) Pageable pageable,
+            Model model
+    ) {
+
+        model.addAttribute("offers", offerService.getAllOffers(pageable));
+
         return "offers";
     }
 
