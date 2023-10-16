@@ -12,22 +12,32 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg bg-nav rounded">
-        <a class="nav-link text-primary active h5 text-stroke" href="/">Reseller App</a>
-        <a class="nav-link text-primary active h5 text-stroke" href="/">Add Offer</a>
+        <th:block th:if="${@currentUser.id == null}">
+            <a class="nav-link text-primary active h5 text-stroke" th:href="@{/}">Reseller App</a>
+        </th:block>
+        <th:block th:unless="${@currentUser.id == null}">
+            <a class="nav-link text-primary active h5 text-stroke" th:href="@{/home}">Reseller App</a>
+            <a class="nav-link text-primary active h5 text-stroke" th:href="@{/}">Add Offer</a>
+        </th:block>
 
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
             <ul class="navbar-nav row">
-                <li class="nav-item col-md-4">
-                    <a class="nav-link text-primary active h5 text-stroke" href="/">Login</a>
-                </li>
 
-                <li class="nav-item col-md-4">
-                    <a class="nav-link text-primary active h5 text-stroke" href="/">Register</a>
-                </li>
+                <th:block th:if="${@currentUser.id == null}">
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-primary active h5 text-stroke" th:href="@{/users/login}">Login</a>
+                    </li>
 
-                <li class="nav-item col-md-4">
-                    <a class="nav-link text-primary active h5 text-stroke" href="/">Logout</a>
-                </li>
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-primary active h5 text-stroke" th:href="@{/users/register}">Register</a>
+                    </li>
+                </th:block>
+                <th:block th:unless="${@currentUser.id == null}">
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-primary active h5 text-stroke" th:href="@{/users/logout}">Logout</a>
+                    </li>
+                </th:block>
+
             </ul>
         </div>
     </nav>
