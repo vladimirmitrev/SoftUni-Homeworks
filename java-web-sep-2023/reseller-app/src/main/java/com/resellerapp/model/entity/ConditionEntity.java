@@ -10,7 +10,7 @@ public class ConditionEntity extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
-    private ConditionNameEnum name;
+    private ConditionNameEnum conditionNameEnum;
 
     @Column(nullable = false)
     private String description;
@@ -18,12 +18,12 @@ public class ConditionEntity extends BaseEntity {
     public ConditionEntity() {
     }
 
-    public ConditionNameEnum getName() {
-        return name;
+    public ConditionNameEnum getConditionNameEnum() {
+        return conditionNameEnum;
     }
 
-    public void setName(ConditionNameEnum name) {
-        this.name = name;
+    public void setConditionNameEnum(ConditionNameEnum conditionNameEnum) {
+        this.conditionNameEnum = conditionNameEnum;
     }
 
     public String getDescription() {

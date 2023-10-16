@@ -32,7 +32,7 @@ public class ConditionServiceImpl implements ConditionService {
         Arrays.stream(ConditionNameEnum.values())
                 .forEach(conditionNameEnum -> {
                     ConditionEntity condition = new ConditionEntity();
-                    condition.setName(conditionNameEnum);
+                    condition.setConditionNameEnum(conditionNameEnum);
                     switch (conditionNameEnum) {
                         case EXCELLENT:
                             condition.setDescription(EXCELLENT_CONDITION);
@@ -48,5 +48,12 @@ public class ConditionServiceImpl implements ConditionService {
                     conditionRepository.save(condition);
                 });
 
+    }
+
+    @Override
+    public ConditionEntity findByConditionNameEnum(ConditionNameEnum conditionNameEnum) {
+        return conditionRepository
+                .findByConditionNameEnum(conditionNameEnum)
+                .orElse(null);
     }
 }

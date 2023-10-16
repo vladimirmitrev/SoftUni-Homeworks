@@ -15,9 +15,9 @@
         <th:block th:if="${@currentUser.id == null}">
             <a class="nav-link text-primary active h5 text-stroke" th:href="@{/}">Reseller App</a>
         </th:block>
-        <th:block th:unless="${@currentUser.id == null}">
+        <th:block th:if="${@currentUser.id != null}">
             <a class="nav-link text-primary active h5 text-stroke" th:href="@{/home}">Reseller App</a>
-            <a class="nav-link text-primary active h5 text-stroke" th:href="@{/}">Add Offer</a>
+            <a class="nav-link text-primary active h5 text-stroke" th:href="@{/offers/add}">Add Offer</a>
         </th:block>
 
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">

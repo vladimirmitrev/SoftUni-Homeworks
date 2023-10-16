@@ -16,6 +16,11 @@ public class OfferEntity extends BaseEntity {
     @ManyToOne
     private ConditionEntity condition;
 
+    @ManyToOne
+    private UserEntity seller;
+    @ManyToOne
+    private UserEntity buyer;
+
     public OfferEntity() {
     }
 
@@ -42,6 +47,23 @@ public class OfferEntity extends BaseEntity {
     public void setCondition(ConditionEntity condition) {
         this.condition = condition;
     }
+
+    public UserEntity getSeller() {
+        return seller;
+    }
+
+    public void setSeller(UserEntity seller) {
+        this.seller = seller;
+    }
+
+    public UserEntity getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(UserEntity buyer) {
+        this.buyer = buyer;
+    }
+
 
     //•	Has an Id – “UUID-String” or Long
     //•	Has a Description (not null)

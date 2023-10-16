@@ -1,9 +1,7 @@
 package com.resellerapp.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,10 +14,10 @@ public class UserEntity extends BaseEntity {
     private String password;
     @Column(nullable = false, unique = true)
     private String email;
-    @OneToMany
+    @OneToMany(mappedBy = "seller", fetch = FetchType.EAGER)
     private Set<OfferEntity> offers;
-    @OneToMany
-    private Set<OfferEntity> boughtOffers;
+    @OneToMany(mappedBy = "buyer", fetch = FetchType.EAGER)
+    private List<OfferEntity> boughtOffers;
 
     public UserEntity() {
     }
@@ -56,15 +54,15 @@ public class UserEntity extends BaseEntity {
         this.offers = offers;
     }
 
-    public Set<OfferEntity> getBoughtOffers() {
+    public List<OfferEntity> getBoughtOffers() {
         return boughtOffers;
     }
 
-    public void setBoughtOffers(Set<OfferEntity> boughtOffers) {
+    public void setBoughtOffers(List<OfferEntity> boughtOffers) {
         this.boughtOffers = boughtOffers;
     }
 
-    //•	Has an Id – “UUID-String” or Long
+//•	Has an Id – “UUID-String” or Long
     //•	Has a Username (unique, not null)
     //o	Username length must be between 3 and 20 characters (inclusive of 3 and 20).
     //•	Has a Password (not null)

@@ -2,12 +2,16 @@ package com.resellerapp.service.impl;
 
 import com.resellerapp.model.entity.UserEntity;
 import com.resellerapp.model.service.UserServiceModel;
+import com.resellerapp.model.view.OfferBoughtViewModel;
 import com.resellerapp.repository.UserRepository;
 import com.resellerapp.service.UserService;
 import com.resellerapp.util.CurrentUser;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -55,4 +59,24 @@ public class UserServiceImpl implements UserService {
             currentUser.setId(id);
             currentUser.setUsername(username);
     }
+
+    @Override
+    public Optional<UserEntity> findById(Long id) {
+        return userRepository
+                .findById(id);
+    }
+
+    @Override
+    public Optional<UserEntity> findUserById(Long userId) {
+        return userRepository.findById(userId);
+    }
+
+//    @Override
+//    public UserEntity findByUsername(String username) {
+//        return userRepository
+//                .findByUsername(username)
+//                .orElse(null);
+//    }
+
+
 }
