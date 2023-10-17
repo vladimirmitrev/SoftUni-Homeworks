@@ -20,8 +20,7 @@ public class Task extends BaseEntity {
 
     @Future
     @Column(nullable = false)
-    private LocalDate date;
-
+    private LocalDate dueDate;
 
     @ManyToOne
     @NotNull
@@ -38,12 +37,12 @@ public class Task extends BaseEntity {
         this.description = description;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getDueDate() {
+        return dueDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
     }
 
     public Priority getPriority() {

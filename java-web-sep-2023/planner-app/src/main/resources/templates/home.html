@@ -9,46 +9,74 @@
 
         <div class="col-5">
             <h3 class=" bg-gray text-dark  mb-0 mt-2">Assigned to me</h3>
-            <h6 class=" bg-gray text-dark  mb-0 mt-0">Username: {loggedUsername}</h6>
+            <h6 class=" bg-gray text-dark  mb-0 mt-0" th:text="|Username: ${@loggedUser.username}|">Username:
+                {loggedUsername}</h6>
             <div class="bg-dark rounded m-auto" style="height: 67vh; overflow: auto">
-                <ul class="list-group list-group-horizontal text-dark">
+                <ul class="list-group list-group-horizontal text-dark"
+                    th:each="assignedTasks : ${tasks.getTasksAssignedToMe()}"
+                >
                     <li class="list-group-item bg-warning">
                         <table>
                             <tr>
-                                <td scope="row" style="width: 5%"><img class="mr-2 " src="/img/pin.png" alt="Pin" width="35px" height="35px"></td>
-                                <td style="width: 15%">{priority}</td>
-                                <td style="width: 40%">{dueDate}</td>
-                                <td><a href="/"><img src="/img/done-remove-button.png" height="35px"></a></td>
-                                <td><a href="/"><img src="/img/return.png" height="35px"></a></td>
+                                <td scope="row" style="width: 5%"><img class="mr-2 " src="/img/pin.png" alt="Pin"
+                                                                       width="35px" height="35px"></td>
+                                <td style="width: 15%" th:text="${assignedTasks.priority}">{priority}</td>
+                                <td style="width: 40%" th:text="${assignedTasks.dueDate}">{dueDate}</td>
+                                <td>
+                                    <form th:method="post"
+                                          th:action="@{/tasks/remove/{id}(id = ${assignedTasks.id})}">
+                                        <button type="submit" style="background:transparent; border:none; cursor:pointer">
+                                            <img src="/img/done-remove-button.png" height="35px">
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form th:method="post"
+                                          th:action="@{/tasks/return/{id}(id = ${assignedTasks.id})}">
+                                        <button type="submit" style="background:transparent; border:none; cursor: pointer">
+                                            <img src="/img/return.png" height="35px">
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         </table>
                     </li>
                     <li class="list-group-item list-group-item-warning text-dark">
-                        <a>{description}</a>
+                        <a th:text="${assignedTasks.description}">{description}</a>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div class="col-5">
+        <div class="col-5" th:object="${tasks}">
             <h3 class="mySticky bg-gray text-dark  mb-0 mt-2">All Available Tasks</h3>
-            <h6 class="mySticky bg-gray text-dark  mb-0 mt-0">{totalUnassignedTasks} Tasks</h6>
+            <h6 class="mySticky bg-gray text-dark  mb-0 mt-0" th:text="|${tasks.getAllTasks().size()} Tasks|">{totalUnassignedTasks} Tasks</h6>
             <div class="bg-dark rounded m-auto" style="height: 67vh; overflow: auto">
-                    <ul class="list-group list-group-horizontal text-dark">
-                        <li class="list-group-item bg-warning">
-                            <table>
-                                <tr>
-                                    <td style="width: 5%"><img class="mr-2 " src="/img/pin.png" alt="Pin" width="35px" height="35px"></td>
-                                    <td style="width: 15%"><a>{priority}</a></td>
-                                    <td><a>Due Date: {dueDate}</a></td>
-                                    <td><a class="ml-3" href="/"><img src="/img/assign-to-me-button.png" height="35px"></a></td>
-                                </tr>
-                            </table>
-                        </li>
-                        <li class="list-group-item list-group-item-warning text-dark">
-                            <a>{description}</a>
-                        </li>
-                    </ul>
+                <ul class="list-group list-group-horizontal text-dark"
+                    th:each="allAvailableTasks : ${tasks.getAllTasks()}"
+                >
+                    <li class="list-group-item bg-warning">
+                        <table>
+                            <tr>
+                                <td style="width: 5%"><img class="mr-2 " src="/img/pin.png" alt="Pin" width="35px"
+                                                           height="35px"></td>
+                                <td style="width: 15%"><a th:text="${allAvailableTasks.priority}">{priority}</a></td>
+                                <td><a th:text="${allAvailableTasks.dueDate}">Due Date: {dueDate}</a></td>
+                                <td>
+                                    <form th:method="post"
+                                          th:action="@{/tasks/assign/{id}(id = ${allAvailableTasks.id})}">
+                                        <button type="submit" style="background:transparent; border:none; cursor:pointer">
+                                            <img src="/img/assign-to-me-button.png" height="35px">
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li class="list-group-item list-group-item-warning text-dark">
+                        <a th:text="${allAvailableTasks.description}">{description}</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
