@@ -47,7 +47,7 @@ public class HomeController {
 //        model.addAttribute("currentUserInfo", user);
         model.addAttribute("user", user);
 
-        List<Post> postsFromCurrentUser = postService.getPostsFromCurrentUser(loggedUser.getId());
+        List<PostViewDTO> postsFromCurrentUser = postService.getPostsFromCurrentUser(loggedUser.getId());
         model.addAttribute("userPosts", postsFromCurrentUser);
 
         List<PostViewDTO> postsFromOtherUsers = this.postService.getPostsFromOtherUsers(this.loggedUser.getId());

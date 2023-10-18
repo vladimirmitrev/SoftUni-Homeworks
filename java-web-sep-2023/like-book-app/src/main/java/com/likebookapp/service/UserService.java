@@ -52,7 +52,9 @@ public class UserService {
     public boolean login(UserLoginBindingModel userLoginBindingModel) {
         String username = userLoginBindingModel.getUsername();
 
-        User user = userRepository.findByUsername(userLoginBindingModel.getUsername());
+        User user = userRepository
+                .findByUsername(userLoginBindingModel.getUsername())
+                .orElse(null);
 
         if(user != null
                 && passwordEncoder.matches(userLoginBindingModel.getPassword(),user.getPassword())) {
@@ -75,5 +77,19 @@ public class UserService {
 
         return userRepository
                 .findById(id);
+    }
+
+    public User findByUsername(String username) {
+
+        return userRepository
+                .findByUsername(username)
+                .orElse(null);
+    }
+
+    public User findById(Long userId) {
+
+        return userRepository
+                .findById(userId)
+                .orElse(null);
     }
 }
