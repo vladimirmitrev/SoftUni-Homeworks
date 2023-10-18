@@ -18,11 +18,10 @@ public class Post extends BaseEntity {
     @ManyToOne
     private User creator;
 
-    @ManyToMany
-    private List<User> likes;
-
     @ManyToOne
     private Mood mood;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<User> userLikes;
 
     public String getContent() {
         return content;
@@ -40,12 +39,12 @@ public class Post extends BaseEntity {
         this.creator = creator;
     }
 
-    public List<User> getLikes() {
-        return likes;
+    public List<User> getUserLikes() {
+        return userLikes;
     }
 
-    public void setLikes(List<User> likes) {
-        this.likes = likes;
+    public void setUserLikes(List<User> userLikes) {
+        this.userLikes = userLikes;
     }
 
     public Mood getMood() {

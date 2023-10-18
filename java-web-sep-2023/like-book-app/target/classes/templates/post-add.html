@@ -8,28 +8,42 @@
     <h1 class="text-center mt-2"><span class="badge badge-pill badge-dark">Add post</span></h1>
     <hr class="hr-3 w-25 bg-white"/>
 
-    <form class="mx-auto w-25 bg-blur rounded" method="" action="/" >
+    <form class="mx-auto w-25 bg-blur rounded"
+          th:method="post"
+          th:action="@{/posts/add}"
+          th:object="${postAddBindingModel}">
+
 
         <div class="form-group">
             <div class="label-holder text-white textCol d-flex justify-content-center">
                 <label for="content" class="h4 mb-2">Content</label>
             </div>
-            <textarea type="text" class="form-control" id="content" name="content"></textarea>
-            <small class="text-danger">Content error message</small>
+            <textarea type="text" class="form-control" id="content"
+                      th:field="*{content}"
+                      th:errorclass="'is-invalid bg-danger'"></textarea>
+            <small th:if="${#fields.hasErrors('content')}"
+                   th:errors="*{content}"
+                   class="text-danger">error message</small>
         </div>
 
         <div class="form-group">
             <div class="text-white label-holder d-flex justify-content-center">
                 <label for="mood" class="h4 mb-2">Mood</label>
             </div>
-            <select class="browser-default custom-select" id="mood" name="mood">
+            <select class="browser-default custom-select" id="mood"
+                    th:field="*{mood}"
+                    th:errorclass="'is-invalid bg-danger'">
                 <option value="">Select mood</option>
-                <option value="HAPPY">Happy</option>
-                <option value="SAD">Sad</option>
-                <option value="INSPIRED">Inspired</option>
+                <option th:each="m : ${T(com.likebookapp.model.entity.enums.MoodNameEnum).values()}"
+                        th:text="${m}"
+                        th:value="${m}"
+                        th:selected="${m} == *{mood}"
+                >Mood</option>
             </select>
 
-            <small class="text-danger">Mood error message</small>
+            <small
+                    th:if="${#fields.hasErrors('mood')}"
+                    th:errors="*{mood}" class="text-danger">Mood error message</small>
         </div>
 
         <div class="button-holder d-flex justify-content-center">

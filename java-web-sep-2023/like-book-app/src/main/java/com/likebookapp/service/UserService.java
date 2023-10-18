@@ -8,6 +8,8 @@ import com.likebookapp.util.LoggedUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -55,6 +57,8 @@ public class UserService {
         if(user != null
                 && passwordEncoder.matches(userLoginBindingModel.getPassword(),user.getPassword())) {
 
+            loggedUser.setId(user.getId());
+            loggedUser.setUsername(user.getUsername());
             loggedUser.login(username);
 
             return true;
@@ -62,9 +66,14 @@ public class UserService {
         return false;
     }
 
-
     public void logout() {
 
         this.loggedUser.logout();
+    }
+
+    public Optional<User> findUserById(Long id) {
+
+        return userRepository
+                .findById(id);
     }
 }

@@ -2,12 +2,10 @@ package com.likebookapp.model.entity;
 
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -25,6 +23,9 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "creator")
     private List<Post> posts;
+
+    @ManyToMany(mappedBy = "userLikes",fetch = FetchType.EAGER)
+    private List<Post> likedPosts;
 
     public String getUsername() {
         return username;
@@ -56,5 +57,14 @@ public class User extends BaseEntity {
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+    }
+
+
+    public List<Post> getLikedPosts() {
+        return likedPosts;
+    }
+
+    public void setLikedPosts(List<Post> likedPosts) {
+        this.likedPosts = likedPosts;
     }
 }
