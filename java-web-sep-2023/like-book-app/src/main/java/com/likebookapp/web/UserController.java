@@ -65,9 +65,9 @@ public class UserController {
     @GetMapping("/register")
     public ModelAndView register(@ModelAttribute("userRegisterBindingModel") UserRegisterBindingModel userRegisterBindingModel) {
 
-//        if(loggedUser.isLogged()) {
-//            return new ModelAndView("redirect:/home");
-//        }
+        if(loggedUser.isLogged()) {
+            return new ModelAndView("redirect:/home");
+        }
 
         return new ModelAndView("register");
     }
