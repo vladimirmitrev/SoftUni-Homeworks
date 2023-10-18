@@ -42,9 +42,9 @@ public class UserController {
             @ModelAttribute("userLoginBindingModel") @Valid UserLoginBindingModel userLoginBindingModel,
             BindingResult bindingResult) {
 
-//        if(loggedUser.isLogged()) {
-//            return new ModelAndView("redirect:/home");
-//        }
+        if(loggedUser.isLogged()) {
+            return new ModelAndView("redirect:/home");
+        }
 
         if (bindingResult.hasErrors()) {
 
@@ -77,9 +77,9 @@ public class UserController {
     public ModelAndView register(@ModelAttribute("userRegisterBindingModel") @Valid UserRegisterBindingModel userRegisterBindingModel,
                                  BindingResult bindingResult) {
 
-//        if(loggedUser.isLogged()) {
-//            return new ModelAndView("redirect:/home");
-//        }
+        if(loggedUser.isLogged()) {
+            return new ModelAndView("redirect:/home");
+        }
 
         if (bindingResult.hasErrors()) {
 
