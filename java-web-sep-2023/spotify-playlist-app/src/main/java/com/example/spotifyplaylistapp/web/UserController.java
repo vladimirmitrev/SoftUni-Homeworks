@@ -1,8 +1,7 @@
 package com.example.spotifyplaylistapp.web;
 
-import com.example.spotifyplaylistapp.model.dto.UserLoginBindingModel;
-import com.example.spotifyplaylistapp.model.dto.UserRegisterBindingModel;
-import com.example.spotifyplaylistapp.model.entity.User;
+import com.example.spotifyplaylistapp.model.dto.user.UserLoginBindingModel;
+import com.example.spotifyplaylistapp.model.dto.user.UserRegisterBindingModel;
 import com.example.spotifyplaylistapp.service.UserService;
 import com.example.spotifyplaylistapp.util.LoggedUser;
 import org.springframework.stereotype.Controller;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -41,9 +41,10 @@ public class UserController {
     @GetMapping("/register")
     public String register(Model model) {
 
-//        if(loggedUser.isLogged()) {
-//            return "redirect:/home";
-//        }
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
+
         if (!model.containsAttribute("notTaken")) {
             model.addAttribute("notTaken", true);
         }
@@ -56,9 +57,9 @@ public class UserController {
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
 
-        //        if(loggedUser.isLogged()) {
-//            return "redirect:/home";
-//        }
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
 
 
         if (bindingResult.hasErrors() || !userRegisterBindingModel.getPassword()
@@ -95,6 +96,10 @@ public class UserController {
     @GetMapping("/login")
     public String login(Model model) {
 
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
+
         if (!model.containsAttribute("isFound")) {
             model.addAttribute("isFound", true);
         }
@@ -106,6 +111,10 @@ public class UserController {
     public String confirmLogin(@Valid UserLoginBindingModel userLoginBindingModel,
                                BindingResult bindingResult,
                                RedirectAttributes redirectAttributes) {
+
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
 
         if (bindingResult.hasErrors()) {
 
@@ -126,6 +135,20 @@ public class UserController {
 
             return "redirect:login";
         }
+
+        return "redirect:/";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession httpSession) {
+
+        if (!loggedUser.isLogged()) {
+            return "redirect:/";
+        }
+
+        userService.logout();
+
+//        httpSession.invalidate();
 
         return "redirect:/";
     }

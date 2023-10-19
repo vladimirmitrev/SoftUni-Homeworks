@@ -19,7 +19,7 @@ public class User extends BaseEntity {
     @Email
     private String email;
 
-    @ManyToMany(mappedBy = "users",fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Song> userSongs;
 
     public String getUsername() {
@@ -53,4 +53,13 @@ public class User extends BaseEntity {
     public void setUserSongs(List<Song> userSongs) {
         this.userSongs = userSongs;
     }
+
+    public void addSongToPlaylist(Song song) {
+        this.userSongs.add(song);
+    }
+
+    public void deleteAllSongFromUserSongs() {
+        this.userSongs.clear();
+    }
+
 }

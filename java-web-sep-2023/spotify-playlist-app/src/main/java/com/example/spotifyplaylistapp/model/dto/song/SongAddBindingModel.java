@@ -1,37 +1,29 @@
-package com.example.spotifyplaylistapp.model.entity;
+package com.example.spotifyplaylistapp.model.dto.song;
 
-import org.hibernate.validator.constraints.Length;
+import com.example.spotifyplaylistapp.model.entity.enums.StyleNameEnum;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
-import java.util.List;
 
-@Entity
-@Table(name = "songs")
-public class Song extends BaseEntity {
+public class SongAddBindingModel {
 
-    @Length(min = 3, max = 20)
-    @Column(nullable = false)
+    @Size(min = 3, max = 20,message = "Performer name length must be between 3 and 20 characters!")
     private String performer;
 
-    @Length(min = 2, max = 20)
-    @Column(nullable = false)
+    @Size(min = 2, max = 20,message = "Title length must be between 3 and 20 characters!")
     private String title;
 
-    @Column(nullable = false)
     @Positive
+    @NotNull
     private int duration;
 
-    @PastOrPresent
+    @PastOrPresent(message = "The Date cannot be in future!")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
 
-    @ManyToOne
-    private Style style;
-
-    @ManyToMany(mappedBy = "userSongs")
-    private List<User> users;
+    @NotNull(message = "You must select a style!")
+    private StyleNameEnum style;
 
     public String getPerformer() {
         return performer;
@@ -65,19 +57,11 @@ public class Song extends BaseEntity {
         this.releaseDate = releaseDate;
     }
 
-    public Style getStyle() {
+    public StyleNameEnum getStyle() {
         return style;
     }
 
-    public void setStyle(Style style) {
+    public void setStyle(StyleNameEnum style) {
         this.style = style;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
     }
 }

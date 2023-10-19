@@ -1,4 +1,4 @@
-package com.example.spotifyplaylistapp.model.dto;
+package com.example.spotifyplaylistapp.model.dto.user;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
