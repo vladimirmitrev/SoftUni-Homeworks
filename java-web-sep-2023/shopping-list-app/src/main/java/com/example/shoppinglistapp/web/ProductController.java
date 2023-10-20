@@ -7,22 +7,17 @@ import com.example.shoppinglistapp.util.LoggedUser;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/products")
 public class ProductController {
 
-    private final UserService userService;
     private final ProductService productService;
     private final LoggedUser loggedUser;
 
-    public ProductController(UserService userService, ProductService productService, LoggedUser loggedUser) {
-        this.userService = userService;
+    public ProductController(ProductService productService, LoggedUser loggedUser) {
         this.productService = productService;
         this.loggedUser = loggedUser;
     }
@@ -35,9 +30,9 @@ public class ProductController {
     @GetMapping("/add")
     public String add() {
 
-//        if(!loggedUser.isLogged()) {
-//            return "redirect:/users/login";
-//        }
+        if(!loggedUser.isLogged()) {
+            return "redirect:/users/login";
+        }
 
 
         return "product-add";
@@ -47,9 +42,9 @@ public class ProductController {
                                  BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes)  {
 
-//        if(!loggedUser.isLogged()) {
-//            return "redirect:/users/login";
-//        }
+        if(!loggedUser.isLogged()) {
+            return "redirect:/users/login";
+        }
 
         if(bindingResult.hasErrors()) {
 
@@ -62,6 +57,29 @@ public class ProductController {
         }
 
         productService.addProduct(productAddBindingModel);
+
+        return "redirect:/home";
+    }
+
+    @GetMapping("/buy/{id}")
+    public String buy(@PathVariable Long id) {
+
+        if(!loggedUser.isLogged()) {
+            return "redirect:/users/login";
+        }
+
+        productService.removeProductById(id);
+
+        return "redirect:/home";
+    }
+    @GetMapping("/buy-all")
+    public String buyAll() {
+
+        if(!loggedUser.isLogged()) {
+            return "redirect:/users/login";
+        }
+
+        productService.removeAllProducts();
 
         return "redirect:/home";
     }

@@ -42,9 +42,9 @@ public class UserController {
     @GetMapping("/register")
     public String register(Model model) {
 
-//        if (loggedUser.isLogged()) {
-//            return "redirect:/home";
-//        }
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
 
         if (!model.containsAttribute("notTaken")) {
             model.addAttribute("notTaken", true);
@@ -58,9 +58,9 @@ public class UserController {
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
 
-//        if (loggedUser.isLogged()) {
-//            return "redirect:/home";
-//        }
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
 
 
         if (bindingResult.hasErrors() || !userRegisterBindingModel.getPassword()
@@ -96,9 +96,9 @@ public class UserController {
     @GetMapping("/login")
     public String login(Model model) {
 
-//        if (loggedUser.isLogged()) {
-//            return "redirect:/home";
-//        }
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
 
         if (!model.containsAttribute("isFound")) {
             model.addAttribute("isFound", true);
@@ -112,9 +112,9 @@ public class UserController {
                                BindingResult bindingResult,
                                RedirectAttributes redirectAttributes) {
 
-//        if (loggedUser.isLogged()) {
-//            return "redirect:/home";
-//        }
+        if (loggedUser.isLogged()) {
+            return "redirect:/home";
+        }
 
         if (bindingResult.hasErrors()) {
 
@@ -142,9 +142,9 @@ public class UserController {
     @GetMapping("/logout")
     public String logout(HttpSession httpSession) {
 
-//        if (!loggedUser.isLogged()) {
-//            return "redirect:/";
-//        }
+        if (!loggedUser.isLogged()) {
+            return "redirect:/";
+        }
 
         userService.logout();
 

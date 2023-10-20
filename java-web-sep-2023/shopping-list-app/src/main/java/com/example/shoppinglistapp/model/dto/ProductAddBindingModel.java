@@ -15,7 +15,7 @@ public class ProductAddBindingModel {
     @Size(min = 3, max = 20,message = "Name length must be between 3 and 20 characters!")
     private String name;
 
-    @Size(min = 2, max = 20,message = "Description length must be more than 5 characters!")
+    @Size(min = 5, message = "Description length must be more than 5 characters!")
     private String description;
 
 
