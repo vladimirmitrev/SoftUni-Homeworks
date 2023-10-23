@@ -15,8 +15,7 @@ public class I18NConfig {
     public LocaleResolver localeResolver() {
         CookieLocaleResolver clr = new CookieLocaleResolver();
         clr.setCookieName("lang");
-            clr.setCookieDomain("lang");
-
+//            clr.setCookieDomain("lang");
         return clr;
     }
 
