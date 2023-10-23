@@ -84,7 +84,6 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 
-
         http
                 .authorizeHttpRequests(
                         authorizeHttpRequests ->
@@ -93,10 +92,11 @@ public class SecurityConfig {
                                         .permitAll().
                                         requestMatchers("/", "/users/login", "/users/register")
                                         .permitAll().
-                                        requestMatchers("offers/all").permitAll()
+                                        requestMatchers("/offers/add").authenticated().
+                                        requestMatchers("/offers/**").permitAll()
 //                                        requestMatchers("/").hasRole(UserRoleEnum.USER.name()).
 //                                        requestMatchers("/").hasRole(UserRoleEnum.ADMIN.name()).
-                                .anyRequest().authenticated()
+                                        .anyRequest().authenticated()
                 )
                 .formLogin(
                         (formLogin) ->
@@ -107,7 +107,7 @@ public class SecurityConfig {
                                         passwordParameter(
                                                 UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY).
                                         defaultSuccessUrl("/")
-//                                .failureForwardUrl("/users/login-error")
+                                        .failureForwardUrl("/users/login-error")
                 )
                 .logout((logout) ->
                         logout.logoutUrl("/users/logout").
@@ -118,10 +118,14 @@ public class SecurityConfig {
 
 
         return http.build();
+
     }
-    @Bean public UserDetailsService userDetailsService(UserRepository userRepository) {
+
+    @Bean
+    public UserDetailsService userDetailsService(UserRepository userRepository) {
         return new MobileleUserDetailsService(userRepository);
     }
+
     @Bean
     public SecurityContextRepository securityContextRepository() {
         return new DelegatingSecurityContextRepository(
@@ -129,10 +133,11 @@ public class SecurityConfig {
                 new HttpSessionSecurityContextRepository()
         );
     }
+
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/error", "/resources/**");
-    }
+//    }
 //    @Bean
 //    CorsConfigurationSource corsConfigurationSource() {
 //        CorsConfiguration configuration = new CorsConfiguration();
@@ -155,6 +160,7 @@ public class SecurityConfig {
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        auth.authenticationProvider(authenticationProvider());
 //    }
+    }
 }
 
 

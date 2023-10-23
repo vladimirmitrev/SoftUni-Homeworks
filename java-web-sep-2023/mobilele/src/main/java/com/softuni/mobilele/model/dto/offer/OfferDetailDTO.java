@@ -119,8 +119,7 @@ public class OfferDetailDTO {
         return id;
     }
 
-    public OfferDetailDTO setId(UUID id) {
+    public void setId(UUID id) {
         this.id = id;
-        return this;
     }
 }
