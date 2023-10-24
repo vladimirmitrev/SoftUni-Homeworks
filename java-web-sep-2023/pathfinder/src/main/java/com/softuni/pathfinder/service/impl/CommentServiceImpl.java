@@ -1,5 +1,6 @@
 package com.softuni.pathfinder.service.impl;
 
+import com.softuni.pathfinder.exeptions.RouteNotFoundException;
 import com.softuni.pathfinder.model.dto.CommentCreationDTO;
 import com.softuni.pathfinder.model.entity.CommentEntity;
 import com.softuni.pathfinder.model.entity.RouteEntity;
@@ -12,6 +13,9 @@ import com.softuni.pathfinder.service.CommentService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -47,7 +51,24 @@ public class CommentServiceImpl implements CommentService {
 
         commentRepository.save(comment);
 
-        return new CommentDisplayView(comment.getId(),author.getFullName(), comment.getTextContent());
+        return new CommentDisplayView(comment.getId(), author.getFullName(), comment.getTextContent());
 
+    }
+
+    @Override
+    public List<CommentDisplayView> getAllCommentsForRoute(Long routeId) {
+
+        RouteEntity route = routeRepository
+                .findById(routeId)
+                .orElseThrow(RouteNotFoundException::new);
+
+        List<CommentEntity> comments = commentRepository.findAllByRoute(route);
+
+        return comments
+                .stream()
+                .map(comment -> new CommentDisplayView(
+                        comment.getId(),
+                        comment.getAuthor().getFullName(),
+                        comment.getTextContent())).collect(Collectors.toList());
     }
 }

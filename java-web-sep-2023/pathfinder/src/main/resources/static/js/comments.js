@@ -28,13 +28,24 @@ async function handleFormSubmission(event) {
             document.getElementById('message').value = "";
             commentContainer.innerHTML += commentAsHtml(data);
         });
-
-    function commentAsHtml(comment) {
-        let commentHtml = '<div>\n';
-        commentHtml += `<h4>${comment.authorName}</h4>\n`;
-        commentHtml += `<p>${comment.message}</p>\n`;
-        commentHtml += '</div>\n';
-
-        return commentHtml;
-    }
 }
+
+function commentAsHtml(comment) {
+    let commentHtml = '<div>\n';
+    commentHtml += `<h4>${comment.authorName}</h4>\n`;
+    commentHtml += `<p>${comment.message}</p>\n`;
+    commentHtml += '</div>\n';
+
+    return commentHtml;
+}
+
+fetch(`http://localhost:8080/api/${routeId}/comments`, {
+    headers: {
+        'Accept': 'application/json'
+    }
+}).then(res => res.json())
+    .then(data => {
+        for (let comment of data) {
+            commentContainer.innerHTML += commentAsHtml(comment)
+        }
+    });
