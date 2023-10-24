@@ -10,6 +10,7 @@ import java.util.Set;
 
 public class RouteDetailsViewModel {
 
+    private Long id;
     private String gpxCoordinates;
 
     private String description;
@@ -23,6 +24,14 @@ public class RouteDetailsViewModel {
     private Set<PictureEntity> pictures;
 
     public RouteDetailsViewModel() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getGpxCoordinates() {

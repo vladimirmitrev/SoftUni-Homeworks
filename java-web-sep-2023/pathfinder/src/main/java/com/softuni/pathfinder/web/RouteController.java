@@ -2,6 +2,8 @@ package com.softuni.pathfinder.web;
 
 import com.softuni.pathfinder.model.binding.RouteAddBindingModel;
 import com.softuni.pathfinder.model.service.RouteServiceModel;
+import com.softuni.pathfinder.model.view.RouteDetailsViewModel;
+import com.softuni.pathfinder.model.view.RouteViewModel;
 import com.softuni.pathfinder.service.RouteService;
 import com.softuni.pathfinder.util.CurrentUser;
 import jakarta.validation.Valid;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.IOException;
 import java.security.Principal;
 import java.security.PublicKey;
+import java.util.List;
 
 @Controller
 @RequestMapping("/routes")
@@ -40,15 +43,19 @@ public class RouteController {
     @GetMapping("/all")
     public String allRoutes(Model model) {
 
-        model.addAttribute("routes", routeService.findAllRoutesView());
+        List<RouteViewModel> routes = routeService.findAllRoutesView();
+
+        model.addAttribute("routes", routes);
 
         return "routes";
     }
 
     @GetMapping("/details/{id}")
-    public String details(@PathVariable Long id, Model model) {
+    public String details(@PathVariable("id") Long id, Model model) {
 
-        model.addAttribute("route", routeService.findRouteById(id));
+        RouteDetailsViewModel route = routeService.findRouteById(id);
+
+        model.addAttribute("route", route);
 
         return "route-details";
     }
@@ -84,7 +91,7 @@ public class RouteController {
                 routeAddBindingModel.getGpxCoordinates().getBytes()));
 
 
-        routeService.addNewRoute(routeServiceModel,userDetails);
+        routeService.addNewRoute(routeServiceModel, userDetails);
 
 
         return "redirect:all";

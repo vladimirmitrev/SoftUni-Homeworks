@@ -1,5 +1,6 @@
 package com.softuni.pathfinder.service.impl;
 
+import com.softuni.pathfinder.exeptions.RouteNotFoundException;
 import com.softuni.pathfinder.model.entity.RouteEntity;
 import com.softuni.pathfinder.model.entity.UserEntity;
 import com.softuni.pathfinder.model.service.RouteServiceModel;
@@ -90,6 +91,6 @@ public class RouteServiceImpl implements RouteService {
                 .findById(id)
                 .map(routeEntity ->
                         modelMapper.map(routeEntity, RouteDetailsViewModel.class))
-                .orElse(null);
+                .orElseThrow(RouteNotFoundException::new);
     }
 }

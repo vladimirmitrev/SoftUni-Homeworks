@@ -76,6 +76,21 @@ img {
     background: var(--dark);
     color: var(--light);
 }
+.nav-btn {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+.nav-btn:hover {
+    background: var(--dark);
+    color: var(--light);
+}
 
 /* Top Container */
 .top-container {

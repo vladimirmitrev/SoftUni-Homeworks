@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -39,9 +40,9 @@ public class PathfinderSecurityConfiguration {
                 // everyone can download static resources (css, js, images)
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 // everyone can login and register
-                .requestMatchers("/", "/users/login", "/users/register").permitAll()
+                .requestMatchers("/", "/routes/**","/about").permitAll()
                 .requestMatchers("/users/profile").authenticated()
-//                .requestMatchers("/users/login", "/users/register").anonymous()
+                .requestMatchers("/users/login", "/users/register").anonymous()
                 // all other pages are available for logger in users
                 .anyRequest()
                 .authenticated()
@@ -77,4 +78,8 @@ public class PathfinderSecurityConfiguration {
     public UserDetailsService userDetailsService(UserRepository userRepository) {
         return new PathfinderUserDetailsService(userRepository);
    }
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring().requestMatchers("/error", "/resources/**");
+    }
 }
