@@ -41,7 +41,7 @@ public class PathfinderSecurityConfiguration {
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 // everyone can login and register
                 .requestMatchers("/", "/routes/**","/about").permitAll()
-                .requestMatchers("/users/profile").authenticated()
+                .requestMatchers("/users/profile", "/api/**").authenticated()
                 .requestMatchers("/users/login", "/users/register").anonymous()
                 // all other pages are available for logger in users
                 .anyRequest()
@@ -64,7 +64,7 @@ public class PathfinderSecurityConfiguration {
                 .logout()
                 // which is the logout url
                 .logoutUrl("/users/logout")
-//                .logoutSuccessUrl("/")
+                .logoutSuccessUrl("/")
                 // invalidate the session and delete the cookies
                 .invalidateHttpSession(true)
 //                .clearAuthentication(true)

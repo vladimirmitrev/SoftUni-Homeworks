@@ -11,7 +11,7 @@
 
         <th:block sec:authorize="isAnonymous()" >
             <li>
-                <a th:href="@{/}">Home</a>
+                <a th:href="@{/}" >Home</a>
             </li>
             <li>
                 <a href="/users/login">Login</a>
@@ -30,6 +30,9 @@
         </li>
         <li>
             <a th:href="@{/users/profile/}">Profile</a>
+        </li>
+        <li>
+            <a th:href="@{/users/admin}" sec:authorize="hasRole('ADMIN')">Admin</a>
         </li>
         <li>
 <!--            <a th:href="@{/users/logout}">Logout</a>-->

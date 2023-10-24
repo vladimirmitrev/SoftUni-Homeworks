@@ -44,6 +44,8 @@ INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (4, 2);
 INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (4, 1);
+# INSERT INTO users_roles (`user_entity_id`, `roles_id`)
+# VALUES (5, 1);
 
 -- categories
 INSERT INTO categories (id, description, name)

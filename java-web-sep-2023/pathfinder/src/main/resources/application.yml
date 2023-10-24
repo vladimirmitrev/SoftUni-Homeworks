@@ -32,4 +32,13 @@ spring:
 #cloudinary:
   #api-key: 
   #api-secret: 
-  #cloud-name: 
+  #cloud-name:
+  logging:
+    level:
+      org:
+        hibernate:
+          type:
+            descriptor: TRACE
+          SQL: DEBUG
+        nodeValue: WARN
+      blog: WARN
