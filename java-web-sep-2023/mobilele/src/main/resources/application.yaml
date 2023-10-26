@@ -11,13 +11,16 @@ spring:
     password: ${MYSQL_PASSWORD:12345}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     defer-datasource-initialization: true
     open-in-view: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
+  sql:
+      init:
+            mode: always
 server:
   port: 8081
 
@@ -26,10 +29,7 @@ mail:
   port: 1025
   username: "mobilele@mobilele.com"
   password: ""
-  
-#  sql:
-#      init:
-#          mode: always
+
 
 
 #spring:
