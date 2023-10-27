@@ -5,6 +5,7 @@ import com.softuni.mobilele.model.dto.offer.SearchOfferDTO;
 import com.softuni.mobilele.model.user.MobileleUserDetails;
 import com.softuni.mobilele.service.OfferService;
 import jakarta.validation.Valid;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -15,6 +16,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.UUID;
 
 
 @Controller
@@ -44,7 +47,7 @@ public class OfferController {
 
     @GetMapping("/offers/add")
     public String add(Model model) {
-        if(!model.containsAttribute("addOfferModel")) {
+        if (!model.containsAttribute("addOfferModel")) {
             model.addAttribute("addOfferModel", new AddOfferDTO());
         }
         model.addAttribute("brands", offerService.getAllBrands());
@@ -76,11 +79,8 @@ public class OfferController {
 //        return "details";
 //    }
 
+
     @GetMapping("/offers/search")
-    public String searchOffer() {
-        return "offer-search";
-    }
-    @PostMapping("/offers/search")
     public String searchQuery(@Valid SearchOfferDTO searchOfferDTO,
                               BindingResult bindingResult,
                               Model model) {
@@ -91,29 +91,30 @@ public class OfferController {
                     "org.springframework.validation.BindingResult.searchOfferModel",
                     bindingResult);
 
-            return "redirect:/offers/search";
+            return "offer-search";
         }
 
-//        if (!model.containsAttribute("searchOfferModel")) {
-//            model.addAttribute("searchOfferModel", searchOfferDTO);
-//        }
+        if (!model.containsAttribute("searchOfferModel")) {
+            model.addAttribute("searchOfferModel", searchOfferDTO);
+        }
 
-//        if (!searchOfferDTO.isEmpty()) {
-//            model.addAttribute("offers", offerService.searchOffer(searchOfferDTO));
-//        }
+        if (!searchOfferDTO.isEmpty()) {
+            model.addAttribute("offers", offerService.searchOffer(searchOfferDTO));
+        }
 
-        return String.format("redirect:/offers/search/%s", searchOfferDTO.getQuery());
-    }
-
-    @GetMapping("offers/search/{query}")
-    public String searchResults(@PathVariable String query, Model model) {
-        model.addAttribute("offers", this.offerService.findOfferByOfferName(query));
         return "offer-search";
     }
+    @GetMapping("/offers/{id}")
+    public String getOfferDetail(@PathVariable("id") UUID uuid,
+                                 Model model) {
 
-    @ModelAttribute(name = "searchOfferModel")
-    private SearchOfferDTO initSearchModel() {
-        return new SearchOfferDTO();
+//        var offerDto =
+//                offerService.findOfferByUUID(uuid).
+//                        orElseThrow(() -> new ObjectNotFoundException("Offer with UUID " +
+//                                uuid + " not found!"));
+
+//        model.addAttribute("offer", offerDto);
+
+        return "details";
     }
-
 }

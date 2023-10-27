@@ -8,13 +8,11 @@ import com.softuni.mobilele.model.entity.ModelEntity;
 import com.softuni.mobilele.model.entity.OfferEntity;
 import com.softuni.mobilele.model.entity.UserEntity;
 import com.softuni.mobilele.model.mapper.OfferMapper;
-import com.softuni.mobilele.repository.BrandRepository;
-import com.softuni.mobilele.repository.ModelRepository;
-import com.softuni.mobilele.repository.OfferRepository;
-import com.softuni.mobilele.repository.UserRepository;
+import com.softuni.mobilele.repository.*;
 import com.softuni.mobilele.service.OfferService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -75,11 +73,12 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public Page<CardListingOfferDTO> getAllOffers(Pageable pageable) {
+    public Page<OfferDetailDTO> getAllOffers(Pageable pageable) {
         return offerRepository
                 .findAll(pageable)
-                .map(offerMapper::offerEntityToCardListingOfferDto);
+                .map(offerMapper::offerEntityToOfferDetailDto);
     }
+
 
     @Override
     public void addOffer(AddOfferDTO addOfferDTO, UserDetails userDetails) {
@@ -102,12 +101,17 @@ public class OfferServiceImpl implements OfferService {
         offerRepository.save(newOffer);
     }
 
-    public List<CardListingOfferDTO> findOfferByOfferName(String query) {
-        return this.offerRepository
-                .findAllByModel_NameContains(query)
-                .stream()
-                .map(offerMapper::offerEntityToCardListingOfferDto)
-                .toList();
+    @Override
+    public List<OfferDetailDTO> searchOffer(SearchOfferDTO searchOfferDTO) {
+
+        Specification<OfferEntity> offerEntitySpecification = new OfferSpecification(searchOfferDTO);
+
+        List<OfferDetailDTO> offerDetailDTOList = this.offerRepository
+                .findAll(offerEntitySpecification)
+                .stream().map(offer -> offerMapper.offerEntityToOfferDetailDto(offer)).
+                toList();
+
+        return offerDetailDTOList;
     }
 
 //    @Override

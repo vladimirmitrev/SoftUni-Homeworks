@@ -1,19 +1,47 @@
 package com.softuni.mobilele.model.dto.offer;
 
-import jakarta.validation.constraints.NotEmpty;
-
 public class SearchOfferDTO {
-    @NotEmpty
-    private String query;
 
-    public SearchOfferDTO() {
+    private String model;
+
+    private Integer minPrice;
+    private Integer maxPrice;
+
+    public String getModel() {
+        return model;
     }
 
-    public String getQuery() {
-        return query;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public void setQuery(String query) {
-        this.query = query;
+    public Integer getMinPrice() {
+        return minPrice;
+    }
+
+    public void setMinPrice(Integer minPrice) {
+        this.minPrice = minPrice;
+    }
+
+    public Integer getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(Integer maxPrice) {
+        this.maxPrice = maxPrice;
+    }
+
+    public boolean isEmpty() {
+        return (model == null || model.isEmpty() &&
+                minPrice == null &&
+                maxPrice == null);
+    }
+    @Override
+    public String toString() {
+        return "SearchOfferDTO{" +
+                "model='" + model + '\'' +
+                ", minPrice=" + minPrice +
+                ", maxPrice=" + maxPrice +
+                '}';
     }
 }

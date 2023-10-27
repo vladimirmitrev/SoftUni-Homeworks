@@ -30,7 +30,10 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'com.icegreen:greenmail:2.0.0'
 	testRuntimeOnly 'org.hsqldb:hsqldb'
+	implementation 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final'
+	implementation 'org.jetbrains:annotations:24.0.1'
 }
 
 tasks.named('test') {
