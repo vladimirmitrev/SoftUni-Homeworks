@@ -20,4 +20,5 @@ public interface OfferService {
     public Page<OfferDetailDTO> getAllOffers(Pageable pageable);
     public List<OfferDetailDTO> searchOffer(SearchOfferDTO searchOfferDTO);
     public Optional<OfferDetailDTO> findOfferByUUID(UUID offerId);
+    void deleteOfferById(UUID offerId);
 }

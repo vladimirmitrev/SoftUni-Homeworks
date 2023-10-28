@@ -123,6 +123,12 @@ public class OfferServiceImpl implements OfferService {
                 .map(offerMapper::offerEntityToOfferDetailDto);
     }
 
+    @Override
+    public void deleteOfferById(UUID offerId) {
+        
+        offerRepository.deleteById(offerId);
+    }
+
 //    @Override
 //    public UUID createOffer(CreateOfferDTO createOfferDTO) {
 //        //Todo: create offer
