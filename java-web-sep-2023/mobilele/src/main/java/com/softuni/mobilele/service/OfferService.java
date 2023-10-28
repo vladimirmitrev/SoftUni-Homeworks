@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 public interface OfferService {
 
@@ -17,4 +19,5 @@ public interface OfferService {
 //    UUID createOffer(CreateOfferDTO createOfferDTO);
     public Page<OfferDetailDTO> getAllOffers(Pageable pageable);
     public List<OfferDetailDTO> searchOffer(SearchOfferDTO searchOfferDTO);
+    public Optional<OfferDetailDTO> findOfferByUUID(UUID offerId);
 }

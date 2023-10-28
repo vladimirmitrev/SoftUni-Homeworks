@@ -1,14 +1,12 @@
 package com.softuni.mobilele.config;
 
 
-import com.softuni.mobilele.model.enums.UserRoleEnum;
 import com.softuni.mobilele.repository.UserRepository;
 import com.softuni.mobilele.service.MobileleUserDetailsService;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,15 +17,19 @@ import org.springframework.security.web.context.DelegatingSecurityContextReposit
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.security.web.context.RequestAttributeSecurityContextRepository;
 import org.springframework.security.web.context.SecurityContextRepository;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import java.util.Arrays;
-import java.util.List;
 
 @Configuration
 public class SecurityConfig {
+//    private final String rememberMeKey;
+//
+//    public SecurityConfiguration(@Value("${mobilele.remember.me.key}")
+//                                 String rememberMeKey) {
+//        this.rememberMeKey = rememberMeKey;
+//    }
+//
+//    public SecurityConfig(String rememberMeKey) {
+//        this.rememberMeKey = rememberMeKey;
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -90,12 +92,12 @@ public class SecurityConfig {
                                 authorizeHttpRequests.
                                         requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                                         .permitAll().
-                                        requestMatchers("/", "/users/login", "/users/register")
+                                        requestMatchers("/", "/users/login", "/users/register","/users/login-error")
                                         .permitAll().
                                         requestMatchers("/offers/add").authenticated().
                                         requestMatchers("/offers/**").permitAll()
-//                                        requestMatchers("/").hasRole(UserRoleEnum.USER.name()).
-//                                        requestMatchers("/").hasRole(UserRoleEnum.ADMIN.name()).
+//                                        .requestMatchers("/").hasRole(UserRoleEnum.USER.name())
+//                                        .requestMatchers("/").hasRole(UserRoleEnum.ADMIN.name())
                                         .anyRequest().authenticated()
                 )
                 .formLogin(
@@ -114,7 +116,14 @@ public class SecurityConfig {
                                 logoutSuccessUrl("/").//go to homepage after logout
                                 invalidateHttpSession(true)
                                 .deleteCookies("JSESSIONID")
-                );
+//                ).rememberMe(
+//                        rememberMe -> {
+//                            rememberMe
+//                                    .key(rememberMeKey)
+//                                    .rememberMeParameter("rememberme")
+//                                    .rememberMeCookieName("rememberme");
+//                        }
+                        );
 
 
         return http.build();

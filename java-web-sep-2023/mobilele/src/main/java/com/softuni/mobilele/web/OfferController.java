@@ -1,11 +1,11 @@
 package com.softuni.mobilele.web;
 
+import com.softuni.mobilele.exception.ObjectNotFoundException;
 import com.softuni.mobilele.model.dto.offer.AddOfferDTO;
 import com.softuni.mobilele.model.dto.offer.SearchOfferDTO;
 import com.softuni.mobilele.model.user.MobileleUserDetails;
 import com.softuni.mobilele.service.OfferService;
 import jakarta.validation.Valid;
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -104,16 +104,17 @@ public class OfferController {
 
         return "offer-search";
     }
+
     @GetMapping("/offers/{id}")
     public String getOfferDetail(@PathVariable("id") UUID uuid,
                                  Model model) {
 
-//        var offerDto =
-//                offerService.findOfferByUUID(uuid).
-//                        orElseThrow(() -> new ObjectNotFoundException("Offer with UUID " +
-//                                uuid + " not found!"));
+        var offerDto =
+                offerService.findOfferByUUID(uuid)
+                        .orElseThrow(() -> new ObjectNotFoundException("Offer with UUID " +
+                                uuid + " not found!"));
 
-//        model.addAttribute("offer", offerDto);
+        model.addAttribute("offer", offerDto);
 
         return "details";
     }
