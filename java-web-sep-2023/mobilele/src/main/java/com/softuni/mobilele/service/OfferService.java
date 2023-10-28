@@ -21,4 +21,5 @@ public interface OfferService {
     public List<OfferDetailDTO> searchOffer(SearchOfferDTO searchOfferDTO);
     public Optional<OfferDetailDTO> findOfferByUUID(UUID offerId);
     void deleteOfferById(UUID offerId);
+    boolean isOwner(String userName, UUID offerId);
 }

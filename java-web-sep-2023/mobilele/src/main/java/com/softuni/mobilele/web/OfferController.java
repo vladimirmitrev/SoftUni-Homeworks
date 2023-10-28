@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.UUID;
 
 
@@ -119,8 +121,11 @@ public class OfferController {
         return "details";
     }
 
+    @PreAuthorize("@offerServiceImpl.isOwner(#principal.name, #uuid)")
     @DeleteMapping("/offers/{id}")
-    public String deleteOffer(@PathVariable("id") UUID uuid) {
+    public String deleteOffer(
+            Principal principal,
+            @PathVariable("id") UUID uuid) {
 
         offerService.deleteOfferById(uuid);
 

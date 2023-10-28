@@ -7,6 +7,7 @@ import com.softuni.mobilele.model.entity.BrandEntity;
 import com.softuni.mobilele.model.entity.ModelEntity;
 import com.softuni.mobilele.model.entity.OfferEntity;
 import com.softuni.mobilele.model.entity.UserEntity;
+import com.softuni.mobilele.model.enums.UserRoleEnum;
 import com.softuni.mobilele.model.mapper.OfferMapper;
 import com.softuni.mobilele.repository.*;
 import com.softuni.mobilele.service.OfferService;
@@ -125,8 +126,31 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public void deleteOfferById(UUID offerId) {
-        
+
         offerRepository.deleteById(offerId);
+    }
+
+    @Override
+    public boolean isOwner(String userName, UUID offerId) {
+        boolean isOwner = offerRepository
+                .findById(offerId)
+                .filter(o -> o.getSeller().getEmail().equals(userName))
+                .isPresent();
+
+        if (isOwner) {
+            return true;
+        }
+
+        return userRepository.findByEmail(userName)
+                .filter(this::isAdmin)
+                .isPresent();
+    }
+
+    private boolean isAdmin(UserEntity user) {
+
+        return user.getUserRoles()
+                .stream()
+                .anyMatch(r -> r.getUserRole() == UserRoleEnum.ADMIN);
     }
 
 //    @Override
