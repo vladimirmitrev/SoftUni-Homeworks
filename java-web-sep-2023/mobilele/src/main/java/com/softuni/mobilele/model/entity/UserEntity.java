@@ -12,7 +12,8 @@ public class UserEntity extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String email;
-    @Column(nullable = false)
+
+//    @Column(nullable = false)
     private String password;
     @Column(nullable = false)
     private String firstName;
@@ -82,7 +83,8 @@ public class UserEntity extends BaseEntity {
         return userRoles;
     }
 
-    public void setUserRoles(List<UserRoleEntity> userRoles) {
+    public UserEntity setUserRoles(List<UserRoleEntity> userRoles) {
         this.userRoles = userRoles;
+        return this;
     }
 }

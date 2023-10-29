@@ -1,5 +1,6 @@
-#logging:
-#    level:
+logging:
+    level:
+      org.springframework: DEBUG
 #      org.hibernate.SQL: DEBUG
 #      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 #        blog: WARN
@@ -21,12 +22,19 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
   sql:
-      init:
-            mode: always
+    init:
+      mode: always
   mvc:
     hiddenmethod:
       filter:
         enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: ${facebook-login-id}
+            client-secret: ${facebook-login-secret}
 
 server:
   port: 8081

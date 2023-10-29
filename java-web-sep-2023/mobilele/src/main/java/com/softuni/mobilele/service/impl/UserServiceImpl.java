@@ -14,7 +14,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -37,6 +39,24 @@ public class UserServiceImpl implements UserService {
         this.userMapper = userMapper;
         this.userDetailsService = userDetailsService;
         this.emailService = emailService;
+    }
+
+    @Override
+    public void createUserIfNotExist(String email) {
+        Optional<UserEntity> optionalUser = this.userRepository.findByEmail(email);
+
+        if (optionalUser.isEmpty()) {
+            UserEntity newUser =
+                    new UserEntity()
+                            .setEmail(email)
+                            .setPassword(null)
+                            .setFirstName("New")
+                            .setLastName("User")
+                            .setUserRoles(List.of());
+
+            userRepository.save(newUser);
+        }
+
     }
 
     @Override
@@ -71,4 +91,6 @@ public class UserServiceImpl implements UserService {
                 getContext().
                 setAuthentication(auth);
     }
+
+
 }
