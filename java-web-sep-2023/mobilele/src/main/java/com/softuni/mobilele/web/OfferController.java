@@ -1,7 +1,7 @@
 package com.softuni.mobilele.web;
 
 import com.softuni.mobilele.exception.ObjectNotFoundException;
-import com.softuni.mobilele.model.dto.offer.AddOfferDTO;
+import com.softuni.mobilele.model.dto.offer.CreateOrUpdateOfferDTO;
 import com.softuni.mobilele.model.dto.offer.SearchOfferDTO;
 import com.softuni.mobilele.model.user.MobileleUserDetails;
 import com.softuni.mobilele.service.OfferService;
@@ -11,14 +11,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.security.Principal;
 import java.util.UUID;
 
 
@@ -50,14 +48,14 @@ public class OfferController {
     @GetMapping("/offers/add")
     public String add(Model model) {
         if (!model.containsAttribute("addOfferModel")) {
-            model.addAttribute("addOfferModel", new AddOfferDTO());
+            model.addAttribute("addOfferModel", new CreateOrUpdateOfferDTO());
         }
         model.addAttribute("brands", offerService.getAllBrands());
         return "offer-add";
     }
 
     @PostMapping("/offers/add")
-    public String addOffer(@Valid AddOfferDTO addOfferModel,
+    public String addOffer(@Valid CreateOrUpdateOfferDTO addOfferModel,
                            BindingResult bindingResult,
                            RedirectAttributes redirectAttributes,
                            @AuthenticationPrincipal MobileleUserDetails userDetails) {
@@ -121,7 +119,19 @@ public class OfferController {
         return "details";
     }
 
-//    @PreAuthorize("@offerServiceImpl.isOwner(#principal.name, #uuid)")
+    @GetMapping("/offers/{id}/edit")
+    public String edit(@PathVariable("id") UUID uuid,
+                       Model model) {
+        var offer = offerService.getOfferEditDetails(uuid).
+                orElseThrow(() -> new ObjectNotFoundException("Offer with ID "+ uuid + "not found"));
+
+        model.addAttribute("offer", offer);
+
+        return "details";
+    }
+
+
+    //    @PreAuthorize("@offerServiceImpl.isOwner(#principal.name, #uuid)")
     @PreAuthorize("isOwner(#uuid)")
     @DeleteMapping("/offers/{id}")
     public String deleteOffer(

@@ -1,6 +1,6 @@
 package com.softuni.mobilele.service;
 
-import com.softuni.mobilele.model.dto.offer.AddOfferDTO;
+import com.softuni.mobilele.model.dto.offer.CreateOrUpdateOfferDTO;
 import com.softuni.mobilele.model.dto.brand.BrandDTO;
 import com.softuni.mobilele.model.dto.offer.OfferDetailDTO;
 import com.softuni.mobilele.model.dto.offer.SearchOfferDTO;
@@ -15,11 +15,13 @@ import java.util.UUID;
 public interface OfferService {
 
     public List<BrandDTO> getAllBrands();
-   public void addOffer(AddOfferDTO addOfferDTO, UserDetails userDetails);
+   public void addOffer(CreateOrUpdateOfferDTO createOrUpdateOfferDTO, UserDetails userDetails);
 //    UUID createOffer(CreateOfferDTO createOfferDTO);
     public Page<OfferDetailDTO> getAllOffers(Pageable pageable);
     public List<OfferDetailDTO> searchOffer(SearchOfferDTO searchOfferDTO);
     public Optional<OfferDetailDTO> findOfferByUUID(UUID offerId);
     void deleteOfferById(UUID offerId);
     boolean isOwner(String userName, UUID offerId);
+
+    Optional<CreateOrUpdateOfferDTO> getOfferEditDetails(UUID uuid);
 }

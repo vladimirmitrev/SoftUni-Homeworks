@@ -84,8 +84,8 @@ public class OfferServiceImpl implements OfferService {
 
 
     @Override
-    public void addOffer(AddOfferDTO addOfferDTO, UserDetails userDetails) {
-        OfferEntity newOffer = offerMapper.addOfferDtoToOfferEntity(addOfferDTO);
+    public void addOffer(CreateOrUpdateOfferDTO createOrUpdateOfferDTO, UserDetails userDetails) {
+        OfferEntity newOffer = offerMapper.createOrUpdateOfferDtoToOfferEntity(createOrUpdateOfferDTO);
 
         //Todo - check if logged user
 
@@ -95,7 +95,7 @@ public class OfferServiceImpl implements OfferService {
 
 
         ModelEntity model = modelRepository
-                .findById(addOfferDTO.getModelId())
+                .findById(createOrUpdateOfferDTO.getModelId())
                 .orElseThrow();
 
         newOffer.setModel(model);
@@ -144,6 +144,12 @@ public class OfferServiceImpl implements OfferService {
         return userRepository.findByEmail(userName)
                 .filter(this::isAdmin)
                 .isPresent();
+    }
+
+    @Override
+    public Optional<CreateOrUpdateOfferDTO> getOfferEditDetails(UUID offerId) {
+        return offerRepository.findById(offerId)
+                .map(offerMapper::offerEntityToCreateOrUpdateOfferDtoTo);
     }
 
     private boolean isAdmin(UserEntity user) {
