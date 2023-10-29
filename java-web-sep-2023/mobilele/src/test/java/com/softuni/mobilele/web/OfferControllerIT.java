@@ -27,14 +27,16 @@ public class OfferControllerIT {
     private TestDataUtils testDataUtils;
 
     private UserEntity testUser, testAdmin;
-    private OfferEntity testOffer;
+    private OfferEntity testOffer, testAdminOffer;
 
     @BeforeEach
     void setUp() {
         testUser = testDataUtils.createTestUser("user@example.com");
-        testAdmin = testDataUtils.createTestUser("admin@example.com");
+        testAdmin = testDataUtils.createTestAdmin("admin@example.com");
+
         var testModel = testDataUtils.createTestModel(testDataUtils.createTestBrand());
         testOffer = testDataUtils.createTestOffer(testUser, testModel);
+        testAdminOffer = testDataUtils.createTestOffer(testAdmin, testModel);
     }
 
     @AfterEach
@@ -61,11 +63,24 @@ public class OfferControllerIT {
                 .andExpect(view().name("redirect:/offers/all"));
     }
 
-    public void testDeleteByOwner() {
-
+    @Test
+    @WithMockUser(
+            username = "user@example.com",
+            roles = "USER")
+    public void testDeleteByOwner() throws Exception {
+        mockMvc.perform(delete("/offers/{id}", testOffer.getId())
+                        .with(csrf()))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(view().name("redirect:/offers/all"));
     }
-
-    public void testDeleteNotOwned_Forbidden() {
-
+    @Test
+    @WithMockUser(
+            username = "user@example.com",
+            roles = "USER"
+    )
+    public void testDeleteNotOwned_Forbidden() throws Exception {
+        mockMvc.perform(delete("/offers/{id}", testAdminOffer.getId())
+                        .with(csrf()))
+                .andExpect(status().isForbidden());
     }
 }

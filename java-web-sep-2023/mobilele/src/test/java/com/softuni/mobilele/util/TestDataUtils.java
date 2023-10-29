@@ -43,12 +43,13 @@ public class TestDataUtils {
 
     public UserEntity createTestAdmin(String email) {
 
-            initRoles();
+        initRoles();
 
             UserEntity admin = new UserEntity();
             admin.setEmail(email);
             admin.setFirstName("Admin");
             admin.setLastName("Adminov");
+            admin.setPassword("password");
             admin.setActive(true);
             admin.setUserRoles(userRoleRepository.findAll());
 
@@ -59,13 +60,16 @@ public class TestDataUtils {
 
         initRoles();
 
-            UserEntity user = new UserEntity();
+        UserEntity user = new UserEntity();
             user.setEmail(email);
             user.setFirstName("User");
             user.setLastName("Userov");
             user.setPassword("password");
             user.setActive(true);
-            user.setUserRoles(userRoleRepository.findAll());
+            user.setUserRoles(userRoleRepository.
+                    findAll().stream().
+                    filter(r -> r.getUserRole() != UserRoleEnum.ADMIN).
+                    toList());
 
         return userRepository.save(user);
     }
@@ -85,6 +89,7 @@ public class TestDataUtils {
 
         return offerRepository.save(offer);
     }
+
     public BrandEntity createTestBrand() {
 
         BrandEntity brand = new BrandEntity();
@@ -95,12 +100,12 @@ public class TestDataUtils {
 
     public ModelEntity createTestModel(BrandEntity brand) {
 
-        ModelEntity model = new ModelEntity();
-        model.setName("Fiesta");
-        model.setBrand(brand);
-        model.setImageUrl("http://image.com/image.png");
-        model.setCategory(CategoryEnum.CAR);
-        model.setStartYear(1978);
+            ModelEntity model = new ModelEntity();
+            model.setName("Fiesta");
+            model.setBrand(brand);
+            model.setImageUrl("http://image.com/image.png");
+            model.setCategory(CategoryEnum.CAR);
+            model.setStartYear(1978);
 
         return modelRepository.save(model);
     }
