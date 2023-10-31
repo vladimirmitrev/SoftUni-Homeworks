@@ -49,20 +49,3 @@ VALUES
     ('5ebdd23e-7bf3-4166-ab67-98242b871f67', 'Качваш са, караш са, отиваш на фиеста 13. С Форд Ескорт.', 'DIESEL', 'https://upload.wikimedia.org/wikipedia/commons/b/b7/1995_Ford_Escort_1.6_Sapphire_%2819773828282%29.jpg', 320016, 2614, 'AUTOMATIC', 1990, 2, 3);
 
 
-
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (1, 'dasdasdasdasdasd', 'GASOLINE', 'https://autozona.bg/wp-content/uploads/2022/06/ford-fiesta-st-line-2022.jpg', 20000, 3000.00, 'AUTOMATIC', 2012, 1, 10, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (2, 'fdgdfhdfgfggd', 'ELECTRIC', 'https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/267369/2008-toyota-yaris-photo-198079-s-original.jpg', 10000, 1000.00, 'AUTOMATIC', 2008, 3, 10, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (3, 'mnogo qk braaaat', 'GASOLINE', 'https://123auta.s3.amazonaws.com/prodej/ford/escort/f_20507_ford_escort_1.jpg', 25000, 4000.00, 'MANUAL', 2005, 2, null, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (5, 'Amazing small car', 'HYBRID', 'https://scene7.toyota.eu/is/image/toyotaeurope/toyota-yaris-grs-2022-alternate-01?wid=1280&fit=fit,1&ts=0&resMode=sharp2&op_usm=1.75,0.3,2,0', 1000, 40000.00, 'AUTOMATIC', 2022, 3, 15, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (6, 'Върви', 'DIESEL', 'https://th.bing.com/th/id/OIP.vHOAMAW_twHpwnEzWSPZzAHaE6?w=295&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7', 80000, 11000.00, 'MANUAL', 2013, 3, 25, null);
-#
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (7, 'dasdasdasdasdasd', 'GASOLINE', 'https://autozona.bg/wp-content/uploads/2022/06/ford-fiesta-st-line-2022.jpg', 20000, 3000.00, 'AUTOMATIC', 2012, 1, 10, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (8, 'fdgdfhdfgfggd', 'ELECTRIC', 'https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/267369/2008-toyota-yaris-photo-198079-s-original.jpg', 10000, 1000.00, 'AUTOMATIC', 2008, 3, 10, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (9, 'mnogo qk braaaat', 'GASOLINE', 'https://123auta.s3.amazonaws.com/prodej/ford/escort/f_20507_ford_escort_1.jpg', 25000, 4000.00, 'MANUAL', 2005, 2, null, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (10, 'Amazing small car', 'HYBRID', 'https://scene7.toyota.eu/is/image/toyotaeurope/toyota-yaris-grs-2022-alternate-01?wid=1280&fit=fit,1&ts=0&resMode=sharp2&op_usm=1.75,0.3,2,0', 1000, 40000.00, 'AUTOMATIC', 2022, 3, 15, null);
-# INSERT INTO mobilele.offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id, uuid) VALUES (11, 'Върви', 'DIESEL', 'https://th.bing.com/th/id/OIP.vHOAMAW_twHpwnEzWSPZzAHaE6?w=295&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7', 80000, 11000.00, 'MANUAL', 2013, 3, 25, null);
-#
-#
-# INSERT INTO offers (id, description, engine, image_url, mileage, price, transmission, year, model_id, seller_id)
-# VALUES ('5ebdd23e-7bf3-4166-ab67-98242b871f6b', 'Качваш са, караш са, отиваш на фиеста. С Форд Фиеста.', 'GASOLINE', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/2005_Ford_Fiesta_%28WP%29_Ghia_5-door_hatchback_%282015-07-24%29_01.jpg/280px-2005_Ford_Fiesta_%28WP%29_Ghia_5-door_hatchback_%282015-07-24%29_01.jpg', 320000, 2600, 'MANUAL', 2005, 1, 1)
-

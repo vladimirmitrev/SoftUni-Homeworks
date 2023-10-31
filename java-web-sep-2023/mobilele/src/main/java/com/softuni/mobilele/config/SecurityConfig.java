@@ -98,7 +98,8 @@ public class SecurityConfig {
                                         requestMatchers("/", "/users/login", "/users/register","/users/login-error")
                                         .permitAll().
                                         requestMatchers("/offers/add").authenticated().
-                                        requestMatchers("/offers/**").permitAll()
+                                        requestMatchers("/offers/**").permitAll().
+                                        requestMatchers("/maintenance").permitAll()
 //                                        .requestMatchers("/").hasRole(UserRoleEnum.USER.name())
 //                                        .requestMatchers("/").hasRole(UserRoleEnum.ADMIN.name())
                                         .anyRequest().authenticated()

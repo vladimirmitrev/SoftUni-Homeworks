@@ -21,7 +21,8 @@ public class OAuthSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
     }
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
+    public void onAuthenticationSuccess(HttpServletRequest request,
+                                        HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
 
         if(authentication instanceof OAuth2AuthenticationToken oAuth2AuthenticationToken) {
 
