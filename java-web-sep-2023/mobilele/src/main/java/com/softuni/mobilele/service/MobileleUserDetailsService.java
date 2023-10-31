@@ -33,8 +33,8 @@ public class MobileleUserDetailsService implements UserDetailsService {
 
         return new MobileleUserDetails(
                 userEntity.getId(),
-                userEntity.getEmail(),
                 userEntity.getPassword(),
+                userEntity.getEmail(),
                 userEntity.getFirstName(),
                 userEntity.getLastName(),
                 userEntity.getUserRoles()

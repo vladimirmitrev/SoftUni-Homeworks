@@ -9,21 +9,21 @@ import java.util.Collections;
 public class MobileleUserDetails implements UserDetails {
 
     private final Long id;
-    private final String username;
     private final String password;
+    private final String username;
     private final String firstName;
     private final String lastName;
     private final Collection<GrantedAuthority> authorities;
 
     public MobileleUserDetails(Long id,
-                               String username,
                                String password,
+                               String username,
                                String firstName,
                                String lastName,
                                Collection<GrantedAuthority> authorities) {
         this.id = id;
-        this.username = username;
         this.password = password;
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.authorities = authorities;
