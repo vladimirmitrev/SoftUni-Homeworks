@@ -4,112 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a636681-ee59-4eaf-b4db-28179d682fd5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774/storage_v2/_src_/schema/dictionary.lnClGg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/DictionaryApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/controller/WordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/init/LanguageInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/dto/user/UserLoginBindingModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/dto/user/UserRegisterBindingModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/dto/word/WordAddBindingModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/dto/word/WordViewBindingModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/entity/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/entity/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/model/entity/enums/LanguageNameEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/repo/LanguageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/repo/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/repo/WordRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/service/LanguageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/service/WordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/service/impl/WordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dictionaryapp/util/LoggedUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/reset-css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/assign-to-me-button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/done-remove-button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/french.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/german.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/italian.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/pin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/return.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/spanish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/word-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dictionaryapp/DictionaryApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/DictionaryApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/config/AppConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/controller/HomeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/controller/WordController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/init/LanguageInit$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/init/LanguageInit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/dto/user/UserLoginBindingModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/dto/user/UserRegisterBindingModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/dto/word/WordAddBindingModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/dto/word/WordViewBindingModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/entity/BaseEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/entity/Language.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/entity/Word.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/model/entity/enums/LanguageNameEnum.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/repo/LanguageRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/repo/UserRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/repo/WordRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/service/LanguageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/service/WordService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/service/impl/WordServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dictionaryapp/util/LoggedUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/reset-css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/assign-to-me-button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/done-remove-button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/french.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/german.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/italian.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/pin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/return.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/spanish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/word-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/dictionaryapp/DictionaryApplicationTests.class" afterDir="false" />
+    <list default="true" id="2a636681-ee59-4eaf-b4db-28179d682fd5" name="Changes" comment="dictionary-app Regular Exam for JAVA Spring Fundamentals">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a55726df-f2da-45f5-bb36-805fabfd4774.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobilele/src/main/resources/templates/offers.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mobilele/src/main/resources/templates/offers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pathfinder/src/main/resources/static/js/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pathfinder/src/main/resources/static/js/comments.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,9 +29,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2X4Qqs4k2AuIX6dkwmOSZcZErzb" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -138,29 +39,29 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User357/Desktop/GitHub/SoftUni-Homeworks/java-web-sep-2023/like-book-app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User357/Desktop/GitHub/SoftUni-Homeworks/java-web-sep-2023/dictionary-app-regular-exam&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.dictionaryapp.model.dto" />
@@ -196,26 +97,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697886068989</updated>
-      <workItem from="1697886071941" duration="22222000" />
+      <workItem from="1697886071941" duration="23650000" />
+      <workItem from="1698043650499" duration="38000" />
+      <workItem from="1698137818658" duration="666000" />
+      <workItem from="1698482098980" duration="752000" />
+      <workItem from="1699174125301" duration="6677000" />
+      <workItem from="1700207052906" duration="1362000" />
     </task>
+    <task id="LOCAL-00001" summary="dictionary-app Regular Exam for JAVA Spring Fundamentals">
+      <option name="closed" value="true" />
+      <created>1697908937499</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697908937499</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dictionary-app Regular Exam for JAVA Spring Fundamentals" />
+    <option name="LAST_COMMIT_MESSAGE" value="dictionary-app Regular Exam for JAVA Spring Fundamentals" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dictionaryapp/controller/UserController.java</url>
-          <line>159</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dictionaryapp/controller/UserController.java</url>
-          <line>155</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dictionaryapp/controller/UserController.java</url>
           <line>139</line>

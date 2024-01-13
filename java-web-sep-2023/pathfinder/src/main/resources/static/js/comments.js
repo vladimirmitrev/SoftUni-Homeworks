@@ -8,6 +8,7 @@ const csrfHeaderValue = document.head.querySelector('[name=_csrf]').content;
 
 const commentContainer = document.getElementById('commentCtnr');
 
+// let allComments = [];
 async function handleFormSubmission(event) {
     event.preventDefault();
 
@@ -25,6 +26,7 @@ async function handleFormSubmission(event) {
         })
     }).then(res => res.json())
         .then(data => {
+            // allComments.push(data);
             document.getElementById('message').value = "";
             commentContainer.innerHTML += commentAsHtml(data);
         });
@@ -46,6 +48,7 @@ fetch(`http://localhost:8080/api/${routeId}/comments`, {
 }).then(res => res.json())
     .then(data => {
         for (let comment of data) {
+            // allComments.push(data);
             commentContainer.innerHTML += commentAsHtml(comment)
         }
     });
