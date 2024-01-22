@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Vote
+build_property.ProjectDir = C:\Users\User357\Desktop\SoftUni Docs\Containers And Cloud\04-Exercise-Containers-and-Docker\Resources\11.Blue-VS-Green-App\vote\dotnet\Vote\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

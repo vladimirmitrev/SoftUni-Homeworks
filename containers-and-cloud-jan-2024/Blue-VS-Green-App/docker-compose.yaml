@@ -1,0 +1,60 @@
+name: vote-app
+version: '1.0.1'
+services:
+    redis:
+        container_name: redis
+        networks:
+            - backend
+        image: redis
+    postgres:
+        container_name: db
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        volumes:
+            - postgres:/var/lib/postgresql/data
+        networks:
+            - backend
+        image: postgres
+    result:
+        container_name: result
+        ports:
+            - 5001:80
+        networks:
+            - backend
+            - frontend
+        volumes:
+            - result:/app
+        image: result
+    vote:
+        container_name: vote
+        ports:
+            - 5000:80
+        networks:
+            - backend
+            - frontend
+        volumes:
+            - vote:/app
+        image: vote
+    worker:
+        container_name: worker
+        networks:
+            - backend
+        image: worker
+networks:
+    backend:
+        external: true
+        name: backend
+    frontend:
+        external: true
+        name: frontend    
+volumes:
+    postgres:
+        external:
+            name: postgres
+    result:
+        external:
+            name: result
+    vote:
+        external:
+            name: vote
