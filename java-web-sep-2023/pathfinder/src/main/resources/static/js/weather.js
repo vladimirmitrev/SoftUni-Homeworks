@@ -3,7 +3,7 @@ const boxImgB = document.getElementById('box-b-img');
 const boxTempA = document.getElementById('box-a-temp');
 const boxTempB = document.getElementById('box-b-temp');
 
-fetch("http://api.openweathermap.org/data/2.5/weather?q=Sofia&appid=8dd1b8c6c70655b59ef4f75b4d9fb753")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=Sofia&appid=8dd1b8c6c70655b59ef4f75b4d9fb753")
     .then(data => data.json())
     .then(info => {
         //Formula Kelvin to Celsius 299K − 273.15 = 25.85°C
@@ -12,7 +12,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Sofia&appid=8dd1b8c6c706
 
     })
 
-fetch("http://api.openweathermap.org/data/2.5/weather?q=Blagoevgrad&appid=8dd1b8c6c70655b59ef4f75b4d9fb753")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=Blagoevgrad&appid=8dd1b8c6c70655b59ef4f75b4d9fb753")
     .then(data => data.json())
     .then(info => {
         //Formula Kelvin to Celsius 299K − 273.15 = 25.85°C
