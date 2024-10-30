@@ -97,4 +97,17 @@ public class DoublyLinkedListTest {
         assertFalse(list.isEmpty());
         assertTrue(new DoublyLinkedList<>().isEmpty());
     }
+
+    @Test
+    public void testAddFirst() {
+        DoublyLinkedList<Integer> numbers = new DoublyLinkedList<>();
+
+        numbers.addFirst(12);
+        numbers.addFirst(13);
+        numbers.addFirst(14);
+
+        numbers.removeFirst();
+        numbers.removeFirst();
+        numbers.removeFirst();
+    }
 }
