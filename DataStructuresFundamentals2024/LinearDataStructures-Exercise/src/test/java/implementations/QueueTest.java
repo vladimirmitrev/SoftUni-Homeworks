@@ -3,6 +3,8 @@ package implementations;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Random;
+
 import static org.junit.Assert.*;
 
 public class QueueTest {
@@ -63,5 +65,19 @@ public class QueueTest {
         for (String s : queue) {
             assertEquals(String.valueOf(last++), s);
         }
+    }
+
+    @Test
+    public void nodeChaining() {
+        Queue<Integer> queue = new Queue<>();
+
+        queue.offer(13);
+
+        queue.poll();
+
+//        new Random()
+//                .ints(100)
+//                .forEach(queue::offer);
+
     }
 }
