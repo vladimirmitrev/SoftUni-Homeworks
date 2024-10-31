@@ -76,7 +76,51 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public void addChild(E parentKey, Tree<E> child) {
+        Tree<E> search = findBfs(parentKey);
 
+        if (search == null) {
+            throw new IllegalArgumentException();
+        }
+
+        search.children.add(child);
+        child.parent = search;
+
+    }
+
+    private Tree<E> findBfs(E parentKey) {
+        Deque<Tree<E>> childrenQueue = new ArrayDeque<>();
+
+        childrenQueue.offer(this);
+
+        while (!childrenQueue.isEmpty()) {
+            Tree<E> current = childrenQueue.poll();
+
+            if (current.value == parentKey) {
+                return current;
+            }
+
+            for (Tree<E> child : current.children) {
+                childrenQueue.offer(child);
+            }
+        }
+
+        return null;
+    }
+
+
+    private Tree<E> findRecursive(Tree<E> current, E parentKey) {
+            if (current.value.equals(parentKey)) {
+                return current;
+            }
+
+        for (Tree<E> child : current.children) {
+            Tree<E> found = this.findRecursive(child, parentKey);
+            if (found != null) {
+                return found;
+            }
+        }
+
+        return  null;
     }
 
     @Override
