@@ -48,6 +48,21 @@ public class Tree<E> implements AbstractTree<E> {
 
         this.doDfs(this, result);
 
+//        *** Dfs without recursion with Stack ***
+//
+//        Deque<Tree<E>> toTraverse = new ArrayDeque<>();
+//        toTraverse.push(this);
+//
+//        while (!toTraverse.isEmpty()) {
+//            Tree<E> current = toTraverse.pop();
+//
+//            for (Tree<E> node : current.children) {
+//                toTraverse.push(node);
+//            }
+//
+//            result.add(current.value);
+//        }
+
         return result;
     }
 
