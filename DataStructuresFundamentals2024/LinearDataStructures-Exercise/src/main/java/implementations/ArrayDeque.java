@@ -165,10 +165,19 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public E remove(int index) {
-        int realIndex = this.head + index;
-        ensureIndex(realIndex);
+        int realIndex = head + index;
+        E element = getAtIndex(realIndex);
+        this.ensureIndex(realIndex);
 
-        return this.getAtIndex(realIndex);
+        for (int i = this.head; i < this.tail; i++) {
+            this.elements[i] = this.elements[i + 1];
+        }
+
+        this.elements[realIndex] = null;
+        this.head++;
+        this.size--;
+
+        return element;
     }
 
     private void ensureIndex(int realIndex) {

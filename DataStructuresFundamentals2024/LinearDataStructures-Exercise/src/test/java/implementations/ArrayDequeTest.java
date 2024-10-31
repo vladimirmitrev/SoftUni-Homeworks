@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class ArrayDequeTest {
 
     @Test
-    public void testArrayDeque() {
+        public void testArrayDeque() {
         ArrayDeque<Integer> deque = new ArrayDeque<>();
 
 //        deque.offer(13);
@@ -25,7 +25,12 @@ public class ArrayDequeTest {
         deque.add(15);
         deque.add(16);
 
-        System.out.println(deque.remove(Integer.valueOf(22)));
+        deque.remove(2);
+//        System.out.println(deque.remove(Integer.valueOf(22)));
+
+        for (Integer integer : deque) {
+            System.out.println(integer);
+        }
 
 //        System.out.println(deque.poll());
     }
