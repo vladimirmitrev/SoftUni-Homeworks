@@ -71,6 +71,14 @@ public class TreeTest {
             assertEquals(expected[index++], num);
         }
     }
+
+    @Test
+    public void testRemoveRootNode() {
+        tree.removeNode(7);
+
+        List<Integer> integers = tree.orderBfs();
+        assertEquals(0, integers.size());
+    }
 	
 	@Test
     public void testSwap() {

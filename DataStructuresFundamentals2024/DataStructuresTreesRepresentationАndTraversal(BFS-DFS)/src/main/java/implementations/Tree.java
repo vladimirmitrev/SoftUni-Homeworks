@@ -16,15 +16,19 @@ public class Tree<E> implements AbstractTree<E> {
         this.value = value;
         this.parent = null;
         this.children = new ArrayList<>();
-        for (Tree<E> child : subtrees) {
-            this.children.add(child);
-            child.parent = this;
+        for (Tree<E> subtree : subtrees) {
+            this.children.add(subtree);
+            subtree.parent = this;
         }
     }
 
     @Override
     public List<E> orderBfs() {
         List<E> result = new ArrayList<>();
+        if (this.value == null) {
+            return result;
+        }
+
         Deque<Tree<E>> childrenQueue = new ArrayDeque<>();
 
         childrenQueue.offer(this);
@@ -125,7 +129,23 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public void removeNode(E nodeKey) {
+        Tree<E> toRemove = findBfs(nodeKey);
 
+        if (toRemove == null) {
+            throw new IllegalArgumentException();
+        }
+
+        for (Tree<E> child : toRemove.children) {
+            child.parent = null;
+        }
+        toRemove.children.clear();
+
+        Tree<E> parent = toRemove.parent;
+        if (parent != null) {
+            parent.children.remove(toRemove);
+        }
+
+        toRemove.value = null;
     }
 
     @Override
