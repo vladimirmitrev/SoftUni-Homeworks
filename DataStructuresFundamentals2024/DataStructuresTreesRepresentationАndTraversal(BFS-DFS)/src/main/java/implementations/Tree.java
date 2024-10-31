@@ -2,10 +2,7 @@ package implementations;
 
 import interfaces.AbstractTree;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 public class Tree<E> implements AbstractTree<E> {
     private E value;
@@ -150,7 +147,42 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public void swap(E firstKey, E secondKey) {
+        Tree<E> firstNode = findBfs(firstKey);
+        Tree<E> secondNode = findBfs(secondKey);
 
+        if (firstNode == null || secondNode == null) {
+            throw new IllegalArgumentException();
+        }
+
+        Tree<E> firstParent = firstNode.parent;
+        Tree<E> secondParent = secondNode.parent;
+
+        if (firstParent == null) {
+            swapRoot(secondNode);
+            return;
+        } else if (secondParent == null) {
+            swapRoot(firstNode);
+            return;
+        }
+
+        firstNode.parent = secondParent;
+        secondNode.parent = firstParent;
+
+        int firstIndex = firstParent.children.indexOf(firstNode);
+        int secondIndex = secondParent.children.indexOf(secondNode);
+
+        firstParent.children.set(firstIndex, secondNode);
+        secondParent.children.set(secondIndex, firstNode);
+
+
+
+    }
+
+    private void swapRoot(Tree<E> node) {
+        this.value = node.value;
+        this.parent = null;
+        this.children = node.children;
+        node.parent = null;
     }
 }
 
