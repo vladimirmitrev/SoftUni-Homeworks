@@ -113,6 +113,14 @@ public class Tree<E> implements AbstractTree<E> {
         }
     }
 
+    private void traverseTreeWithRecursion(List<Tree<E>> collection,Tree<E> tree) {
+        collection.add(tree);
+
+        for (Tree<E> child : tree.children) {
+            traverseTreeWithRecursion(collection ,child);
+        }
+    }
+
     private String getPadding(int size) {
         StringBuilder builder = new StringBuilder();
 
@@ -134,7 +142,13 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public List<E> getMiddleKeys() {
-        return null;
+         List<Tree<E>> allNodes = new ArrayList<>();
+         this.traverseTreeWithRecursion(allNodes, this);
+
+        return allNodes.stream()
+                .filter(tree -> tree.parent != null && tree.children.size() > 0)
+                .map(Tree::getKey)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     @Override
