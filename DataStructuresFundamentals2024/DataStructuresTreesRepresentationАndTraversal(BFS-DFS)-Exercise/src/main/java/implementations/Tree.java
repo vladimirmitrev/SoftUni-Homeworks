@@ -2,9 +2,7 @@ package implementations;
 
 import interfaces.AbstractTree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Tree<E> implements AbstractTree<E> {
 
@@ -47,6 +45,36 @@ public class Tree<E> implements AbstractTree<E> {
         StringBuilder builder = new StringBuilder();
 
         traverseTreeWithRecursion(builder, 0, this);
+
+        return builder.toString().trim();
+    }
+
+    public String traverseWithBFS() {
+        StringBuilder builder = new StringBuilder();
+
+        Deque<Tree<E>> queue = new ArrayDeque<>();
+
+        queue.offer(this);
+
+        int indent = 0;
+
+        while (!queue.isEmpty()) {
+            Tree<E> tree = queue.poll();
+
+            if (tree.getParent() != null && tree.getParent().getKey().equals(this.getKey())) {
+                indent = 2;
+            } else if (tree.children.size() == 0) {
+                indent = 4;
+            }
+
+            builder.append(getPadding(indent))
+                    .append(tree.getKey())
+                    .append(System.lineSeparator());
+
+            for (Tree<E> child : tree.children) {
+                queue.offer(child);
+            }
+        }
 
         return builder.toString().trim();
     }
