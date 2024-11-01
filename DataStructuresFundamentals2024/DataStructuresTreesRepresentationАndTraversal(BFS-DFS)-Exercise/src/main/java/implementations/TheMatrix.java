@@ -24,6 +24,7 @@ public class TheMatrix {
         Deque<int[]> coordinates = new ArrayDeque<>();
 
         coordinates.offer(new int[]{startRow, startCol});
+//        coordinates.push(new int[]{startRow, startCol}); with stack
 
         while (!coordinates.isEmpty()) {
             int[] position = coordinates.poll();
@@ -35,6 +36,7 @@ public class TheMatrix {
 
             if (isInBounds(row + 1, col) && this.matrix[row + 1][col] == this.startChar) {
                 coordinates.offer(new int[]{row + 1, col});
+//                coordinates.push(new int[]{row + 1, col}); with stack
             }
             if (isInBounds(row - 1, col) && this.matrix[row - 1][col] == this.startChar) {
                 coordinates.offer(new int[]{row - 1, col});
