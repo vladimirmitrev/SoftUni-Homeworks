@@ -44,7 +44,33 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public String getAsString() {
-        return null;
+        StringBuilder builder = new StringBuilder();
+
+        traverseTreeWithRecursion(builder, 0, this);
+
+        return builder.toString().trim();
+    }
+
+    private void traverseTreeWithRecursion(StringBuilder builder, int indent, Tree<E> tree) {
+
+        builder
+                .append(this.getPadding(indent))
+                .append(tree.getKey())
+                .append(System.lineSeparator());
+
+        for (Tree<E> child : tree.children) {
+            traverseTreeWithRecursion(builder, indent + 2, child);
+        }
+    }
+
+    private String getPadding(int size) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < size; i++) {
+            builder.append(" ");
+        }
+
+        return builder.toString();
     }
 
     @Override
