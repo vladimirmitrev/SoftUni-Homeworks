@@ -3,6 +3,7 @@ package implementations;
 import interfaces.AbstractTree;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Tree<E> implements AbstractTree<E> {
 
@@ -79,6 +80,27 @@ public class Tree<E> implements AbstractTree<E> {
         return builder.toString().trim();
     }
 
+    public List<Tree<E>> traverseWithBFSLeafs() {
+        Deque<Tree<E>> queue = new ArrayDeque<>();
+
+        queue.offer(this);
+
+        int indent = 0;
+
+        List<Tree<E>> allNodes = new ArrayList<>();
+
+        while (!queue.isEmpty()) {
+            Tree<E> tree = queue.poll();
+            allNodes.add(tree);
+
+            for (Tree<E> child : tree.children) {
+                queue.offer(child);
+            }
+        }
+
+        return allNodes;
+    }
+
     private void traverseTreeWithRecursion(StringBuilder builder, int indent, Tree<E> tree) {
 
         builder
@@ -103,7 +125,11 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public List<E> getLeafKeys() {
-        return null;
+        return traverseWithBFSLeafs()
+                .stream()
+                .filter(tree -> tree.children.isEmpty())
+                .map(Tree::getKey)
+                .collect(Collectors.toList());
     }
 
     @Override
