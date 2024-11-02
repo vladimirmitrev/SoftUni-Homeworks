@@ -216,7 +216,24 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public List<E> getLongestPath() {
-        return null;
+        Tree<E> deepestLeftmostNode = getDeepestLeftmostNode();
+
+
+        return reversedList(deepestLeftmostNode);
+    }
+
+    private List<E> reversedList(Tree<E> tree) {
+        List<E> list = new ArrayList<>();
+
+        while (tree.parent != null) {
+            list.add(tree.key);
+            tree = tree.parent;
+        }
+
+        list.add(tree.key);
+        Collections.reverse(list);
+
+        return list;
     }
 
     @Override
