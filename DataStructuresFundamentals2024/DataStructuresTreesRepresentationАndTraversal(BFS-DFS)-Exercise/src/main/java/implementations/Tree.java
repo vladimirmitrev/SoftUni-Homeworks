@@ -238,7 +238,33 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public List<List<E>> pathsWithGivenSum(int sum) {
-        return null;
+        List<Tree<E>> trees = traverseWithBFSGetAllNodes();
+        List<List<E>> treeLists = new ArrayList<>();
+
+        for (Tree<E> tree : trees) {
+            if (tree.isLeaf()) {
+                int sumFromLeafToRoot = getSumFromLeafToRoot(tree);
+                if (sumFromLeafToRoot == sum) {
+                    treeLists.add(reversedList(tree));
+                }
+            }
+        }
+
+        return treeLists;
+    }
+
+    private int getSumFromLeafToRoot(Tree<E> tree) {
+        int sum = 0;
+        Tree<E> current = tree;
+
+        while (current.parent != null) {
+            sum += (int) current.key;
+            current = current.parent;
+        }
+
+        sum += (int) current.key;
+
+        return sum;
     }
 
     @Override
