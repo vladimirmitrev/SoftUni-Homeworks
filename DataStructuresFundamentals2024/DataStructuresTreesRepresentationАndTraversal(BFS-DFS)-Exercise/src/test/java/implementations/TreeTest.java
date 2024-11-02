@@ -121,6 +121,7 @@ public class TreeTest {
         TreeFactory treeFactory = new TreeFactory();
         Tree<Integer> tree = treeFactory.createTreeFromStrings(input);
 
+//        Tree<Integer> deepestLeftmostNode = tree.getDeepestLeftmostNodeWithDFS();
         Tree<Integer> deepestLeftmostNode = tree.getDeepestLeftmostNode();
 
         assertEquals(Integer.valueOf(1), deepestLeftmostNode.getKey());

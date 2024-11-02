@@ -20,6 +20,9 @@ public class Tree<E> implements AbstractTree<E> {
 //        }
     }
 
+    public Tree() {
+        this.children = new ArrayList<>();
+    }
 
     @Override
     public void setParent(Tree<E> parent) {
@@ -169,6 +172,30 @@ public class Tree<E> implements AbstractTree<E> {
             }
         }
         return deepestLeftMostNode;
+    }
+
+    public Tree<E> getDeepestLeftmostNodeWithDFS() {
+        List<Tree<E>> deepestLeftMostNode = new ArrayList<>();
+        int maxPath[] = new int[1];
+
+        deepestLeftMostNode.add(new Tree<E>());
+        int max = 0;
+
+        findDeepestNodeDFS(deepestLeftMostNode, maxPath, max, this);
+
+         return deepestLeftMostNode.get(0);
+    }
+
+    private void findDeepestNodeDFS(List<Tree<E>> deepestLeftMostNode, int[] maxPath, int max, Tree<E> tree) {
+
+        if (max > maxPath[0]) {
+            maxPath[0] = max;
+            deepestLeftMostNode.set(0, tree);
+        }
+
+        for (Tree<E> child : tree.children) {
+            findDeepestNodeDFS(deepestLeftMostNode, maxPath, max + 1, child);
+        }
     }
 
     private int getStepFromLeafToRoot(Tree<E> tree) {
