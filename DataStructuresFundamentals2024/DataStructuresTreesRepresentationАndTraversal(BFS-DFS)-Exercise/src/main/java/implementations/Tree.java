@@ -153,7 +153,38 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public Tree<E> getDeepestLeftmostNode() {
-        return null;
+        List<Tree<E>> trees = traverseWithBFSGetAllNodes();
+
+        int maxPath = 0;
+
+        Tree<E> deepestLeftMostNode = null;
+
+        for (Tree<E> tree : trees) {
+            if (tree.isLeaf()) {
+                int currentPath = getStepFromLeafToRoot(tree);
+                if (currentPath > maxPath) {
+                    maxPath = currentPath;
+                    deepestLeftMostNode = tree;
+                }
+            }
+        }
+        return deepestLeftMostNode;
+    }
+
+    private int getStepFromLeafToRoot(Tree<E> tree) {
+        int counter = 0;
+        Tree<E> current = tree;
+
+        while (current.parent != null) {
+            counter++;
+            current = current.parent;
+        }
+
+        return counter;
+    }
+
+    private boolean isLeaf() {
+            return this.parent != null && this.children.isEmpty();
     }
 
     @Override
