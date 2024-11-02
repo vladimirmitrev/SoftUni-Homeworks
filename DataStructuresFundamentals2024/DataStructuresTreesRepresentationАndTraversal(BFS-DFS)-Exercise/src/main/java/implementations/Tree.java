@@ -45,7 +45,7 @@ public class Tree<E> implements AbstractTree<E> {
     public String getAsString() {
         StringBuilder builder = new StringBuilder();
 
-        traverseTreeWithRecursion(builder, 0, this);
+        traverseTreeWithRecursionWithIndent(builder, 0, this);
 
         return builder.toString().trim();
     }
@@ -80,7 +80,7 @@ public class Tree<E> implements AbstractTree<E> {
         return builder.toString().trim();
     }
 
-    public List<Tree<E>> traverseWithBFSLeafs() {
+    public List<Tree<E>> traverseWithBFSGetAllNodes() {
         Deque<Tree<E>> queue = new ArrayDeque<>();
 
         queue.offer(this);
@@ -101,7 +101,7 @@ public class Tree<E> implements AbstractTree<E> {
         return allNodes;
     }
 
-    private void traverseTreeWithRecursion(StringBuilder builder, int indent, Tree<E> tree) {
+    private void traverseTreeWithRecursionWithIndent(StringBuilder builder, int indent, Tree<E> tree) {
 
         builder
                 .append(this.getPadding(indent))
@@ -109,15 +109,15 @@ public class Tree<E> implements AbstractTree<E> {
                 .append(System.lineSeparator());
 
         for (Tree<E> child : tree.children) {
-            traverseTreeWithRecursion(builder, indent + 2, child);
+            traverseTreeWithRecursionWithIndent(builder, indent + 2, child);
         }
     }
 
-    private void traverseTreeWithRecursion(List<Tree<E>> collection,Tree<E> tree) {
+    private void traverseTreeWithRecursionWithIndent(List<Tree<E>> collection, Tree<E> tree) {
         collection.add(tree);
 
         for (Tree<E> child : tree.children) {
-            traverseTreeWithRecursion(collection ,child);
+            traverseTreeWithRecursionWithIndent(collection ,child);
         }
     }
 
@@ -133,7 +133,7 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public List<E> getLeafKeys() {
-        return traverseWithBFSLeafs()
+        return traverseWithBFSGetAllNodes()
                 .stream()
                 .filter(tree -> tree.children.isEmpty())
                 .map(Tree::getKey)
@@ -143,7 +143,7 @@ public class Tree<E> implements AbstractTree<E> {
     @Override
     public List<E> getMiddleKeys() {
          List<Tree<E>> allNodes = new ArrayList<>();
-         this.traverseTreeWithRecursion(allNodes, this);
+         this.traverseTreeWithRecursionWithIndent(allNodes, this);
 
         return allNodes.stream()
                 .filter(tree -> tree.parent != null && tree.children.size() > 0)
