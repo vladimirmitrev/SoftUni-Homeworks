@@ -48,7 +48,7 @@ public class Tree<E> implements AbstractTree<E> {
     public String getAsString() {
         StringBuilder builder = new StringBuilder();
 
-        traverseTreeWithRecursionWithIndent(builder, 0, this);
+        traverseTreeWithRecursion(builder, 0, this);
 
         return builder.toString().trim();
     }
@@ -104,7 +104,7 @@ public class Tree<E> implements AbstractTree<E> {
         return allNodes;
     }
 
-    private void traverseTreeWithRecursionWithIndent(StringBuilder builder, int indent, Tree<E> tree) {
+    private void traverseTreeWithRecursion(StringBuilder builder, int indent, Tree<E> tree) {
 
         builder
                 .append(this.getPadding(indent))
@@ -112,15 +112,15 @@ public class Tree<E> implements AbstractTree<E> {
                 .append(System.lineSeparator());
 
         for (Tree<E> child : tree.children) {
-            traverseTreeWithRecursionWithIndent(builder, indent + 2, child);
+            traverseTreeWithRecursion(builder, indent + 2, child);
         }
     }
 
-    private void traverseTreeWithRecursionWithIndent(List<Tree<E>> collection, Tree<E> tree) {
+    private void traverseTreeWithRecursion(List<Tree<E>> collection, Tree<E> tree) {
         collection.add(tree);
 
         for (Tree<E> child : tree.children) {
-            traverseTreeWithRecursionWithIndent(collection ,child);
+            traverseTreeWithRecursion(collection ,child);
         }
     }
 
@@ -146,7 +146,7 @@ public class Tree<E> implements AbstractTree<E> {
     @Override
     public List<E> getMiddleKeys() {
          List<Tree<E>> allNodes = new ArrayList<>();
-         this.traverseTreeWithRecursionWithIndent(allNodes, this);
+         this.traverseTreeWithRecursion(allNodes, this);
 
         return allNodes.stream()
                 .filter(tree -> tree.parent != null && tree.children.size() > 0)
@@ -266,11 +266,61 @@ public class Tree<E> implements AbstractTree<E> {
 
         return sum;
     }
+    public List<Tree<E>> subTreesWithGivenSum(int sum)
+    {
+        List<Tree<E>> trees = new ArrayList<>();
+        this.subTreeSumDFS(sum, this, trees);
 
-    @Override
-    public List<Tree<E>> subTreesWithGivenSum(int sum) {
-        return null;
+        return trees;
     }
+
+    private int subTreeSumDFS(int sum, Tree<E> node, List<Tree<E>> trees) {
+        int currentSum = (int) (node.key);
+
+        for (Tree<E> child : node.children) {
+            currentSum += subTreeSumDFS(sum, child, trees);
+        }
+
+        if (currentSum == sum)
+        {
+            trees.add(node);
+        }
+
+        return currentSum;
+    }
+//    @Override
+//    public List<Tree<E>> subTreesWithGivenSum(int sum) {
+//
+//        List<Tree<E>>subtrees = traverseWithBFSGetAllNodes()
+//                .stream()
+//                .filter(tree -> !tree.children.isEmpty() && tree.parent != null)
+//                .collect(Collectors.toList());
+//
+//        List<Tree<E>>subtreesWithGivenSum = new ArrayList<>();
+//        for (Tree<E> subtree : subtrees) {
+//            List<E> result=new ArrayList<>();
+//            dfs(subtree, result);
+//            int currentSum = result.stream().mapToInt(num -> (int) num).sum();
+//            if (currentSum == sum){
+//                subtreesWithGivenSum.add(subtree);
+//            }
+//
+//        }
+//
+//        return subtreesWithGivenSum;
+//    }
+//
+//
+//
+//
+//    private void dfs(Tree<E> node, List<E> result) {
+//        for (Tree<E> child : node.children) {
+//            this.dfs(child, result);
+//        }
+//        result.add(node.key);
+//
+//    }
+
 }
 
 
