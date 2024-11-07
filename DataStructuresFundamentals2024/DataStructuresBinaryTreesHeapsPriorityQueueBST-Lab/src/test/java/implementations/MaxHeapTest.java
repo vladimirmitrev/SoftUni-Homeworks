@@ -32,6 +32,18 @@ public class MaxHeapTest {
         assertEquals(Integer.valueOf(25), maxHeap.peek());
     }
 
+    @Test(expected = IllegalStateException.class)
+    public void testHepifyShouldThrow() {
+        new MaxHeap<>().peek();
+    }
+
+    @Test
+    public void testPeek() {
+        this.maxHeap.add(100);
+
+        assertEquals(Integer.valueOf(100), this.maxHeap.peek());
+    }
+
     @Test
     public void testSizeShouldBeCorrect() {
         assertEquals(8, this.maxHeap.size());
