@@ -55,4 +55,42 @@ public class BinarySearchTreeTest {
     public void testContainsFalse() {
         assertFalse(bst.contains(66));
     }
+
+    @Test
+    public void testSearchTrue() {
+        BinarySearchTree<Integer> search = bst.search(7);
+
+        bst.insert(8);
+
+        assertEquals(Integer.valueOf(7), search.getRoot().getValue());
+        assertEquals(Integer.valueOf(6), search.getRoot().getLeft().getValue());
+        assertEquals(Integer.valueOf(17), search.getRoot().getRight().getValue());
+
+        assertTrue(bst.contains(8));
+        assertFalse(search.contains(8));
+    }
+
+    @Test
+    public void testSearchFalse() {
+        assertNull(bst.search(66));
+    }
+
+    @Test
+    public void testRange() {
+        List<Integer> range = bst.range(3, 7);
+        //3, 5, 6, 7
+        List<Integer> expected = Arrays.asList(3, 5, 7 ,6);
+
+        assertEquals(4, range.size());
+        for (Integer value : range) {
+                assertTrue(expected.contains(value));
+        }
+    }
+
+    @Test
+    public void testDeleteMin() {
+        assertTrue(bst.contains(1));
+        bst.deleteMin();
+        assertFalse(bst.contains(1));
+    }
 }
