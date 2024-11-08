@@ -55,4 +55,105 @@ public class BinarySearchTreeTest {
     public void testContainsFalse() {
         assertFalse(bst.contains(66));
     }
+
+    @Test
+    public void testSearchTrue() {
+        BinarySearchTree<Integer> search = bst.search(7);
+
+        bst.insert(8);
+
+        assertEquals(Integer.valueOf(7), search.getRoot().getValue());
+        assertEquals(Integer.valueOf(6), search.getRoot().getLeft().getValue());
+        assertEquals(Integer.valueOf(17), search.getRoot().getRight().getValue());
+
+        assertTrue(bst.contains(8));
+        assertFalse(search.contains(8));
+    }
+
+    @Test
+    public void testSearchFalse() {
+        assertNull(bst.search(66));
+    }
+
+    @Test
+    public void testRange() {
+        List<Integer> range = bst.range(3, 7);
+        //3, 5, 6, 7
+        List<Integer> expected = Arrays.asList(3, 5, 7 ,6);
+
+        assertEquals(4, range.size());
+        for (Integer value : range) {
+            assertTrue(expected.contains(value));
+        }
+    }
+
+    @Test
+    public void testDeleteMin() {
+        assertTrue(bst.contains(1));
+        bst.deleteMin();
+        assertFalse(bst.contains(1));
+    }
+    @Test
+    public void testDeleteMax() {
+        assertTrue(bst.contains(17));
+        bst.deleteMax();
+        assertFalse(bst.contains(17));
+    }
+
+    @Test
+    public void testCount() {
+        assertEquals(6, bst.count());
+    }
+
+    @Test
+    public void testCountAfterInsert() {
+        bst.insert(11);
+        assertEquals(7 , bst.count());
+    }
+    @Test
+    public void testCountAfterDeleteMin() {
+        bst.deleteMin();
+        assertEquals(5, bst.count());
+    }
+
+    @Test
+    public void testCountAfterDeleteMax() {
+        bst.deleteMax();
+        assertEquals(5, bst.count());
+    }
+
+    @Test
+    public void testRank() {
+        assertEquals(4, bst.rank(7));
+    }
+
+    @Test
+    public void testRankMinElement() {
+        assertEquals(0, bst.rank(-1));
+    }
+
+    @Test
+    public void testRankEmptyTree() {
+        assertEquals(0, new BinarySearchTree<Integer>().rank(1));
+    }
+
+    @Test
+    public void testFloor() {
+        assertEquals(Integer.valueOf(6), bst.floor(7));
+    }
+
+    @Test
+    public void testEmptyFloor() {
+        assertNull(bst.floor(-1));
+    }
+
+    @Test
+    public void testCeil() {
+        assertEquals(Integer.valueOf(7), bst.ceil(6));
+    }
+
+    @Test
+    public void testEmptyCeil() {
+        assertNull(bst.ceil(20));
+    }
 }
