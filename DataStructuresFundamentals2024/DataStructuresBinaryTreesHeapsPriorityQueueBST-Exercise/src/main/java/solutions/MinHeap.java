@@ -22,7 +22,9 @@ public class MinHeap<E extends Comparable<E> & Decrease<E>> implements Heap<E> {
     @Override
     public void add(E element) {
         this.data.add(element);
-        this.heapifyUp();
+//        this.heapifyUp();
+        this.heapifyUp(this.data.size() - 1);
+
     }
 
     @Override
@@ -45,7 +47,15 @@ public class MinHeap<E extends Comparable<E> & Decrease<E>> implements Heap<E> {
 
     @Override
     public void decrease(E element) {
+//        when you have equals and hashCode methods in Product class
+//        this.data.remove(element);
+//        element.decrease();
+//        this.data.add(element);
+        int elementIndex = this.data.indexOf(element);
+        E heapElement = this.data.get(elementIndex);
+        heapElement.decrease();
 
+        this.heapifyUp(elementIndex);
     }
 
     private void heapifyDown() {
@@ -68,8 +78,8 @@ public class MinHeap<E extends Comparable<E> & Decrease<E>> implements Heap<E> {
         }
     }
 
-    private void heapifyUp() {
-        int index = this.data.size() - 1;
+    private void heapifyUp(int index) {
+//        int index = this.data.size() - 1;
         int parentIndex = this.getParentIndexFor(index);
 
         while (index > 0 && isLess(index, parentIndex)) {
