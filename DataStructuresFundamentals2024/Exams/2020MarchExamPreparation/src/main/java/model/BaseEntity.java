@@ -4,6 +4,7 @@ import interfaces.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class BaseEntity implements Entity {
 
@@ -70,5 +71,18 @@ public abstract class BaseEntity implements Entity {
     @Override
     public int compareTo(Entity other) {
         return other.getId() - this.id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        BaseEntity that = (BaseEntity) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
