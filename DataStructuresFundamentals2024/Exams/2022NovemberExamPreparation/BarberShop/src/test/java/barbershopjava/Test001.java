@@ -25,4 +25,9 @@ public class Test001 {
         this.barberShop.addBarber(b1);
         assertTrue(this.barberShop.exist(b1));
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void TestAddBarberThrowsForSameName() {
+        this.barberShop.addBarber(b1);
+        this.barberShop.addBarber(b1);
+    }
 }
