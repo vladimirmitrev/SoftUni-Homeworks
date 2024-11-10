@@ -51,7 +51,7 @@ public class TripAdministratorImpl implements TripAdministrator {
 
     @Override
     public void removeCompany(Company c) {
-        if (companiesByNames.containsKey(c.name)) {
+        if (!companiesByNames.containsKey(c.name)) {
             throw new IllegalArgumentException();
         }
         companiesByNames.remove(c.name);
