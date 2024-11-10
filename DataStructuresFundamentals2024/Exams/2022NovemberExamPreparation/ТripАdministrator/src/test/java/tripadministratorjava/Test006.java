@@ -23,6 +23,6 @@ public class Test006 {
     public void TestAddTripForCompanyWithNoTripCapacity() {
         this.tripAdministrations.addCompany(c2);
         this.tripAdministrations.addTrip(c2, t1);
-        this.tripAdministrations.addTrip(c2, t1);
+        this.tripAdministrations.addTrip(c2, new Trip("test_trip", 1, Transportation.NONE, 100));
     }
 }
