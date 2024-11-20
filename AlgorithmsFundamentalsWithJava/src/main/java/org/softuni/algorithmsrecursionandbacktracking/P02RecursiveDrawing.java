@@ -8,24 +8,26 @@ public class P02RecursiveDrawing {
 
         int n = Integer.parseInt(scanner.nextLine());
 
-//        long fact = 1;
-//
-//        for (int i = 1; i <= n; i++) {
-//            fact *= i;
-//        }
-//
-//        System.out.println(fact);
-
-        long result = calculateFactorial(n);
-
-        System.out.println(result);
+        drawFigure(n);
     }
 
-    private static long calculateFactorial(int n) {
-        if (n == 1) {
-            return 1;
+    private static void drawFigure(int n) {
+        if (n == 0) {
+            return;
         }
 
-        return n * calculateFactorial(n - 1);
+        for (int i = 0; i < n; i++) {
+            System.out.print("*");
+        }
+
+        System.out.println();
+
+        drawFigure(n - 1);
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("#");
+        }
+
+        System.out.println();
     }
 }
